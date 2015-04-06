@@ -2,6 +2,10 @@
 #+AUTHOR: Georgios Diapoulis
 #+EMAIL: gediapou[at]student[dot]jyu[dot]fi
 
+
+* About
+These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[These are personal notes, if anyone finds these intere][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can fin the orgmode everything [[https://github.com/gewhere/gewhere.github.io][here]].
+
 * Github
 I am learning how to use github, it pretty handy, just needs some time and repetitive practice.  The basic steps are below:
 
@@ -37,4 +41,5 @@ P P => to push
 
 
 * Orgmode
+
 * Emacs
