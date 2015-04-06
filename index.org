@@ -1,8 +1,38 @@
 #+TITLE: Notes about programming tools
+#+AUTHOR: Georgios Diapoulis
+#+EMAIL: gediapou[at]student[dot]jyu[dot]fi
+
 * Github
+I am learning how to use github, it pretty handy, just needs some time and repetitive practice.  The basic steps are below:
+
+** Git locally
+
+*** Initialize git
+
+#+BEGIN_SRC sh :results silent
+git init # initialize a folder .git/
+# create a file
+touch newfile # Ctrl+D to save and exit
+git status # now newfile is untracked
+git add newfile # to bring file in the staged level
+git commit -m 'Initial commit' # to make file ready for push
+#+END_SRC
+
+*** Git publicly
+#+BEGIN_SRC sh :results silent
+git remote # this should return 'origin'
+git push origin master # git asks for credentials
+#+END_SRC
+
+
 ** Magit
 #+BEGIN_EXAMPLE
 M-x magit-status
+s => to stage
+c c => to commit
+P P => to push
 #+END_EXAMPLE
+
+
 * Orgmode
 * Emacs
