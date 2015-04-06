@@ -2,7 +2,7 @@
 * Github
 ** Magit
 #+BEGIN_EXAMPLE
-M-x magit
+M-x magit-status
 #+END_EXAMPLE
 * Orgmode
 * Emacs
