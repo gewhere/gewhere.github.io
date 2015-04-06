@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-04-06 Δευ 22:20 -->
+<!-- 2015-04-06 Δευ 22:24 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -169,7 +169,7 @@ for the JavaScript code in this tag.
 <h2 id="sec-1"><span class="section-number-2">1</span> About</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from <a href="http://pages.sachachua.com/.emacs.d/Sacha.html">Sacha Chua</a>, and it is written in <a href="http://orgmode.org/">Orgmode</a>.  You can fin the orgmode everything <a href="https://github.com/gewhere/gewhere.github.io">here</a>.
+These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from <a href="http://pages.sachachua.com/.emacs.d/Sacha.html">Sacha Chua</a>, and it is written in <a href="http://orgmode.org/">Orgmode</a>.  You can find the orgmode and html files <a href="https://github.com/gewhere/gewhere.github.io">here</a>.
 </p>
 </div>
 </div>
@@ -177,7 +177,7 @@ These are personal notes, if anyone finds this documentation helpful I will be g
 <h2 id="sec-2"><span class="section-number-2">2</span> Github</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-I am learning how to use github, it pretty handy, just needs some time and repetitive practice.  The basic steps are below:
+I am learning how to use github, it's pretty handy, just needs some time and repetitive practice.  The basic steps are below:
 </p>
 </div>
 
@@ -202,6 +202,7 @@ git commit -m 'Initial commit' # to make file ready for push
 <div class="org-src-container">
 
 <pre class="src src-sh">git remote # this should return 'origin'
+git remote -v # returns the online repository
 git push origin master # git asks for credentials
 </pre>
 </div>
@@ -212,7 +213,7 @@ git push origin master # git asks for credentials
 <h3 id="sec-2-3"><span class="section-number-3">2.3</span> Using Magit</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
-Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With <code>M-x magit-status</code> magit opens a buffer which tracks your activity.  In this buffer you can your local path to the working directory, your remotes, and the last commit online (<code>Head</code>).
+Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With <code>M-x magit-status</code> magit opens a buffer which tracks your activity.  In this buffer you can see your local path to the working directory, your remotes, and the last commit online (<code>Head</code>).
 </p>
 
 <p>

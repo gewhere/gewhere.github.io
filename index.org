@@ -4,10 +4,10 @@
 
 
 * About
-These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can fin the orgmode everything [[https://github.com/gewhere/gewhere.github.io][here]].
+These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can find the orgmode and html files [[https://github.com/gewhere/gewhere.github.io][here]].
 
 * Github
-I am learning how to use github, it pretty handy, just needs some time and repetitive practice.  The basic steps are below:
+I am learning how to use github, it's pretty handy, just needs some time and repetitive practice.  The basic steps are below:
 
 ** Git locally
 
@@ -24,12 +24,13 @@ git commit -m 'Initial commit' # to make file ready for push
 ** Git publicly
 #+BEGIN_SRC sh :results silent
 git remote # this should return 'origin'
+git remote -v # returns the online repository
 git push origin master # git asks for credentials
 #+END_SRC
 
 
 ** Using Magit
-Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With =M-x magit-status= magit opens a buffer which tracks your activity.  In this buffer you can your local path to the working directory, your remotes, and the last commit online (=Head=).
+Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With =M-x magit-status= magit opens a buffer which tracks your activity.  In this buffer you can see your local path to the working directory, your remotes, and the last commit online (=Head=).
 
 At the top of your files in the magit's buffer there is a button like text region which says either =Unstaged changes= for files that are untracked, either =Staged Changes= for files that are in the staged level, or =Unpushed commits=.
 #+BEGIN_EXAMPLE
