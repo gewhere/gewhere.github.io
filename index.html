@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-04-06 Δευ 21:54 -->
+<!-- 2015-04-06 Δευ 22:12 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -152,13 +152,9 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1">1. Github</a>
 <ul>
-<li><a href="#sec-1-1">1.1. Git locally</a>
-<ul>
-<li><a href="#sec-1-1-1">1.1.1. Initialize git</a></li>
-<li><a href="#sec-1-1-2">1.1.2. Git publicly</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-2">1.2. Magit</a></li>
+<li><a href="#sec-1-1">1.1. Git locally</a></li>
+<li><a href="#sec-1-2">1.2. Git publicly</a></li>
+<li><a href="#sec-1-3">1.3. Using Magit</a></li>
 </ul>
 </li>
 <li><a href="#sec-2">2. Orgmode</a></li>
@@ -178,9 +174,6 @@ I am learning how to use github, it pretty handy, just needs some time and repet
 <div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> Git locally</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-sec-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Initialize git</h4>
-<div class="outline-text-4" id="text-1-1-1">
 <div class="org-src-container">
 
 <pre class="src src-sh">git init # initialize a folder .git/
@@ -193,9 +186,9 @@ git commit -m 'Initial commit' # to make file ready for push
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Git publicly</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Git publicly</h3>
+<div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 
 <pre class="src src-sh">git remote # this should return 'origin'
@@ -204,11 +197,17 @@ git push origin master # git asks for credentials
 </div>
 </div>
 </div>
-</div>
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Magit</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Using Magit</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With <code>M-x magit-status</code> magit opens a buffer which tracks your activity.  In this buffer you can your local path to the working directory, your remotes, and the last commit online (<code>Head</code>).
+</p>
+
+<p>
+At the top of your files in the magit's buffer there is a button like text region which says either <code>Unstaged changes</code> for files that are untracked, either <code>Staged Changes</code> for files that are in the staged level, or <code>Unpushed commits</code>.
+</p>
 <pre class="example">
 M-x magit-status
 s =&gt; to stage

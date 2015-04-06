@@ -27,7 +27,7 @@ git push origin master # git asks for credentials
 ** Using Magit
 Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With =M-x magit-status= magit opens a buffer which tracks your activity.  In this buffer you can your local path to the working directory, your remotes, and the last commit online (=Head=).
 
-At the top of your files in the magit's buffer there is a button like text region which says either =Unstaged changes= for files that are untracked, either =Staged Changes= for files that are in the staged level,
+At the top of your files in the magit's buffer there is a button like text region which says either =Unstaged changes= for files that are untracked, either =Staged Changes= for files that are in the staged level, or =Unpushed commits=.
 #+BEGIN_EXAMPLE
 M-x magit-status
 s => to stage
