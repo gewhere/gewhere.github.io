@@ -7,7 +7,6 @@ I am learning how to use github, it pretty handy, just needs some time and repet
 
 ** Git locally
 
-*** Initialize git
 
 #+BEGIN_SRC sh :results silent
 git init # initialize a folder .git/
@@ -18,14 +17,16 @@ git add newfile # to bring file in the staged level
 git commit -m 'Initial commit' # to make file ready for push
 #+END_SRC
 
-*** Git publicly
+** Git publicly
 #+BEGIN_SRC sh :results silent
 git remote # this should return 'origin'
 git push origin master # git asks for credentials
 #+END_SRC
 
 
-** Magit
+** Using Magit
+Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With =M-x magit-status= magit opens a buffer which tracks your activity.  In this buffer you can your local path to the working directory, your remotes, and the last commit online (=Head=).
+
 #+BEGIN_EXAMPLE
 M-x magit-status
 s => to stage
