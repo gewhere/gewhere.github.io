@@ -1,0 +1,8 @@
+#+TITLE: Notes about programming tools
+* Github
+** Magit
+#+BEGIN_EXAMPLE
+M-x magit
+#+END_EXAMPLE
+* Orgmode
+* Emacs
