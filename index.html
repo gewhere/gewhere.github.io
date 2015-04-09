@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-04-10 Παρ 01:51 -->
+<!-- 2015-04-10 Παρ 01:55 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -190,12 +190,12 @@ You can use git only locally, though one of the main concept behind git and vers
 
 <div class="org-src-container">
 
-<pre class="src src-sh">git init # initialize a folder .git/
+<pre class="src src-sh">git init                        # initialize a folder .git/
 # create a file
-touch newfile # Ctrl+D to save and exit
-git status # now newfile is untracked
+touch newfile                   # Ctrl+D to save and exit
+git status                      # now newfile is untracked
 git add newfile # to bring file in the staged level
-git commit -m 'Initial commit' # to make file ready for push
+git commit -m 'Initial commit'  # to make file ready for push
 </pre>
 </div>
 
@@ -205,14 +205,14 @@ Branching is a core concept for handling big programming projects.
 
 <div class="org-src-container">
 
-<pre class="src src-sh">git brach NewBranch    # creates a new branch
-git branch             # returns the working branch
-git checkout NewBranch # you are now in the NewBranch
-touch newfile          # create a newfile in the NewBranch
-                       # this file does not exists in the working directory
-                       # unless you 'git merge'
-git checkout master    # the master branch is by default the branch that git initialise
-git merge NewBranch    # at this point the newfile appears
+<pre class="src src-sh">git brach NewBranch     # creates a new branch
+git branch              # returns the working branch
+git checkout NewBranch  # you are now in the NewBranch
+touch newfile           # create a newfile in the NewBranch
+                        # this file does not exists in the working directory
+                        # unless you 'git merge'
+git checkout master     # the master branch is by default the branch that git initialise
+git merge NewBranch     # at this point the newfile appears
 </pre>
 </div>
 </div>
@@ -226,9 +226,9 @@ When you <code>git clone</code> a repository to your hard disc, you clone this f
 
 <div class="org-src-container">
 
-<pre class="src src-sh">git remote # this should return 'origin'
-git remote -v # returns the online repository
-git push origin master # git asks for credentials
+<pre class="src src-sh">git remote              # this should return 'origin'
+git remote -v           # returns the online repository
+git push origin master  # git asks for credentials
 </pre>
 </div>
 </div>
