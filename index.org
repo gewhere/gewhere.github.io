@@ -10,7 +10,7 @@ These are personal notes, if anyone finds this documentation helpful I will be g
 I am learning how to use github, it's pretty handy, just needs some time and repetitive practice.  The basic steps are below:
 
 ** Git locally
-
+You can use git only locally, though one of the main concept behind git and version control systems is that of collaborative coding.
 
 #+BEGIN_SRC sh :results silent
 git init # initialize a folder .git/
@@ -21,7 +21,22 @@ git add newfile # to bring file in the staged level
 git commit -m 'Initial commit' # to make file ready for push
 #+END_SRC
 
+Branching is a core concept for handling big programming projects.
+
+#+BEGIN_SRC sh :results silent
+git brach NewBranch    # creates a new branch
+git branch             # returns the working branch
+git checkout NewBranch # you are now in the NewBranch
+touch newfile          # create a newfile in the NewBranch
+                       # this file does not exists in the working directory
+                       # unless you 'git merge'
+git checkout master    # the master branch is by default the branch that git initialise
+git merge NewBranch    # at this point the newfile appears
+#+END_SRC
+
 ** Git publicly
+When you =git clone= a repository to your hard disc, you clone this from a /remote/.
+
 #+BEGIN_SRC sh :results silent
 git remote # this should return 'origin'
 git remote -v # returns the online repository
