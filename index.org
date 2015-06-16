@@ -30,7 +30,7 @@ git checkout NewBranch 	# you are now in the NewBranch
 touch newfile          	# create a newfile in the NewBranch
                        	# this file does not exists in the working directory
                        	# unless you 'git merge'
-git checkout master    	# the master branch is by default the branch that git initialise
+qgit checkout master    	# the master branch is by default the branch that git initialise
 git merge NewBranch    	# at this point the newfile appears
 #+END_SRC
 
@@ -67,7 +67,7 @@ I am using GNUPLOT to plot orgmode's tables.
 : org-plot/gnuplot
 
 ** Org-tables
-The examples below are the key profiles of Krumhansl-Kessler probe-tone empirical research, as presented by Tamperley (1999).
+The examples below are the major and minor profiles of Krumhansl-Kessler key-finding algorithm based on the probe-tone technique, as presented by Tamperley (1999).
 
 #+BEGIN_EXAMPLE
 #+PLOT: title:"Krumhansl-Kessler C major key profile" ind:1 deps:(2) type:2d with:histograms set:"yrange[0.0:7.0]"
