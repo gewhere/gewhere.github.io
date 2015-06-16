@@ -59,6 +59,17 @@ I am using GNUPLOT to plot orgmode's tables.
 ** Org-tables and GNUPLOT
 The examples below are the key profiles of Krumhansl-Kessler probe-tone empirical research, as presented by Tamperley (1999).
 # =======
+
+I use org-plot installed via =M-x package-install= RET =gnuplot=.  I have also added gnuplot to babel languages.
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((gnuplot . t)))
+#+END_SRC
+
+
+
 ** Org-tables
 The examples below are the major and minor profiles of Krumhansl-Kessler key-finding algorithm based on the probe-tone technique, as presented by Tamperley (1999).
 # >>>>>>> master
