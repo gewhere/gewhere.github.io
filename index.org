@@ -30,7 +30,7 @@ git checkout NewBranch 	# you are now in the NewBranch
 touch newfile          	# create a newfile in the NewBranch
                        	# this file does not exists in the working directory
                        	# unless you 'git merge'
-git checkout master    	# the master branch is by default the branch that git initialise
+qgit checkout master    	# the master branch is by default the branch that git initialise
 git merge NewBranch    	# at this point the newfile appears
 #+END_SRC
 
@@ -68,8 +68,13 @@ I am using GNUPLOT to plot orgmode's tables.
 #+RESULTS:
 : org-plot/gnuplot
 
+<<<<<<< HEAD
 ** Org-tables and GNUPLOT
 The examples below are the key profiles of Krumhansl-Kessler probe-tone empirical research, as presented by Tamperley (1999).
+=======
+** Org-tables
+The examples below are the major and minor profiles of Krumhansl-Kessler key-finding algorithm based on the probe-tone technique, as presented by Tamperley (1999).
+>>>>>>> master
 
 #+BEGIN_EXAMPLE
 #+PLOT: title:"Krumhansl-Kessler C major key profile" ind:1 deps:(2) type:2d with:histograms set:"yrange[0.0:7.0]"
@@ -120,10 +125,6 @@ The examples below are the key profiles of Krumhansl-Kessler probe-tone empirica
 
 #+BEGIN_HTML
 
-# PUT THIS IN .HTML TO left-align and DIMINISH fonts
-# <section id="sec-5" style="text-align: left; font-size: 0.53em;">
-
-
 <div id="bibtex_display"></div>
 
 <textarea id="bibtex_input" style="display:none;">
@@ -138,6 +139,7 @@ The examples below are the key profiles of Krumhansl-Kessler probe-tone empirica
 }
 
 
+
 </textarea>
 
 <div class="bibtex_template">
@@ -150,10 +152,10 @@ The examples below are the key profiles of Krumhansl-Kessler probe-tone empirica
     </span>
     <a class="url"><span class="title"></span></a>.
     <span class="if journal">
-      In <span class="journal" style="font-style: italic;"></span>,
+      In <span class="journal" style="font-style: italic;"></span>.
     </span>
     <span class="if booktitle">
-      In <span class="booktitle" style="font-style: italic;"></span>,
+      In <span class="booktitle" style="font-style: italic;"></span>.
     </span>
     <span class="if phdthesis">
       <span class="phdthesis" style="font-style: italic;"></span>, PhD dissertation.
@@ -176,7 +178,9 @@ The examples below are the key profiles of Krumhansl-Kessler probe-tone empirica
     </span>
   </li>
 </div>
-#+BEGIN_HTML
+
+#+END_HTML
+
 
 #+BEGIN_HTML
 
@@ -184,4 +188,4 @@ The examples below are the key profiles of Krumhansl-Kessler probe-tone empirica
 <script type="text/javascript"
 src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
 
-#+BEGIN_HTML
+#+END_HTML
