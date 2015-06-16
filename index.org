@@ -56,7 +56,7 @@ P P => to push
 #+END_EXAMPLE
 
 *** Using branches
-By default git uses a =master= branch.  To switch to a different branch =M-x magit-status= and =b=.
+By default git uses a =master= branch.  To switch to a different branch =M-x magit-status= and =b=, and =b= for /checkout/.
 
 * Orgmode
 I am using GNUPLOT to plot orgmode's tables.
