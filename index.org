@@ -55,13 +55,13 @@ I am using GNUPLOT to plot orgmode's tables.
 #+RESULTS:
 : org-plot/gnuplot
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 ** Org-tables and GNUPLOT
 The examples below are the key profiles of Krumhansl-Kessler probe-tone empirical research, as presented by Tamperley (1999).
-=======
+# =======
 ** Org-tables
 The examples below are the major and minor profiles of Krumhansl-Kessler key-finding algorithm based on the probe-tone technique, as presented by Tamperley (1999).
->>>>>>> master
+# >>>>>>> master
 
 #+BEGIN_EXAMPLE
 #+PLOT: title:"Krumhansl-Kessler C major key profile" ind:1 deps:(2) type:2d with:histograms set:"yrange[0.0:7.0]"
