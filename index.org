@@ -30,7 +30,7 @@ git checkout NewBranch 	# you are now in the NewBranch
 touch newfile          	# create a newfile in the NewBranch
                        	# this file does not exists in the working directory
                        	# unless you 'git merge'
-ggit checkout master    	# the master branch is by default the branch that git initialise
+git checkout master    	# the master branch is by default the branch that git initialise
 git merge NewBranch    	# at this point the newfile appears
 #+END_SRC
 
