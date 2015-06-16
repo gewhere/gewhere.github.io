@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-06-16 Τρι 06:13 -->
+<!-- 2015-06-16 Τρι 20:27 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -155,12 +155,17 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-2-1">2.1. Git locally</a></li>
 <li><a href="#sec-2-2">2.2. Git publicly</a></li>
-<li><a href="#sec-2-3">2.3. Using Magit</a></li>
+<li><a href="#sec-2-3">2.3. Using Magit</a>
+<ul>
+<li><a href="#sec-2-3-1">2.3.1. Using branches</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#sec-3">3. Orgmode</a>
 <ul>
-<li><a href="#sec-3-1">3.1. Org-tables</a></li>
+<li><a href="#sec-3-1">3.1. Org-tables and GNUPLOT</a></li>
+<li><a href="#sec-3-2">3.2. Org-tables</a></li>
 </ul>
 </li>
 <li><a href="#sec-4">4. Emacs</a></li>
@@ -252,16 +257,38 @@ Magit is an emacs package with which you can handle git more interactively.  Wit
 <p>
 At the top of your files in the magit's buffer there is a button like text region which says either <code>Unstaged changes</code> for files that are untracked, either <code>Staged Changes</code> for files that are in the staged level, or <code>Unpushed commits</code>.
 </p>
+<ul class="org-ul">
+<li><code>M-x magit-status</code> OR <code>C-x g</code>
+</li>
+</ul>
 <pre class="example">
-M-x magit-status
 s =&gt; to stage
 c c =&gt; to commit
 P P =&gt; to push
 </pre>
 </div>
-</div>
-</div>
 
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> Using branches</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>By default git uses a <code>master</code> branch.  To switch to a different branch (let the name of the branch  <b>source</b>) <code>M-x magit-status</code> and <code>b</code>, and <code>b</code> for <i>checkout</i>.
+</li>
+<li>To apply the changes of <code>source</code> branch to <code>master</code>, <b>checkout</b> to master branch and merge.  Be sure that you don't have any unstaged changes.
+</li>
+<li>After this step your changes have been applied to <code>master</code> branch and you are ready to <code>stage</code> and <code>commit</code> them.
+</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./img/magit-log.png" alt="magit-log.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3"><span class="section-number-2">3</span> Orgmode</h2>
@@ -275,13 +302,26 @@ I am using GNUPLOT to plot orgmode's tables.
 <pre class="src src-emacs-lisp">(local-set-key "\M-\C-g" 'org-plot/gnuplot)
 </pre>
 </div>
-</div>
 
+<p>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</p>
+</div>
 <div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Org-tables</h3>
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Org-tables and GNUPLOT</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 The examples below are the key profiles of Krumhansl-Kessler probe-tone empirical research, as presented by Tamperley (1999).
+<code>=====</code>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Org-tables</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+The examples below are the major and minor profiles of Krumhansl-Kessler key-finding algorithm based on the probe-tone technique, as presented by Tamperley (1999).
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; master
 </p>
 
 <pre class="example">

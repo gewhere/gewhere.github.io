@@ -60,7 +60,7 @@ P P => to push
 - To apply the changes of =source= branch to =master=, *checkout* to master branch and merge.  Be sure that you don't have any unstaged changes.
 - After this step your changes have been applied to =master= branch and you are ready to =stage= and =commit= them.
 
-
+[[./img/magit-log.png]]
 
 * Orgmode
 I am using GNUPLOT to plot orgmode's tables.
