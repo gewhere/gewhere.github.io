@@ -44,23 +44,6 @@ git push origin master 	# git asks for credentials
 #+END_SRC
 
 
-** Using Magit
-Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With =M-x magit-status= magit opens a buffer which tracks your activity.  In this buffer you can see your local path to the working directory, your remotes, and the last commit online (=Head=).
-
-At the top of your files in the magit's buffer there is a button like text region which says either =Unstaged changes= for files that are untracked, either =Staged Changes= for files that are in the staged level, or =Unpushed commits=.
-- =M-x magit-status= OR =C-x g=
-#+BEGIN_EXAMPLE
-s => to stage
-c c => to commit
-P P => to push
-#+END_EXAMPLE
-
-*** Using branches
-- By default git uses a =master= branch.  To switch to a different branch (let the name of the branch  *source*) =M-x magit-status= and =b=, and =b= for /checkout/.
-- To apply the changes of =source= branch to =master=, *checkout* to master branch and merge.  Be sure that you don't have any unstaged changes.
-- After this step your changes have been applied to =master= branch and you are ready to =stage= and =commit= them.
-
-[[./img/magit-log.png]]
 
 * Orgmode
 I am using GNUPLOT to plot orgmode's tables.
@@ -123,6 +106,23 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 [[./img/minor.png]]
 
 * Emacs
+** Using Magit
+Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With =M-x magit-status= magit opens a buffer which tracks your activity.  In this buffer you can see your local path to the working directory, your remotes, and the last commit online (=Head=).
+
+At the top of your files in the magit's buffer there is a button like text region which says either =Unstaged changes= for files that are untracked, either =Staged Changes= for files that are in the staged level, or =Unpushed commits=.
+- =M-x magit-status= OR =C-x g=
+#+BEGIN_EXAMPLE
+s => to stage
+c c => to commit
+P P => to push
+#+END_EXAMPLE
+
+*** Using branches
+- By default git uses a =master= branch.  To switch to a different branch (let the name of the branch  *source*) =M-x magit-status= and =b=, and =b= for /checkout/.
+- To apply the changes of =source= branch to =master=, *checkout* to master branch and merge.  Be sure that you don't have any unstaged changes.
+- After this step your changes have been applied to =master= branch and you are ready to =stage= and =commit= them.
+
+[[./img/magit-log.png]]
 
 * Bibliography
 
