@@ -4,7 +4,7 @@
 
 
 * About
-These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can find the orgmode and html files [[https://github.com/gewhere/gewhere.github.io][here]].
+These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can find the orgmode and html files on github repository [[https://github.com/gewhere/gewhere.github.io][here]].
 
 * Github
 I am learning how to use github, it's pretty handy, just needs some time and repetitive practice.  The basic steps are below:
@@ -68,15 +68,15 @@ I use org-plot installed via =M-x package-install= RET =gnuplot=.  I have also a
  '((gnuplot . t)))
 #+END_SRC
 
-** Orgmode and ditaa
+# ** Orgmode and ditaa
 
-#+BEGIN_SRC ditaa :file ./img/hello-world.png
-+--------------+
-|              |
-| Hello World! |
-|              |
-+--------------+
-#+END_SRC
+# #+BEGIN_SRC ditaa :file ./img/hello-world.png
+# +--------------+
+# |              |
+# | Hello World! |
+# |              |
+# +--------------+
+# #+END_SRC
 
 
 
@@ -128,15 +128,24 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 ** Org-tables and id
 I am importing values that I have calculated in =grades.org= file.
 
-| Name  | Grade   |
-|-------+---------|
-| _     | grade01 |
-| Nick  | 8       |
-| _     | grade02 |
-| Brad  | 6       |
-| _     | grade03 |
-| Marie | 8       |
-#+TBLFM: $grade01 = remote(grades-overall, $overall01);%.0f::$grade02 = remote(grades-overall, $overall02);%.0f::$grade03 = remote(grades-overall, $overall03);%.0f
+#+BEGIN_EXAMPLE
+* Calculate grades
+  :PROPERTIES:
+  :ID:       grades-overall
+  :END:
+| Name  | Test | Presentation | Attendance |   Overall |
+|-------+------+--------------+------------+-----------|
+| Nick  |    7 |            8 |          9 |         8 |
+| ^     |      |              |            | overall01 |
+| Dan   |    8 |            6 |          4 |         6 |
+| ^     |      |              |            | overall02 |
+| Marie |    9 |            4 |         10 |         8 |
+| ^     |      |              |            | overall03 |
+#+TBLFM: $> = vsum($<<..$>>)/3;%.0f
+#+END_EXAMPLE
+
+
+The id value must be *unique*.  You can create a /unique id/ with =M-x org-id-get-create=.
 
 
 *** Get values from file
@@ -152,15 +161,6 @@ The source code is as folows:
 | Marie | 8       |
 #+TBLFM: $grade01 = remote(grades-overall, $overall01);%.0f::$grade02 = remote(grades-overall, $overall02);%.0f::$grade03 = remote(grades-overall, $overall03);%.0f
 #+END_EXAMPLE
-| Name  | Grade   |
-|-------+---------|
-| _     | grade01 |
-| Nick  | 8       |
-| _     | grade02 |
-| Brad  | 6       |
-| _     | grade03 |
-| Marie | 8       |
-#+TBLFM: $grade01 = remote(grades-overall, $overall01);%.0f::$grade02 = remote(grades-overall, $overall02);%.0f::$grade03 = remote(grades-overall, $overall03);%.0f
 
 
 * Emacs
