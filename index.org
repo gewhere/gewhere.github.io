@@ -126,11 +126,32 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 
 [[./img/minor.png]]
 ** Org-tables and id
+I am importing values that I have calculated in =grades.org= file.
+
+| Name  | Grade   |
+|-------+---------|
+| _     | grade01 |
+| Nick  | 8       |
+| _     | grade02 |
+| Brad  | 6       |
+| _     | grade03 |
+| Marie | 8       |
+#+TBLFM: $grade01 = remote(grades-overall, $overall01);%.0f::$grade02 = remote(grades-overall, $overall02);%.0f::$grade03 = remote(grades-overall, $overall03);%.0f
+
 
 *** Get values from file
-    :PROPERTIES:
-    :ID:       47d9a824-7895-4eda-8a0f-7ff788009c1f
-    :END:
+The source code is as folows:
+#+BEGIN_EXAMPLE
+| Name  | Grade   |
+|-------+---------|
+| _     | grade01 |
+| Nick  | 8       |
+| _     | grade02 |
+| Brad  | 6       |
+| _     | grade03 |
+| Marie | 8       |
+#+TBLFM: $grade01 = remote(grades-overall, $overall01);%.0f::$grade02 = remote(grades-overall, $overall02);%.0f::$grade03 = remote(grades-overall, $overall03);%.0f
+#+END_EXAMPLE
 | Name  | Grade   |
 |-------+---------|
 | _     | grade01 |
