@@ -1,0 +1,13 @@
+* Calculate grades
+  :PROPERTIES:
+  :ID:       grades-overall
+  :END:
+| Name  | Test | Presentation | Attendance |   Overall |
+|-------+------+--------------+------------+-----------|
+| Nick  |    7 |            8 |          9 |         8 |
+| ^     |      |              |            | overall01 |
+| Dan   |    8 |            6 |          4 |         6 |
+| ^     |      |              |            | overall02 |
+| Marie |    9 |            4 |         10 |         8 |
+| ^     |      |              |            | overall03 |
+#+TBLFM: $> = vsum($<<..$>>)/3;%.0f
