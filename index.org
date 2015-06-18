@@ -2,6 +2,7 @@
 #+AUTHOR: Georgios Diapoulis
 #+EMAIL: gediapou[at]student[dot]jyu[dot]fi
 
+#+OPTIONS: d:RESULTS
 
 * About
 These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can find the orgmode and html files on github repository [[https://github.com/gewhere/gewhere.github.io][here]].
@@ -128,9 +129,12 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 ** Org-tables and id
 I am importing values that I have calculated in =grades.org= file.
 
+
+# http://stackoverflow.com/questions/20194347/org-mode-with-code-example-as-html
+
 #+BEGIN_EXAMPLE
 
-#* Calculate grades
+* Calculate grades                                                 :noexport:
   :PROPERTIES:
   :ID:       grades-overall
   :END:
