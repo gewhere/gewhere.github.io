@@ -133,7 +133,7 @@ I am importing values that I have calculated in =grades.org= file.
 # http://stackoverflow.com/questions/20194347/org-mode-with-code-example-as-html
 
 
-#+begin_src org :results replace drawer :exports both :post wrap-html(text=*this*)
+#+BEGIN_SRC org :results replace drawer :exports both :post wrap-html(text=*this*)
 * Calculate grades                                                 :noexport:
   :PROPERTIES:
   :ID:       grades-overall
@@ -148,7 +148,7 @@ I am importing values that I have calculated in =grades.org= file.
 | ^     |      |              |            | overall03 |
 #+TBLFM: $> = vsum($<<..$>>)/3;%.0f
 
-#+end_source
+#+END_SRC
 
 
 The id value must be *unique*.  You can create a /unique id/ with =M-x org-id-get-create=.
