@@ -127,31 +127,32 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 
 [[./img/minor.png]]
 ** Org-tables and id
-I am importing values that I have calculated in =grades.org= file.
+I am importing values that I have calculated in =grades.org= file ([[https://github.com/gewhere/gewhere.github.io/blob/master/grades.org][link]]).  The id value must be *unique*.  You can create a /unique id/ with =M-x org-id-get-create=.
 
 
-# http://stackoverflow.com/questions/20194347/org-mode-with-code-example-as-html
+
+# # http://stackoverflow.com/questions/20194347/org-mode-with-code-example-as-html
 
 
-#+BEGIN_SRC org :results replace drawer :exports both :post wrap-html(text=*this*)
-* Calculate grades                                                 :noexport:
-  :PROPERTIES:
-  :ID:       grades-overall
-  :END:
-| Name  | Test | Presentation | Attendance |   Overall |
-|-------+------+--------------+------------+-----------|
-| Nick  |    7 |            8 |          9 |         8 |
-| ^     |      |              |            | overall01 |
-| Dan   |    8 |            6 |          4 |         6 |
-| ^     |      |              |            | overall02 |
-| Marie |    9 |            4 |         10 |         8 |
-| ^     |      |              |            | overall03 |
-#+TBLFM: $> = vsum($<<..$>>)/3;%.0f
+# #+BEGIN_SRC org :results replace drawer :exports both :post wrap-html(text=*this*)
+# * Calculate grades                                                 :noexport:
+#   :PROPERTIES:
+#   :ID:       grades-overall
+#   :END:
+# | Name  | Test | Presentation | Attendance |   Overall |
+# |-------+------+--------------+------------+-----------|
+# | Nick  |    7 |            8 |          9 |         8 |
+# | ^     |      |              |            | overall01 |
+# | Dan   |    8 |            6 |          4 |         6 |
+# | ^     |      |              |            | overall02 |
+# | Marie |    9 |            4 |         10 |         8 |
+# | ^     |      |              |            | overall03 |
+# #+TBLFM: $> = vsum($<<..$>>)/3;%.0f
 
-#+END_SRC
+# #+END_SRC
 
 
-The id value must be *unique*.  You can create a /unique id/ with =M-x org-id-get-create=.
+
 
 
 *** Get values from file
