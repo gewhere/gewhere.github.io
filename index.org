@@ -129,6 +129,7 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 I am importing values that I have calculated in =grades.org= file.
 
 #+BEGIN_EXAMPLE
+
 * Calculate grades
   :PROPERTIES:
   :ID:       grades-overall
@@ -142,6 +143,7 @@ I am importing values that I have calculated in =grades.org= file.
 | Marie |    9 |            4 |         10 |         8 |
 | ^     |      |              |            | overall03 |
 #+TBLFM: $> = vsum($<<..$>>)/3;%.0f
+
 #+END_EXAMPLE
 
 
@@ -150,7 +152,9 @@ The id value must be *unique*.  You can create a /unique id/ with =M-x org-id-ge
 
 *** Get values from file
 The source code is as folows:
+
 #+BEGIN_EXAMPLE
+
 | Name  | Grade   |
 |-------+---------|
 | _     | grade01 |
@@ -160,6 +164,7 @@ The source code is as folows:
 | _     | grade03 |
 | Marie | 8       |
 #+TBLFM: $grade01 = remote(grades-overall, $overall01);%.0f::$grade02 = remote(grades-overall, $overall02);%.0f::$grade03 = remote(grades-overall, $overall03);%.0f
+
 #+END_EXAMPLE
 
 
