@@ -130,7 +130,7 @@ I am importing values that I have calculated in =grades.org= file.
 
 #+BEGIN_EXAMPLE
 
-* Calculate grades
+#* Calculate grades
   :PROPERTIES:
   :ID:       grades-overall
   :END:
