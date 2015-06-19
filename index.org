@@ -148,7 +148,7 @@ The source code is as folows:
 
 *** Append orgmode tables
 
-#+BEGIN_ORG
+#+BEGIN_EXAMPLE
 
 #+name: table-names
 - tbl1
@@ -164,15 +164,11 @@ The source code is as folows:
 | d | 4 |
 |---+---|
 
-#+END_ORG
-
 #+BEGIN_SRC emacs-lisp :var table-names=table-names
 (mapcan #'org-babel-ref-resolve table-names)
 #+END_SRC
 
-Results to the following:
-#+BEGIN_ORG
-
+#+RESULTS:
 | a | 1 |
 | b | 2 |
 |---+---|
@@ -180,7 +176,7 @@ Results to the following:
 | d | 4 |
 |---+---|
 
-#+END_ORG
+#+END_EXAMPLE
 
 * Emacs
 ** Using Magit
