@@ -184,6 +184,7 @@ Babel calls the function =org-babel-execute-src-block=.  Inline [[http://orgmode
 *** ditaa
 Locate your path to =ditaa.jar= in your init file like this =(setq org-ditaa-jar-path "/path/to/ditaa.jar)=.
 
+#+BEGIN_EXAMPLE
 #+begin_src ditaa :file ./img/hello-ditaa.png
       +-----------+
       |           |
@@ -191,6 +192,7 @@ Locate your path to =ditaa.jar= in your init file like this =(setq org-ditaa-jar
       |           |
       +-----------+
 #+end_src
+#+END_EXAMPLE
 
 #+RESULTS:
 [[file:./img/hello-ditaa.png]]

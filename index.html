@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-06-20 Σαβ 02:12 -->
+<!-- 2015-06-20 Σαβ 02:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -495,6 +495,16 @@ Babel calls the function <code>org-babel-execute-src-block</code>.  Inline <a hr
 <p>
 Locate your path to <code>ditaa.jar</code> in your init file like this <code>(setq org-ditaa-jar-path "/path/to/ditaa.jar)</code>.
 </p>
+
+<pre class="example">
+#+begin_src ditaa :file ./img/hello-ditaa.png
+      +-----------+
+      |           |
+      |           |
+      |           |
+      +-----------+
+#+end_src
+</pre>
 
 
 <div class="figure">
