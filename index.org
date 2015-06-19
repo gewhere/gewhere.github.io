@@ -146,6 +146,41 @@ The source code is as folows:
 
 #+END_EXAMPLE
 
+*** Append orgmode tables
+
+#+BEGIN_ORG
+
+#+name: table-names
+- tbl1
+- tbl2
+
+#+name: tbl1
+| a | 1 |
+| b | 2 |
+|---+---|
+
+#+name: tbl2
+| c | 3 |
+| d | 4 |
+|---+---|
+
+#+END_ORG
+
+#+BEGIN_SRC emacs-lisp :var table-names=table-names
+(mapcan #'org-babel-ref-resolve table-names)
+#+END_SRC
+
+Results to the following:
+#+BEGIN_ORG
+
+| a | 1 |
+| b | 2 |
+|---+---|
+| c | 3 |
+| d | 4 |
+|---+---|
+
+#+END_ORG
 
 * Emacs
 ** Using Magit
