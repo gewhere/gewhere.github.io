@@ -179,7 +179,7 @@ The source code is as folows:
 #+END_EXAMPLE
 ** Org-babel
 - http://orgmode.org/manual/Evaluating-code-blocks.html
-Babel call the function =org-babel-execute-src-block=.  Inline [[http://orgmode.org/worg/org-contrib/babel/intro.html][source code]] can be written as =src_lang{code}=.  For example, highlight this source code \color{yellow}{=src_emacs-lisp{(+ 1 1)}=} and press *C-c C-c*, it will result to =2=.
+Babel call the function =org-babel-execute-src-block=.  Inline [[http://orgmode.org/worg/org-contrib/babel/intro.html][source code]] can be written as =src_lang{code}=.  For example, highlight this source code =src_emacs-lisp{(+ 1 1)}= and press *C-c C-c*, it will result to =2=.
 
 * Emacs
 ** Using Magit
