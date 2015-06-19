@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-06-20 Σαβ 01:43 -->
+<!-- 2015-06-20 Σαβ 02:12 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -167,7 +167,11 @@ for the JavaScript code in this tag.
 <li><a href="#sec-3-3-2">3.3.2. Append orgmode tables</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-4">3.4. Org-babel</a></li>
+<li><a href="#sec-3-4">3.4. Org-babel</a>
+<ul>
+<li><a href="#sec-3-4-1">3.4.1. ditaa</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#sec-4">4. Emacs</a>
@@ -481,8 +485,23 @@ The source code is as folows:
 </li>
 </ul>
 <p>
-Babel call the function <code>org-babel-execute-src-block</code>.  Inline <a href="http://orgmode.org/worg/org-contrib/babel/intro.html">source code</a> can be written as <code>src_lang{code}</code>.  For example, highlight this source code <code>src_emacs-lisp{(+ 1 1)}</code> and press <b>C-c C-c</b>, it will result to <code>2</code>.
+Babel calls the function <code>org-babel-execute-src-block</code>.  Inline <a href="http://orgmode.org/worg/org-contrib/babel/intro.html">source code</a> can be written as <code>src_lang{code}</code>.  For example, highlight this source code <code>src_emacs-lisp{(+ 1 1)}</code> and press <b>C-c C-c</b>, it will result to <code>2</code>.  A different way to interpret emacs-lisp source code inline is to write the expression as an orgmode link using the prefix <code>elisp(&lt;code expression&gt;)</code> and evaluate the source code using <b>C-c C-o</b>, just like you open a link. For example <a href="(org-agenda)">(org-agenda)</a>.
 </p>
+</div>
+
+<div id="outline-container-sec-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1"><span class="section-number-4">3.4.1</span> ditaa</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+Locate your path to <code>ditaa.jar</code> in your init file like this <code>(setq org-ditaa-jar-path "/path/to/ditaa.jar)</code>.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/hello-ditaa.png" alt="hello-ditaa.png" />
+</p>
+</div>
+</div>
 </div>
 </div>
 </div>
