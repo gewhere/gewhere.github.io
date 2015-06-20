@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-06-20 Σαβ 02:14 -->
+<!-- 2015-06-20 Σαβ 03:19 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -485,7 +485,18 @@ The source code is as folows:
 </li>
 </ul>
 <p>
-Babel calls the function <code>org-babel-execute-src-block</code>.  Inline <a href="http://orgmode.org/worg/org-contrib/babel/intro.html">source code</a> can be written as <code>src_lang{code}</code>.  For example, highlight this source code <code>src_emacs-lisp{(+ 1 1)}</code> and press <b>C-c C-c</b>, it will result to <code>2</code>.  A different way to interpret emacs-lisp source code inline is to write the expression as an orgmode link using the prefix <code>elisp(&lt;code expression&gt;)</code> and evaluate the source code using <b>C-c C-o</b>, just like you open a link. For example <a href="(org-agenda)">(org-agenda)</a>.
+Babel calls the function <code>org-babel-execute-src-block</code>.  The default value of <code>#+RESULTS:</code> can be changed using <code>org-babel-results-keyword</code>.  For example:
+</p>
+<div class="org">
+<p>
+,#+BEGIN<sub>SRC</sub> emacs-lisp
+(setq org-babel-results-keyword "name")
+,#+END<sub>SRC</sub>
+</p>
+
+</div>
+<p>
+Inline <a href="http://orgmode.org/worg/org-contrib/babel/intro.html">source code</a> can be written as <code>src_lang{code}</code>.  For example, highlight this source code <code>src_emacs-lisp{(+ 1 1)}</code> and press <b>C-c C-c</b>, it will result to <code>2</code>.  A different way to interpret emacs-lisp source code inline is to write the expression as an orgmode link using the prefix <code>elisp(&lt;code expression&gt;)</code> and evaluate the source code using <b>C-c C-o</b>, just like you open a link. For example <a href="(org-agenda)">(org-agenda)</a>.
 </p>
 </div>
 
