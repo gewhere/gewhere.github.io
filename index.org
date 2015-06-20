@@ -180,11 +180,15 @@ The source code is as folows:
 ** Org-babel
 - http://orgmode.org/manual/Evaluating-code-blocks.html
 Babel calls the function =org-babel-execute-src-block=.  The default value of =#+RESULTS:= can be changed using =org-babel-results-keyword=.  For example:
-#+BEGIN_ORG
-,#+BEGIN_SRC emacs-lisp
+
+#+BEGIN_EXAMPLE
+
+#+BEGIN_SRC emacs-lisp
 (setq org-babel-results-keyword "name")
-,#+END_SRC
-#+END_ORG
+#+END_SRC
+
+#+END_EXAMPLE
+
 Inline [[http://orgmode.org/worg/org-contrib/babel/intro.html][source code]] can be written as =src_lang{code}=.  For example, highlight this source code =src_emacs-lisp{(+ 1 1)}= and press *C-c C-c*, it will result to =2=.  A different way to interpret emacs-lisp source code inline is to write the expression as an orgmode link using the prefix =elisp(<code expression>)= and evaluate the source code using *C-c C-o*, just like you open a link. For example [[elisp:(org-agenda)]].
 
 *** ditaa
