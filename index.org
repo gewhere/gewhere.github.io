@@ -7,7 +7,7 @@
 These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can find the orgmode and html files on github repository [[https://github.com/gewhere/gewhere.github.io][here]].
 
 * Github
-I am learning how to use github, it's pretty handy, just needs some time and repetitive practice.  The basic steps are below:
+I am learning how to use github, it's pretty handy, just needs some time and repetitive practice.  Git documentation is available [[https://git-scm.com/documentation][here]].  The basic steps are below:
 
 ** Git locally
 You can use git only locally, though one of the main concept behind git and version control systems is that of collaborative coding.
@@ -231,6 +231,23 @@ P P => to push
 - After this step your changes have been applied to =master= branch and you are ready to =stage= and =commit= them.
 
 [[./img/magit-log.png]]
+
+* Python
+
+** repr()
+A python example for =%r=.
+
+#+BEGIN_SRC python :results output
+# I am not sure why in this case the second backslash is added
+repr1 = "\%r"
+repr2 = "\\r"
+print "This is an object representation %r" % repr1
+print "Also this is an object representation %r" % repr2
+#+END_SRC
+
+#+RESULTS:
+: This is an object representation '\\%r'
+: Also this is an object representation '\\r'
 
 * Bibliography
 
