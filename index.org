@@ -233,12 +233,22 @@ P P => to push
 [[./img/magit-log.png]]
 
 * Python
-I am not sure about the reason that I don't have colorized src-block for python.  Is this because I have set =python2= interpreter for babel?
+I have assign to babel =python2= interpreter instead of the default (which is python3).
 
-#+BEGIN_EXAMPLE emacs-lisp
+#+BEGIN_SRC emacs-lisp :results silent
 ;; Set python2 for python
 (setq org-babel-python-command "python2")
-#+END_EXAMPLE
+#+END_SRC
+
+A different way to do that is like [[http://lists.gnu.org/archive/html/emacs-orgmode/2014-04/msg01038.html][this]].  You can get your python's path by typing =src_sh[:results output]{which python2}= (highlight and =C-c C-c= to evaluate), returns this: =/usr/bin/python2=.
+
+#+begin_src python :python /usr/bin/python2
+  return 1 + 2
+#+end_src
+
+#+RESULTS:
+: 3
+
 ** repr()
 A python example for =%r=.
 
