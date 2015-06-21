@@ -233,7 +233,12 @@ P P => to push
 [[./img/magit-log.png]]
 
 * Python
+I am not sure about the reason that I don't have colorized src-block for python.  Is this because I have set =python2= interpreter for babel?
 
+#+BEGIN_EXAMPLE emacs-lisp
+;; Set python2 for python
+(setq org-babel-python-command "python2")
+#+END_EXAMPLE
 ** repr()
 A python example for =%r=.
 
