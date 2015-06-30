@@ -213,6 +213,19 @@ Locate your path to =ditaa.jar= in your init file like this =(setq org-ditaa-jar
 #+RESULTS:
 [[file:./img/hello-ditaa.png]]
 
+#+BEGIN_SRC ditaa :file ./img/lines-ditaa.png
+*---*     /---*
+|   |     |
+|   *-----+
+|   |
+|   *-----+
+|   |     |
+*---*     \---*
+#+END_SRC
+
+#+RESULTS:
+[[file:./img/lines-ditaa.png]]
+
 * Emacs
 ** Using Magit
 Magit is an emacs package with which you can handle git more interactively.  With following steps you can push your code on github. With =M-x magit-status= magit opens a buffer which tracks your activity.  In this buffer you can see your local path to the working directory, your remotes, and the last commit online (=Head=).
