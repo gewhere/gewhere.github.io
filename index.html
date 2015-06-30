@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-06-22 Δευ 00:59 -->
+<!-- 2015-06-30 Τρι 06:07 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -183,7 +183,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#sec-5">5. Python</a>
+<li><a href="#sec-5">5. Python and Babel</a>
 <ul>
 <li><a href="#sec-5-1">5.1. repr()</a></li>
 </ul>
@@ -220,12 +220,12 @@ You can use git only locally, though one of the main concept behind git and vers
 
 <div class="org-src-container">
 
-<pre class="src src-sh">git init                        # initialize a folder .git/
-# create a file
-touch newfile                   # Ctrl+D to save and exit
-git status                      # now newfile is untracked
-git add newfile                 # to bring file in the staged level
-git commit -m 'Initial commit'  # to make file ready for push
+<pre class="src src-sh">git init                        <span class="org-comment-delimiter"># </span><span class="org-comment">initialize a folder .git/</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">create a file</span>
+touch newfile                   <span class="org-comment-delimiter"># </span><span class="org-comment">Ctrl+D to save and exit</span>
+git status                      <span class="org-comment-delimiter"># </span><span class="org-comment">now newfile is untracked</span>
+git add newfile                 <span class="org-comment-delimiter"># </span><span class="org-comment">to bring file in the staged level</span>
+git commit -m <span class="org-string">'Initial commit'</span>  <span class="org-comment-delimiter"># </span><span class="org-comment">to make file ready for push</span>
 </pre>
 </div>
 
@@ -235,14 +235,14 @@ Branching is a core concept for handling big programming projects.
 
 <div class="org-src-container">
 
-<pre class="src src-sh">git brach NewBranch     # creates a new branch
-git branch              # returns the working branch
-git checkout NewBranch  # you are now in the NewBranch
-touch newfile           # create a newfile in the NewBranch
-                        # this file does not exists in the working directory
-                        # unless you 'git merge'
-git checkout master     # the master branch is by default the branch that git initialise
-git merge NewBranch     # at this point the newfile appears
+<pre class="src src-sh">git brach NewBranch     <span class="org-comment-delimiter"># </span><span class="org-comment">creates a new branch</span>
+git branch              <span class="org-comment-delimiter"># </span><span class="org-comment">returns the working branch</span>
+git checkout NewBranch  <span class="org-comment-delimiter"># </span><span class="org-comment">you are now in the NewBranch</span>
+touch newfile           <span class="org-comment-delimiter"># </span><span class="org-comment">create a newfile in the NewBranch</span>
+                        <span class="org-comment-delimiter"># </span><span class="org-comment">this file does not exists in the working directory</span>
+                        <span class="org-comment-delimiter"># </span><span class="org-comment">unless you 'git merge'</span>
+git checkout master     <span class="org-comment-delimiter"># </span><span class="org-comment">the master branch is by default the branch that git in</span><span class="org-comment"><span class="org-whitespace-line">itialise</span></span>
+git merge NewBranch     <span class="org-comment-delimiter"># </span><span class="org-comment">at this point the newfile appears</span>
 </pre>
 </div>
 </div>
@@ -257,9 +257,9 @@ When you <code>git clone</code> a repository to your hard disc, you clone this f
 
 <div class="org-src-container">
 
-<pre class="src src-sh">git remote              # this should return 'origin'
-git remote -v           # returns the online repository
-git push origin master  # git asks for credentials
+<pre class="src src-sh">git remote              <span class="org-comment-delimiter"># </span><span class="org-comment">this should return 'origin'</span>
+git remote -v           <span class="org-comment-delimiter"># </span><span class="org-comment">returns the online repository</span>
+git push origin master  <span class="org-comment-delimiter"># </span><span class="org-comment">git asks for credentials</span>
 </pre>
 </div>
 </div>
@@ -277,7 +277,7 @@ I am using GNUPLOT to plot orgmode's tables.
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(local-set-key "\M-\C-g" 'org-plot/gnuplot)
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>local-set-key <span class="org-string">"\M-\C-g"</span> 'org-plot/gnuplot<span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 </div>
@@ -293,9 +293,9 @@ I use org-plot installed via <code>M-x package-install</code> RET <code>gnuplot<
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(org-babel-do-load-languages
+<pre class="src src-emacs-lisp"><span class="org-rainbow-delimiters-depth-1">(</span>org-babel-do-load-languages
  'org-babel-load-languages
- '((gnuplot . t)))
+ '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>gnuplot . t<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 </div>
@@ -506,7 +506,7 @@ Inline <a href="http://orgmode.org/worg/org-contrib/babel/intro.html#orgheadline
 
 <div class="org-src-container">
 
-<pre class="src src-org">[[elisp:(org-agenda)]]
+<pre class="src src-org"><span class="org-org-link"><a href="elisp:(org-agenda)">elisp:(org-agenda)</a></span>
 </pre>
 </div>
 </div>
@@ -586,7 +586,7 @@ P P =&gt; to push
 </div>
 
 <div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Python</h2>
+<h2 id="sec-5"><span class="section-number-2">5</span> Python and Babel</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 I have assign to babel <code>python2</code> interpreter instead of the default (which is python3).
@@ -594,8 +594,8 @@ I have assign to babel <code>python2</code> interpreter instead of the default (
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">;; Set python2 for python
-(setq org-babel-python-command "python2")
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">Set python2 for python</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>setq org-babel-python-command <span class="org-string">"python2"</span><span class="org-rainbow-delimiters-depth-1">)</span>
 </pre>
 </div>
 
@@ -605,7 +605,7 @@ A different way to do that is like <a href="http://lists.gnu.org/archive/html/em
 
 <div class="org-src-container">
 
-<pre class="src src-python">return 1 + 2
+<pre class="src src-python"><span class="org-keyword">return</span> 1 + 2
 </pre>
 </div>
 </div>
@@ -619,11 +619,18 @@ A python example for <code>%r</code>.
 
 <div class="org-src-container">
 
-<pre class="src src-python"># I am not sure why in this case the second backslash is added
-repr1 = "\%r"
-repr2 = "\\r"
-print "This is an object representation %r" % repr1
-print "Also this is an object representation %r" % repr2
+<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">I am not sure why in this case the second backslash is added</span>
+<span class="org-variable-name">repr1</span> = <span class="org-string">"\%r"</span>
+<span class="org-variable-name">repr2</span> = <span class="org-string">"\\r"</span>
+<span class="org-keyword">print</span> <span class="org-string">"This is an object representation %r"</span> % repr1
+<span class="org-keyword">print</span> <span class="org-string">"Also this is an object representation %r"</span> % repr2
+</pre>
+</div>
+
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-keyword">return</span>  <span class="org-builtin">eval</span> ( <span class="org-builtin">eval</span> ( <span class="org-builtin">eval</span> ( <span class="org-builtin">eval</span> ( <span class="org-string">'%r'</span>.__repr__() ).__repr__()).__repr__()).__<span class="org-whitespace-line">repr__())</span>
 </pre>
 </div>
 </div>

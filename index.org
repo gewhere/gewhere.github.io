@@ -232,7 +232,7 @@ P P => to push
 
 [[./img/magit-log.png]]
 
-* Python
+* Python and Babel
 I have assign to babel =python2= interpreter instead of the default (which is python3).
 
 #+BEGIN_SRC emacs-lisp :results silent
@@ -263,6 +263,14 @@ print "Also this is an object representation %r" % repr2
 #+RESULTS:
 : This is an object representation '\\%r'
 : Also this is an object representation '\\r'
+
+
+#+BEGIN_SRC python :results value
+return  eval ( eval ( eval ( eval ( '%r'.__repr__() ).__repr__()).__repr__()).__repr__())
+#+END_SRC
+
+#+RESULTS:
+: %r
 
 * Bibliography
 
