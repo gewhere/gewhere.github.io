@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-10-16 Παρ 19:26 -->
+<!-- 2015-10-17 Σαβ 04:20 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -161,15 +161,10 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-3-1">3.1. Org-tables and GNUPLOT</a></li>
 <li><a href="#sec-3-2">3.2. Org-tables</a></li>
-<li><a href="#sec-3-3">3.3. Org-tables and id</a>
+<li><a href="#sec-3-3">3.3. Table/Matrix manipulation</a>
 <ul>
-<li><a href="#sec-3-3-1">3.3.1. Get values from file</a></li>
-<li><a href="#sec-3-3-2">3.3.2. Append orgmode tables</a></li>
-</ul>
-</li>
-<li><a href="#sec-3-4">3.4. Org-babel</a>
-<ul>
-<li><a href="#sec-3-4-1">3.4.1. ditaa</a></li>
+<li><a href="#sec-3-3-1">3.3.1. Org-tables and id</a></li>
+<li><a href="#sec-3-3-2">3.3.2. Org-babel</a></li>
 </ul>
 </li>
 </ul>
@@ -427,17 +422,40 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 </div>
 </div>
 <div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Org-tables and id</h3>
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Table/Matrix manipulation</h3>
 <div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>The example below was posted in orgmode list.
+</li>
+</ul>
+<pre class="example">
+Elegant lisp code for transposing a matrix.
+
+#+tblname: transpose-example
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+
+#+srcname: transpose
+#+begin_src emacs-lisp :var table=transpose-example
+  (apply #'mapcar* #'list table)
+#+end_src
+
+#+RESULTS:
+| 1 | 4 |
+| 2 | 5 |
+| 3 | 6 |
+</pre>
+</div>
+<div id="outline-container-sec-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1"><span class="section-number-4">3.3.1</span> Org-tables and id</h4>
+<div class="outline-text-4" id="text-3-3-1">
 <p>
 I am importing values that I have calculated in <code>grades.org</code> file (<a href="https://github.com/gewhere/gewhere.github.io/blob/master/grades.org">link</a>).  The id value must be <b>unique</b>.  You can create a <i>unique id</i> with <code>M-x org-id-get-create</code>.
 </p>
 </div>
 
 
-<div id="outline-container-sec-3-3-1" class="outline-4">
-<h4 id="sec-3-3-1"><span class="section-number-4">3.3.1</span> Get values from file</h4>
-<div class="outline-text-4" id="text-3-3-1">
+<ol class="org-ol"><li><a id="sec-3-3-1-1" name="sec-3-3-1-1"></a>Get values from file<br  /><div class="outline-text-5" id="text-3-3-1-1">
 <p>
 The source code is as folows:
 </p>
@@ -454,11 +472,9 @@ The source code is as folows:
 #+TBLFM: $grade01 = remote(grades-overall, $overall01);%.0f::$grade02 = remote(grades-overall, $overall02);%.0f::$grade03 = remote(grades-overall, $overall03);%.0f
 </pre>
 </div>
-</div>
+</li>
 
-<div id="outline-container-sec-3-3-2" class="outline-4">
-<h4 id="sec-3-3-2"><span class="section-number-4">3.3.2</span> Append orgmode tables</h4>
-<div class="outline-text-4" id="text-3-3-2">
+<li><a id="sec-3-3-1-2" name="sec-3-3-1-2"></a>Append orgmode tables<br  /><div class="outline-text-5" id="text-3-3-1-2">
 <pre class="example">
 #+name: table-names
 - tbl1
@@ -487,11 +503,11 @@ The source code is as folows:
 |---+---|
 </pre>
 </div>
+</li></ol>
 </div>
-</div>
-<div id="outline-container-sec-3-4" class="outline-3">
-<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Org-babel</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-sec-3-3-2" class="outline-4">
+<h4 id="sec-3-3-2"><span class="section-number-4">3.3.2</span> Org-babel</h4>
+<div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li><a href="http://orgmode.org/manual/Evaluating-code-blocks.html">http://orgmode.org/manual/Evaluating-code-blocks.html</a>
 </li>
@@ -519,9 +535,7 @@ Inline <a href="http://orgmode.org/worg/org-contrib/babel/intro.html#orgheadline
 </div>
 
 
-<div id="outline-container-sec-3-4-1" class="outline-4">
-<h4 id="sec-3-4-1"><span class="section-number-4">3.4.1</span> ditaa</h4>
-<div class="outline-text-4" id="text-3-4-1">
+<ol class="org-ol"><li><a id="sec-3-3-2-1" name="sec-3-3-2-1"></a>ditaa<br  /><div class="outline-text-5" id="text-3-3-2-1">
 <p>
 Locate your path to <code>ditaa.jar</code> in your init file like this <code>(setq org-ditaa-jar-path "/path/to/ditaa.jar)</code>.
 </p>
@@ -548,6 +562,7 @@ Locate your path to <code>ditaa.jar</code> in your init file like this <code>(se
 </p>
 </div>
 </div>
+</li></ol>
 </div>
 </div>
 </div>

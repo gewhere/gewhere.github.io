@@ -125,11 +125,31 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 | Sol# | 3.17 |
 
 [[./img/minor.png]]
-** Org-tables and id
+** Table/Matrix manipulation
+- The example below was posted in orgmode list.
+#+BEGIN_EXAMPLE
+Elegant lisp code for transposing a matrix.
+
+#+tblname: transpose-example
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+
+#+srcname: transpose
+#+begin_src emacs-lisp :var table=transpose-example
+  (apply #'mapcar* #'list table)
+#+end_src
+
+#+RESULTS:
+| 1 | 4 |
+| 2 | 5 |
+| 3 | 6 |
+
+#+END_EXAMPLE
+*** Org-tables and id
 I am importing values that I have calculated in =grades.org= file ([[https://github.com/gewhere/gewhere.github.io/blob/master/grades.org][link]]).  The id value must be *unique*.  You can create a /unique id/ with =M-x org-id-get-create=.
 
 
-*** Get values from file
+**** Get values from file
 The source code is as folows:
 
 #+BEGIN_EXAMPLE
@@ -146,7 +166,7 @@ The source code is as folows:
 
 #+END_EXAMPLE
 
-*** Append orgmode tables
+**** Append orgmode tables
 
 #+BEGIN_EXAMPLE
 
@@ -177,7 +197,7 @@ The source code is as folows:
 |---+---|
 
 #+END_EXAMPLE
-** Org-babel
+*** Org-babel
 - http://orgmode.org/manual/Evaluating-code-blocks.html
 Babel calls the function =org-babel-execute-src-block=.  The default value of =#+RESULTS:= can be changed using =org-babel-results-keyword=.  For example:
 
@@ -197,7 +217,7 @@ Inline [[http://orgmode.org/worg/org-contrib/babel/intro.html#orgheadline18][sou
 #+END_SRC
 
 
-*** ditaa
+**** ditaa
 Locate your path to =ditaa.jar= in your init file like this =(setq org-ditaa-jar-path "/path/to/ditaa.jar)=.
 
 #+BEGIN_EXAMPLE
