@@ -126,7 +126,7 @@ The examples below are the major and minor profiles of Krumhansl-Kessler key-fin
 
 [[./img/minor.png]]
 ** Table/Matrix manipulation
-- The example below was posted in orgmode list.
+- The example below was posted in [[https://lists.gnu.org/archive/html/emacs-orgmode/2010-04/msg00239.html][orgmode list]].
 #+BEGIN_EXAMPLE
 Elegant lisp code for transposing a matrix.
 
