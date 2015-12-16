@@ -44,10 +44,16 @@ git push origin master 	# git asks for credentials
 #+END_SRC
 
 
-** Retrieve a deleted file
-#+BEGIN_SRC sh :result silent
+** Deleted file
+*** Retrieve a deleted file
+#+BEGIN_SRC sh :results silent
 git log --all -- <path-to-file>
 git show <SHA> -- <path-to-file>
+#+END_SRC
+*** Remove multiple files that are already deleted
+- http://stackoverflow.com/questions/492558/removing-multiple-files-from-a-git-repo-that-have-already-been-deleted-from-disk
+#+BEGIN_SRC sh :results silent
+git ls-files --deleted -z | xargs -0 git rm
 #+END_SRC
 * Orgmode
 I am using GNUPLOT to plot orgmode's tables.
