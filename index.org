@@ -6,8 +6,8 @@
 * About
 These are personal notes, if anyone finds this documentation helpful I will be glad too.  I adopt this template from [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]], and it is written in [[http://orgmode.org/][Orgmode]].  You can find the orgmode and html files on github repository [[https://github.com/gewhere/gewhere.github.io][here]].
 
-* Github
-I am learning how to use github, it's pretty handy, just needs some time and repetitive practice.  Git documentation is available [[https://git-scm.com/documentation][here]].  The basic steps are below:
+* Git
+I am learning how to use git, it's pretty handy, just needs some time and repetitive practice.  Git documentation is available [[https://git-scm.com/documentation][here]].  The basic steps are below:
 
 ** Git locally
 You can use git only locally, though one of the main concept behind git and version control systems is that of collaborative coding.
@@ -44,7 +44,11 @@ git push origin master 	# git asks for credentials
 #+END_SRC
 
 
-
+** Retrieve a deleted file
+#+BEGIN_SRC sh :result silent
+git log --all -- <path-to-file>
+git show <SHA> -- <path-to-file>
+#+END_SRC
 * Orgmode
 I am using GNUPLOT to plot orgmode's tables.
 
@@ -77,8 +81,6 @@ I use org-plot installed via =M-x package-install= RET =gnuplot=.  I have also a
 # |              |
 # +--------------+
 # #+END_SRC
-
-
 
 ** Org-tables
 The examples below are the major and minor profiles of Krumhansl-Kessler key-finding algorithm based on the probe-tone technique, as presented by Tamperley (1999).
@@ -245,6 +247,48 @@ Locate your path to =ditaa.jar= in your init file like this =(setq org-ditaa-jar
 
 #+RESULTS:
 [[file:./img/lines-ditaa.png]]
+
+*** graphviz (dot)
+- Export png file
+
+#+BEGIN_SRC dot :file ./img/testfile.png :cmdline -Kdot -Tpng
+digraph G {
+rankdir=LR
+node[shape=box]
+
+subgraph clusterA {
+  a[label="Alpha"]
+  label="1st cluster";
+  color=green;
+}
+
+subgraph clusterB {
+  b[label="Beta"]
+  k[label="Kappa"]
+  label="2nd cluster";
+  color=blue;
+}
+
+subgraph clusterC {
+  d[label="Delta"]
+  l[label="Lambda"]
+  label="3rd cluster";
+  color=orange;
+}
+
+a -> b[lhead=clusterB,ltail=clusterA];
+k -> d;
+
+//{ rank=same; b; d; }
+
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:./img/testfile.png]]
+
+
+
 
 * Emacs
 ** Using Magit
