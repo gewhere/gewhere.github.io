@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-12-16 Τετ 09:19 -->
+<!-- 2015-12-16 Τετ 09:21 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -594,6 +594,41 @@ Locate your path to <code>ditaa.jar</code> in your init file like this <code>(se
 <li>Export png file
 </li>
 </ul>
+<pre class="example">
+#+BEGIN_SRC dot :file ./img/testfile.png :cmdline -Kdot -Tpng
+digraph G {
+rankdir=LR
+node[shape=box]
+
+subgraph clusterA {
+  a[label="Alpha"]
+  label="1st cluster";
+  color=green;
+}
+
+subgraph clusterB {
+  b[label="Beta"]
+  k[label="Kappa"]
+  label="2nd cluster";
+  color=blue;
+}
+
+subgraph clusterC {
+  d[label="Delta"]
+  l[label="Lambda"]
+  label="3rd cluster";
+  color=orange;
+}
+
+a -&gt; b[lhead=clusterB,ltail=clusterA];
+k -&gt; d;
+
+// this is a comment
+//{ rank=same; b; d; }
+
+}
+#+END_SRC
+</pre>
 
 
 <div class="figure">

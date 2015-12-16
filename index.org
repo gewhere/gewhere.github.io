@@ -250,6 +250,7 @@ Locate your path to =ditaa.jar= in your init file like this =(setq org-ditaa-jar
 
 *** graphviz (dot)
 - Export png file
+#+BEGIN_EXAMPLE
 
 #+BEGIN_SRC dot :file ./img/testfile.png :cmdline -Kdot -Tpng
 digraph G {
@@ -279,10 +280,12 @@ subgraph clusterC {
 a -> b[lhead=clusterB,ltail=clusterA];
 k -> d;
 
+// this is a comment
 //{ rank=same; b; d; }
 
 }
 #+END_SRC
+#+END_EXAMPLE
 
 #+RESULTS:
 [[file:./img/testfile.png]]
