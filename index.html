@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Notes about programming tools</title>
-<!-- 2015-12-16 Τετ 09:27 -->
+<!-- 2016-02-17 Τετ 04:25 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Georgios Diapoulis" />
@@ -203,7 +203,16 @@ for the JavaScript code in this tag.
 <li><a href="#sec-5-1">5.1. repr()</a></li>
 </ul>
 </li>
-<li><a href="#sec-6">6. Bibliography</a></li>
+<li><a href="#sec-6">6. Unix</a>
+<ul>
+<li><a href="#sec-6-1">6.1. grep</a>
+<ul>
+<li><a href="#sec-6-1-1">6.1.1. Find filename</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-7">7. Bibliography</a></li>
 </ul>
 </div>
 </div>
@@ -324,12 +333,16 @@ I am using GNUPLOT to plot orgmode's tables.
 </pre>
 </div>
 </div>
+
+
 <div id="outline-container-sec-3-1" class="outline-3">
 <h3 id="sec-3-1"><span class="section-number-3">3.1</span> Org-tables and GNUPLOT</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 The examples below are the key profiles of Krumhansl-Kessler probe-tone empirical research, as presented by Tamperley (1999).
 </p>
+
+
 <p>
 I use org-plot installed via <code>M-x package-install</code> RET <code>gnuplot</code>.  I have also added gnuplot to babel languages.
 </p>
@@ -849,9 +862,33 @@ A python example for <code>%r</code>.
 </div>
 </div>
 
+
 <div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> Bibliography</h2>
+<h2 id="sec-6"><span class="section-number-2">6</span> Unix</h2>
 <div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> grep</h3>
+<div class="outline-text-3" id="text-6-1">
+</div><div id="outline-container-sec-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> Find filename</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>Find all files that start with alphanumeric characters and have <code>.org</code> suffix.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">find . | grep <span class="org-string">"[[:alnum:]]\.org"</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Bibliography</h2>
+<div class="outline-text-2" id="text-7">
 
 <div id="bibtex_display"></div>
 
