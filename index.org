@@ -65,10 +65,10 @@ I am using GNUPLOT to plot orgmode's tables.
 #+RESULTS:
 : org-plot/gnuplot
 
-# <<<<<<< HEAD
+
 ** Org-tables and GNUPLOT
 The examples below are the key profiles of Krumhansl-Kessler probe-tone empirical research, as presented by Tamperley (1999).
-# =======
+
 
 I use org-plot installed via =M-x package-install= RET =gnuplot=.  I have also added gnuplot to babel languages.
 
@@ -376,6 +376,22 @@ return eval ( eval ( '%r'.__repr__() ).__repr__() )
 
 #+RESULTS:
 : %r
+
+
+* Unix
+
+** grep
+
+*** Find filename
+- Find all files that start with alphanumeric characters and have =.org= suffix.
+#+BEGIN_SRC sh :results output
+find . | grep "[[:alnum:]]\.org"
+#+END_SRC
+
+#+RESULTS:
+: ./grades.org
+: ./index.org
+: ./.#index.org
 
 * Bibliography
 
