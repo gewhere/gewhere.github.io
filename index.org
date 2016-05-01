@@ -55,6 +55,14 @@ git show <SHA> -- <path-to-file>
 #+BEGIN_SRC sh :results silent
 git ls-files --deleted -z | xargs -0 git rm
 #+END_SRC
+
+** Get file from previous commit
+#+BEGIN_SRC sh :results silent
+git log -2 # show last 2 commits
+git checkout <commitID> <pathToFile>
+
+#+END_SRC
+
 * Orgmode
 I am using GNUPLOT to plot orgmode's tables.
 
