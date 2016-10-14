@@ -50,8 +50,9 @@ git push origin master 	# git asks for credentials
 git log --all -- <path-to-file>
 git show <SHA> -- <path-to-file>
 #+END_SRC
-*** Remove multiple files that are already deleted
+*** Remove multiple files from git status that are already deleted
 - http://stackoverflow.com/questions/492558/removing-multiple-files-from-a-git-repo-that-have-already-been-deleted-from-disk
+- That works only in MacOSX for me
 #+BEGIN_SRC sh :results silent
 git ls-files --deleted -z | xargs -0 git rm
 #+END_SRC
