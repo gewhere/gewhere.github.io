@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>aucotsi's blog</title>
+        <description>music &amp; code 
+</description>
+        <link>http://localhost:4000</link>
+        <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Initial post</title>
+            
+            <description>This is my initial post in my blog</description>
+            
+            <pubDate>Fri, 14 Oct 2016 00:00:00 +0300</pubDate>
+            <link>http://localhost:4000/initial-post</link>
+            <guid isPermaLink="true">http://localhost:4000/initial-post</guid>
+        </item>
+        
+    </channel>
+</rss>
