@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>About me</title>
+        <title>Pacgraph</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -38,29 +38,54 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 blog-main">
-                    <div class="blog-header">
-                        <p class="blog-title">aucotsi's blog <sup class="blog-description">music & code 
-</sup>
-                    </div>
-                </div>
-                <div class="col-md-4 blog-sidebar">
-                    <div class="sidebar-module sidebar-module-inset">
-                        <blockquote class="blockquote-reverse blog-quote">
-    Go to SuperCollider!
-</blockquote>
-<div class="text-right"><a href="http://supercollider.github.io/"><img src="/img/sc3.png" style="width:10%"/></a></div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">About me</h2>
+<h2 id="sec-1">Pacgraph to plot installed packages from pacman</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-I am a PhD student in the University of Jyväskylä in the Music department, under the supervision of Prof. Petri Toiviainen and Dr. Marc Thompson.  I attended the master's degree <i>Music, mind, and technology</i> during 2014-16, and my thesis focused on the perception of expressivity and interaction within musical dyads, under the supervision of Dr. Marc Thompson and Dr. Pasi Saari.
+From times to times I am using <a href="https://www.archlinux.org/packages/community/any/pacgraph/">pacgraph</a> to plot the packages that I have installed from pacman.  You simply run <code>pacgraph</code>, or you modify your plot based on the man file.
 </p>
+
+<pre class="example">
+#+BEGIN_SRC sh
+pacgraph --file=./img/pacgraph-25-10-2016 -b white -l red -t green -d blue
+#+END_SRC
+
+#+RESULTS:
+| Autodetected | Arch.   |       |
+| Loading      | package | info  |
+| Placing      | 688     | nodes |
+| Saving       | SVG     |       |
+| Rendering    | PNG     |       |
+| Indexing     | PNG     |       |
+</pre>
+</div>
+
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">pacgraph-25-10-2016</h3>
+<div class="outline-text-3" id="text-1-1">
+<img src ="./img/pacgraph-25-10-2016.png"
+alt="pacgraph-25-10-2016" align="left" width="600"
+title="pacgraph-25-10-2016.png" class="img"</img>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">pacgraph-20-01-2016</h3>
+<div class="outline-text-3" id="text-1-2">
+<img src ="./img/pacgraph-30-01-2016.png"
+alt="pacgraph-30-01-2016" align="left" width="600"
+title="pacgraph-30-01-2016.png" class="img"</img>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">pacgraph-22-04-2014</h3>
+<div class="outline-text-3" id="text-1-3">
+<img src ="./img/pacgraph-22-04-2014.png"
+alt="pacgraph-22-04-2014" align="left" width="600"
+title="pacgraph-22-04-2014.png" class="img"</img>
+</div>
 </div>
 </div>
 
