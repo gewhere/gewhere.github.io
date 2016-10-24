@@ -8,6 +8,16 @@
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Gnuplot and Orgmode</title>
+            
+            <description>How to plot using gnuplot within orgmode</description>
+            
+            <pubDate>Sun, 23 Oct 2016 00:00:00 +0300</pubDate>
+            <link>http://localhost:4000/gnuplot-orgmode</link>
+            <guid isPermaLink="true">http://localhost:4000/gnuplot-orgmode</guid>
+        </item>
+        
+        <item>
             <title>Using bibtex.js to display citations on html</title>
             
             <description>Orgmode and bibtex.js to render my publications</description>
@@ -45,16 +55,6 @@
             <pubDate>Mon, 17 Oct 2016 00:00:00 +0300</pubDate>
             <link>http://localhost:4000/jitsi</link>
             <guid isPermaLink="true">http://localhost:4000/jitsi</guid>
-        </item>
-        
-        <item>
-            <title>Recover audio files in Audacity</title>
-            
-            <description>Recover temp files after audacity's crash</description>
-            
-            <pubDate>Sat, 15 Oct 2016 00:00:00 +0300</pubDate>
-            <link>http://localhost:4000/audacity-recover-crash-session</link>
-            <guid isPermaLink="true">http://localhost:4000/audacity-recover-crash-session</guid>
         </item>
         
     </channel>

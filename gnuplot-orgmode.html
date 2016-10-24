@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Initial post</title>
+        <title>Gnuplot and Orgmode</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,11 +39,106 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Blogging</h2>
+<h2 id="sec-1">How to setup gnuplot and make plots in orgmode</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-This post is as my initial post using jekyll for blogging environment.  I followed the instruction by @ardumont in his <a href="https://github.com/ardumont/ardumont.github.io">github</a> profile.
+<a href="http://www.gnuplot.info/">GNUPLOT</a> is a powerful plotting engine.  To install gnuplot in orgmode you need to follow the <a href="http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-gnuplot.html">instructions online</a> and put in your Emacs init file the following chunk to activate gnuplot in babel.
 </p>
+
+<div class="org-src-container">
+
+<pre class="src src-elisp"><span class="org-comment-delimiter">;; </span><span class="org-comment">active Babel languages</span>
+<span class="org-rainbow-delimiters-depth-1">(</span>org-babel-do-load-languages
+ 'org-babel-load-languages
+ '<span class="org-rainbow-delimiters-depth-2">(</span><span class="org-rainbow-delimiters-depth-3">(</span>gnuplot . t<span class="org-rainbow-delimiters-depth-3">)</span><span class="org-rainbow-delimiters-depth-2">)</span><span class="org-rainbow-delimiters-depth-1">)</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">add additional languages with '((language . t)))</span>
+</pre>
+</div>
+
+<p>
+<a href="http://www.cs.unm.edu/~eschulte/">Eric Schulte</a>, the author of babel, has many examples in his <a href="https://eschulte.github.io/org-scraps/">org-scrapts</a>, but also check <a href="http://orgmode.org/manual/Org_002dPlot.html">Org-Plot</a> page and the <a href="http://orgmode.org/worg/org-tutorials/org-plot.html">tutorial for plotting tables</a> using org-plot.
+</p>
+
+<p>
+For plotting tables I am using the instructions from Org-Plot.  I am running the Emacs-lisp command <code>src_elisp{ (local-set-key "\M-\C-g" 'org-plot/gnuplot) }</code> (this format is inline code chunk in orgmode), which defines a local keyboard shortcut for <code>M-C-g</code> in order to run gnuplot.
+</p>
+
+<p>
+The source code below plots the table as a histogram using the <code>M-C-g</code>.
+</p>
+
+
+<pre class="example">
+#+PLOT: title:"Grades in Physics and Mathematics" ind:2 deps:(3 4) type:2d with:histograms set:"yrange [0:]" set:"xlabel 'Student'" set:"ylabel 'grades'" set:"output './img/gnuplot-grades.png'" set:"terminal png size 600,500"
+|---+--------+-------------+---------|
+|   | Grades | Mathematics | Physics |
+|---+--------+-------------+---------|
+| # | Ben    |         9.2 |     9.9 |
+| # | Tom    |         6.7 |     7.7 |
+| # | Tim    |         7.5 |     6.7 |
+| # | Dean   |         8.0 |     7.0 |
+</pre>
+
+
+<div class="figure">
+<p><img src="./img/gnuplot-grades.png" alt="gnuplot-grades.png" />
+</p>
+<p><span class="figure-number">Figure 1:</span> Plot histogram</p>
+</div>
+
+
+<p>
+Some important keywords for babel's definition are:
+</p>
+<ul class="org-ul">
+<li><code>set</code>: set any gnuplot command
+</li>
+<li><code>ind</code>: specify which column will be the x-axis
+</li>
+<li><code>deps</code>: which columns hold the data
+</li>
+</ul>
+
+
+<p>
+You can do the same plot by writing a gnuplot script.  I noticed that using hashtags (<code>#</code>) in the first column of the table, you cannot access the data in columns.  Following the first keyword <code>using</code> the <code>2:xtic(1)</code> is collecting the data from the 2nd column and assigns the 1st column of the table as legends of the x-axis.  After the second keyword <code>using</code> the <code>($3)</code> reads the data from the 3rd column.
+</p>
+
+<pre class="example">
+#+tblname: grades
+| Ben  | 9.2 | 9.9 |
+| Tim  | 6.7 | 7.7 |
+| Tom  | 7.5 | 6.7 |
+| Dean | 8.0 | 7.0 |
+
+#+begin_src gnuplot :var data=grades :results output :file ./img/grades.png
+set title "Students' Grades"
+set yrange[0:10]
+set style data histogram
+set terminal png size 400,300
+plot data using 2:xtic(1) title 'Maths', '' using ($3) title 'Physics'
+#+end_src
+
+#+RESULTS:
+[[file:./img/grades.png]]
+</pre>
+
+
+<div class="figure">
+<p><img src="./img/grades.png" alt="grades.png" />
+</p>
+<p><span class="figure-number">Figure 2:</span> Change the size of the png output</p>
+</div>
+
+
+<p>
+If you don't want to assign legends on the x-axis you can use the command <code>unset xtic</code>.  In this case you have to rewrite the last line as follows:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-gnuplot"><span class="org-keyword">plot</span> data <span class="org-type">using</span> ($2) <span class="org-type">title</span> <span class="org-string">'Maths'</span>, <span class="org-string">''</span> <span class="org-type">using</span> ($3) <span class="org-type">title</span> <span class="org-string">'Physics'</span>
+</pre>
+</div>
 </div>
 </div>
 
