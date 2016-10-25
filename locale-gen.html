@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Install AUR packages with pacman</title>
+        <title>Locale</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,36 +39,121 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">How to install AUR packages with pacman</h2>
+<h2 id="sec-1">Generating locale settings in archlinux</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-AUR is an unofficial arch repository where you can find many packages, though the problem is that if you don't have everything under the  scope of pacman your OS may crash.  A good practice is to build AUR packages using pacman.
+<a href="https://wiki.archlinux.org/index.php/locale">Locales</a> are used by different applications in order to display the output in a proper way.  Note that in every <a href="https://www.archlinux.org/packages/?name=glibc">glibc</a> update the locales are generated.
 </p>
 
-<p>
-Let say we want to install <a href="https://aur.archlinux.org/packages/openframeworks/">openframeworks</a> from AUR.  You have to do the following steps:
-</p>
+<dl class="org-dl">
+<dt> List the enabled locales </dt><dd><code>locale -a</code>
+</dd>
+</dl>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<ul class="org-ul">
-<li><b>STEP 1</b>: Make sure that you have install all dependencies using pacman
-</li>
-<li><b>STEP 2</b>: On the menu on top right 'Package Actions' right click on the link <b>Download snapshot</b> and select <b>Copy Link Location</b>
-</li>
-<li><b>STEP 3</b>: Make a directory on your <code>$HOME</code>, lets say <code>mkdir $HOME/PKGBUILDS</code>, and <code>wget https://aur.archlinux.org/cgit/aur.git/snapshot/openframeworks.tar.gz</code> (the copied link location, usually in terminal use <code>Shift+Insert</code> to paste)
-</li>
-<li><b>STEP 4</b>: <code>tar xf &lt;package name&gt;.tar.gz</code> to uncompress the package folder
-</li>
-<li><b>STEP 5</b>: Change directory and open PKGBUILD file to see if everything is OK.  You can do the same before downloading the package in 'View PKGBUILD', in 'Packages Actions'.  Read also the 'Latest Comments' as you might find some useful information.
-</li>
-<li><b>STEP 6</b>: If everything looks fine <code>makepkg</code> to build the package.  If no errors/warnings occur you should be OK.
-</li>
-<li><b>STEP 7</b>: Install the package using pacman <code>sudo pacman -U $HOME/PKGBUILDS/package_name-version.pkg.tar.xz</code>
-</li>
-</ul>
 
-<p>
-If you would like to remove the package <code>sudo pacman -R &lt;package name&gt;</code>.
-</p>
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">C</td>
+</tr>
+
+<tr>
+<td class="left">el_GR.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">POSIX</td>
+</tr>
+</tbody>
+</table>
+<dl class="org-dl">
+<dt> Available locales file </dt><dd><code>vim /etc/locale.gen</code>
+</dd>
+<dt> Generate locales </dt><dd><code>sudo locale-gen</code>
+</dd>
+<dt> Display locale settings </dt><dd><code>locale</code>
+</dd>
+</dl>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" width="50">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">LANG=en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">LC_NUMERIC=el_GR.utf8</td>
+</tr>
+
+<tr>
+<td class="left">LC_TIME=el_GR.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">LC_MONETARY=el_GR.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">LC_PAPER=el_GR.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">LC_MEASUREMENT=el_GR.utf8</td>
+</tr>
+
+<tr>
+<td class="left">en_US.utf8</td>
+</tr>
+
+<tr>
+<td class="left">LC_ALL=</td>
+</tr>
+</tbody>
+</table>
+<dl class="org-dl">
+<dt> List locales in archive </dt><dd><code>localedef--list-archive</code>
+</dd>
+<dt> Setting the system locale </dt><dd><code>vim /etc/locale.conf</code>
+</dd>
+<dt> Override the system locale per session </dt><dd><code>vim ~/.config/locale.conf</code>
+</dd>
+<dt> <b>NOTE</b>: <code>LC_ALL</code> <span class="underline">cannot</span> be set in <code>locale.conf</code> </dt><dd></dd>
+</dl>
 </div>
 </div>
 
