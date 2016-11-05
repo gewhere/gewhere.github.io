@@ -8,6 +8,16 @@
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Orgmode Emacs init file</title>
+            
+            <description>Setup emacs init via orgmode</description>
+            
+            <pubDate>Sat, 05 Nov 2016 00:00:00 +0200</pubDate>
+            <link>http://localhost:4000/orgmode-emacs-init-file</link>
+            <guid isPermaLink="true">http://localhost:4000/orgmode-emacs-init-file</guid>
+        </item>
+        
+        <item>
             <title>SuperCollider and Processing communication (part 1)</title>
             
             <description>Sending OSC messages from SC3 to Processing</description>
@@ -45,16 +55,6 @@
             <pubDate>Sun, 23 Oct 2016 00:00:00 +0300</pubDate>
             <link>http://localhost:4000/gnuplot-orgmode</link>
             <guid isPermaLink="true">http://localhost:4000/gnuplot-orgmode</guid>
-        </item>
-        
-        <item>
-            <title>Using bibtex.js to display citations on html</title>
-            
-            <description>Orgmode and bibtex.js to render my publications</description>
-            
-            <pubDate>Sat, 22 Oct 2016 00:00:00 +0300</pubDate>
-            <link>http://localhost:4000/bibtex-js</link>
-            <guid isPermaLink="true">http://localhost:4000/bibtex-js</guid>
         </item>
         
     </channel>
