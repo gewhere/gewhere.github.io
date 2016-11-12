@@ -8,6 +8,16 @@
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Parsing web feeds in python</title>
+            
+            <description>Feedparser library for python</description>
+            
+            <pubDate>Sat, 12 Nov 2016 00:00:00 +0200</pubDate>
+            <link>http://localhost:4000/feedparser-python</link>
+            <guid isPermaLink="true">http://localhost:4000/feedparser-python</guid>
+        </item>
+        
+        <item>
             <title>How to use git basic commands</title>
             
             <description>A fast-forward to start using git on cl</description>
@@ -45,16 +55,6 @@
             <pubDate>Tue, 25 Oct 2016 00:00:00 +0300</pubDate>
             <link>http://localhost:4000/pacgraph</link>
             <guid isPermaLink="true">http://localhost:4000/pacgraph</guid>
-        </item>
-        
-        <item>
-            <title>Locale</title>
-            
-            <description>Generating locale settings</description>
-            
-            <pubDate>Tue, 25 Oct 2016 00:00:00 +0300</pubDate>
-            <link>http://localhost:4000/locale-gen</link>
-            <guid isPermaLink="true">http://localhost:4000/locale-gen</guid>
         </item>
         
     </channel>
