@@ -86,25 +86,25 @@
 The code below is a way to join vectors in a 2D org-table.  Also is a demonstration to export tsv using python.
 </p>
 
-<div class="org-src-container">
+<pre class="example">
+#+BEGIN_SRC python :exports both :var decs=decimal hexs=hexadecimal
+import csv
+file = open('test', 'w')
 
-<pre class="src src-python"><span class="org-keyword">import</span> csv
-<span class="org-builtin">file</span> = <span class="org-builtin">open</span>(<span class="org-string">'test'</span>, <span class="org-string">'w'</span>)
+data = []
 
-<span class="org-variable-name">data</span> = []
-
-<span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(0,7):
+for i in range(0,7):
   data.append([decs[i][0], hexs[i][0]])
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">use TAB delimiter to write tsv file</span>
-<span class="org-variable-name">writer</span> = csv.writer(<span class="org-builtin">file</span>, delimiter=<span class="org-string">'\t'</span>)
-<span class="org-keyword">for</span> item <span class="org-keyword">in</span> data:
+# use TAB delimiter to write tsv file
+writer = csv.writer(file, delimiter='\t')
+for item in data:
     writer.writerow(item)
-<span class="org-builtin">file</span>.close()
+file.close()
 
-<span class="org-keyword">return</span> data
+return data
+#+END_SRC
 </pre>
-</div>
 
 <pre class="example">
 #+RESULTS:
@@ -129,13 +129,13 @@ The code below is a way to join vectors in a 2D org-table.  Also is a demonstrat
 <a href="http://pandas.pydata.org/">Pandas</a> is a data analysis library in python, with handy functionality.
 </p>
 
-<div class="org-src-container">
-
-<pre class="src src-python"><span class="org-keyword">import</span> pandas <span class="org-keyword">as</span> pd
-<span class="org-variable-name">bpm</span> = pd.read_csv(<span class="org-string">'test'</span>, sep=<span class="org-string">'\t'</span>, header=<span class="org-constant">None</span>, names=[<span class="org-string">'Dec'</span>, <span class="org-string">'Hex'</span>])
-<span class="org-keyword">return</span> bpm.tail()
+<pre class="example">
+#+BEGIN_SRC python :exports both
+import pandas as pd
+bpm = pd.read_csv('test', sep='\t', header=None, names=['Dec', 'Hex'])
+return bpm.tail()
+#+END_SRC
 </pre>
-</div>
 
 <p>
 Now, notice that the leftmost column is an enumeration produced by pandas.
