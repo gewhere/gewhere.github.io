@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Archives</title>
+        <title>Orgmode vectors to python arrays</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -38,193 +38,120 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 blog-main">
-                    <div class="blog-header">
-                        <p class="blog-title">aucotsi's blog <sup class="blog-description">music & code 
-</sup>
-                    </div>
-                </div>
-                <div class="col-md-4 blog-sidebar">
-                    <div class="sidebar-module sidebar-module-inset">
-                        <blockquote class="blockquote-reverse blog-quote">
-    Go to SuperCollider!
-</blockquote>
-<div class="text-right"><a href="http://supercollider.github.io/"><img src="/img/sc3.png" style="width:10%"/></a></div>
+                    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Export vectors from orgmode to tsv file and import using python pandas</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="http://orgmode.org/manual/Tables.html">Orgmode tables</a> are handy and powerful.  I was copying and pasting few column arrays from a spreadsheet application to orgmode, and I wasn't able to concatenate the vectors to an org-table.  So, I assigned the vectors to variables in python and I exported them both in orgmode and to a tsv file.
+</p>
+</div>
 
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 blog-main">
-                    <p><b>Post Archives</b></p>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Decimal representation</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+#+NAME: decimal
+| 10 |
+| 20 |
+| 30 |
+| 40 |
+| 50 |
+| 60 |
+| 70 |
+</pre>
+</div>
+</div>
 
-<ul>
-  
-  <li>
-    <a href="/org-vectors-to-python" title="Orgmode vectors to python arrays">
-      <span class="date">
-        <span class="day">15</span>
-        <span class="month"><abbr>Nov</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Orgmode vectors to python arrays</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/pacman-conflicting-packages" title="Find pacman conflicting packages">
-      <span class="date">
-        <span class="day">12</span>
-        <span class="month"><abbr>Nov</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Find pacman conflicting packages</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/feedparser-python" title="Parsing web feeds in python">
-      <span class="date">
-        <span class="day">12</span>
-        <span class="month"><abbr>Nov</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Parsing web feeds in python</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/how-to-git" title="How to use git basic commands">
-      <span class="date">
-        <span class="day">09</span>
-        <span class="month"><abbr>Nov</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">How to use git basic commands</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/orgmode-emacs-init-file" title="Orgmode Emacs init file">
-      <span class="date">
-        <span class="day">05</span>
-        <span class="month"><abbr>Nov</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Orgmode Emacs init file</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/sc3-to-processing-via-osc" title="SuperCollider and Processing communication (part 1)">
-      <span class="date">
-        <span class="day">25</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">SuperCollider and Processing communication (part 1)</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/pacgraph" title="Pacgraph">
-      <span class="date">
-        <span class="day">25</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Pacgraph</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/locale-gen" title="Locale">
-      <span class="date">
-        <span class="day">25</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Locale</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/gnuplot-orgmode" title="Gnuplot and Orgmode">
-      <span class="date">
-        <span class="day">23</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Gnuplot and Orgmode</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/bibtex-js" title="Using bibtex.js to display citations on html">
-      <span class="date">
-        <span class="day">22</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Using bibtex.js to display citations on html</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/install-aur-with-pacman" title="Install AUR packages with pacman">
-      <span class="date">
-        <span class="day">19</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Install AUR packages with pacman</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/sc3classhierarchy" title="SuperCollider class tree">
-      <span class="date">
-        <span class="day">17</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">SuperCollider class tree</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/jitsi" title="Using Jitsi for online conference">
-      <span class="date">
-        <span class="day">17</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Using Jitsi for online conference</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/audacity-recover-crash-session" title="Recover audio files in Audacity">
-      <span class="date">
-        <span class="day">15</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Recover audio files in Audacity</span>
-    </a>
-  </li>
-  
-  <li>
-    <a href="/initial-post" title="Initial post">
-      <span class="date">
-        <span class="day">14</span>
-        <span class="month"><abbr>Oct</abbr></span>
-        <span class="year">2016</span>
-      </span>
-      <span class="title">Initial post</span>
-    </a>
-  </li>
-  
-</ul>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Hexadecimal representation</h3>
+<div class="outline-text-3" id="text-1-2">
+<pre class="example">
+#+NAME: hexadecimal
+|  0xA |
+| 0x14 |
+| 0x1e |
+| 0x28 |
+| 0x32 |
+| 0x3c |
+| 0x46 |
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">Import vectors in python and write to tsv file</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+The code below is a way to join vectors in a 2D org-table.  Also is a demonstration to export tsv using python.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-keyword">import</span> csv
+<span class="org-builtin">file</span> = <span class="org-builtin">open</span>(<span class="org-string">'test'</span>, <span class="org-string">'w'</span>)
+
+<span class="org-variable-name">data</span> = []
+
+<span class="org-keyword">for</span> i <span class="org-keyword">in</span> <span class="org-builtin">range</span>(0,7):
+  data.append([decs[i][0], hexs[i][0]])
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">use TAB delimiter to write tsv file</span>
+<span class="org-variable-name">writer</span> = csv.writer(<span class="org-builtin">file</span>, delimiter=<span class="org-string">'\t'</span>)
+<span class="org-keyword">for</span> item <span class="org-keyword">in</span> data:
+    writer.writerow(item)
+<span class="org-builtin">file</span>.close()
+
+<span class="org-keyword">return</span> data
+</pre>
+</div>
+
+<pre class="example">
+#+RESULTS:
+| 10 |  0xA |
+| 20 | 0x14 |
+| 30 | 0x1e |
+| 40 | 0x28 |
+| 50 | 0x32 |
+| 60 | 0x3c |
+| 70 | 0x46 |
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Pandas to import tsv data</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="http://pandas.pydata.org/">Pandas</a> is a data analysis library in python, with handy functionality.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-keyword">import</span> pandas <span class="org-keyword">as</span> pd
+<span class="org-variable-name">bpm</span> = pd.read_csv(<span class="org-string">'test'</span>, sep=<span class="org-string">'\t'</span>, header=<span class="org-constant">None</span>, names=[<span class="org-string">'Dec'</span>, <span class="org-string">'Hex'</span>])
+<span class="org-keyword">return</span> bpm.tail()
+</pre>
+</div>
+
+<p>
+Now, notice that the leftmost column is an enumeration produced by pandas.
+</p>
+
+<pre class="example">
+#+RESULTS:
+: Dec   Hex
+: 2   30  0x1e
+: 3   40  0x28
+: 4   50  0x32
+: 5   60  0x3c
+: 6   70  0x46
+</pre>
+</div>
+</div>
 
                 </div>
                 <div class="col-md-4 blog-sidebar">
