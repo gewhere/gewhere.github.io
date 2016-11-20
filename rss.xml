@@ -35,7 +35,7 @@
         <item>
             <title>Find pacman conflicting packages</title>
             
-            <description>An online script to print pacman conflicting packages</description>
+            <description>An oneline script to print pacman conflicting packages</description>
             
             <pubDate>Sat, 12 Nov 2016 00:00:00 +0200</pubDate>
             <!-- <link>http://localhost:4000/pacman-conflicting-packages</link> -->
