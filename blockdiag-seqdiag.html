@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Using Jitsi for online conference</title>
+        <title>Blockdiag and Seqdiag</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,14 +39,55 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">An easy to use video-conference application on your browser</h2>
+<h2 id="sec-1">Blockdiag and Seqdiag</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Today I used <a href="https://meet.jit.si/">meet.jitsi.si</a>, a simple to use interface on my browser.  I experienced that while I was sharing my desktop, my screen was producing fractal images.  I am unsure if that happens on other applications like google's hangouts.  Running on Arch Linux I found online an <a href="https://aur.archlinux.org/packages/jitsi/">AUR package</a>, but I realized that this is messenger application.
+<a href="http://blockdiag.com/en/index.html">Blockdiag</a> and <a href="http://blockdiag.com/en/seqdiag/introduction.html">Seqdiag</a> is a program which is written in python and is based on graphviz syntax for making block diagrams.  I think that in some cases it is much more easy to use than graphviz, and there is also an online <a href="http://blockdiag.com/en/blockdiag/demo.html">interactive shell for blockdiag</a>.
 </p>
 
 <p>
-I downloaded this package because I was not able to make a valid conference room in the first place, though a friend next to me found out that the problem was an underscore that I had typed on the URL (the room's name).  That was redirecting my browser to an error page saying something about Ubuntu, and I thought in the first place that jitsi was unable to identify my OS.  By removing the underscore the problem was solved and the room was working.
+You should have a look at <a href="http://blockdiag.com/en/blockdiag/attributes/diagram.attributes.html">diagram</a>, <a href="http://blockdiag.com/en/blockdiag/attributes/node.attributes.html">node</a> and <a href="http://blockdiag.com/en/blockdiag/attributes/edge.attributes.html">edge</a> attributes.  By default the similar attribute to <code>rankdir</code> in graphviz is called <i>orientation</i>, and it is from left to right similar to graphviz.  If you would like to change the orientation from top-to-bottom <code>orientation=portrait</code>.  Similar to graphviz <code>subgraph</code> is the <code>group</code> attribute.  Also note that directionality in edges is much more simple that graphviz.
+</p>
+
+<p>
+To compile the following script make a file <code>example.diag</code> and run on a terminal <code>blockdiag example.diag</code>.
+</p>
+
+<pre class="example">
+blockdiag {
+  span_width=30;
+  node_width=80;
+
+  A[label="Node",numbered=A];
+  A -&gt; B -&gt; C;
+  B -&gt; D &lt;- E;
+
+  group {
+    color="#FFF344";
+    label="group";
+    C; D;
+  }
+}
+</pre>
+
+
+<div class="figure">
+<p><img src="./img/example.png" alt="example.png" />
+</p>
+<p><span class="figure-number">Figure 1:</span> Blockdiag output</p>
+</div>
+
+<p>
+If you would like to setup initialization settings make a file <code>~/.blockdiagrc</code> with the following content to change the default font.
+</p>
+
+<pre class="example">
+[blockdiag]
+fontpath = /usr/share/fonts/TTF/DejaVuSerif.ttf
+</pre>
+
+<p>
+If you would to go to <a href="http://interactive.blockdiag.com/seqdiag/">interactive shell for seqdiag</a> go to top-right drop-down menu "Switch to other diagram type".  You can find there interactive shells for other implementations like <a href="http://blockdiag.com/en/actdiag/introduction.html">actdiag</a>.
 </p>
 </div>
 </div>
