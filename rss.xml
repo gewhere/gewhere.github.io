@@ -20,6 +20,17 @@
         </item>
         
         <item>
+            <title>Org-bibtex</title>
+            
+            <description>Handling bibliography in orgmode</description>
+            
+            <pubDate>Wed, 23 Nov 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/org-bibtex</link> -->
+            <link href="http://gewhere.github.io/">/org-bibtex</link>
+            <guid isPermaLink="true">http://localhost:4000/org-bibtex</guid>
+        </item>
+        
+        <item>
             <title>Blockdiag and Seqdiag</title>
             
             <description>Graphviz-like apps in python</description>
@@ -50,17 +61,6 @@
             <!-- <link>http://localhost:4000/pacman-conflicting-packages</link> -->
             <link href="http://gewhere.github.io/">/pacman-conflicting-packages</link>
             <guid isPermaLink="true">http://localhost:4000/pacman-conflicting-packages</guid>
-        </item>
-        
-        <item>
-            <title>Parsing web feeds in python</title>
-            
-            <description>Feedparser library for python</description>
-            
-            <pubDate>Sat, 12 Nov 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/feedparser-python</link> -->
-            <link href="http://gewhere.github.io/">/feedparser-python</link>
-            <guid isPermaLink="true">http://localhost:4000/feedparser-python</guid>
         </item>
         
     </channel>

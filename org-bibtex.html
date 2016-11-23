@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Recover audio files in Audacity</title>
+        <title>Org-bibtex</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -38,101 +38,105 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 blog-main">
-                    <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">How to recover audio files from a crashed session in Audacity</h2>
-<div class="outline-text-2" id="text-1">
+                    <div id="outline-container-dominik2010org" class="outline-2">
+<h2 id="dominik2010org"><a id="sec-1" name="sec-1"></a>Org-bibtex: Annotated bibliography with orgmode</h2>
+<div class="outline-text-2" id="text-dominik2010org">
 <p>
-Today I experienced a crash using Audacity while I was recording a long radio session.  I was on an old macbook which runs on MacOS 10.5.8 and Audacity 1.2.5.  When I had the crash a 'Yes' or 'No' dialog opened in which I click 'No' in order <b>not to delete</b> the temporary files.
+Org-bibtex is responsible for handling bibtex citation in <a href="https://github.com/jwiegley/org-mode">orgmode</a>.  In <b>contrib</b> library there is an addition (<a href="https://github.com/jwiegley/org-mode/blob/master/contrib/lisp/org-bibtex-extras.el">org-bibtex-extras.el</a>) by <a href="http://www.cs.unm.edu/~eschulte/">Eric Schulte</a>.  This can be used as an easy way to manage an annotated bibliography in orgmode.  You can find a video demo to make the setup <a href="https://vimeo.com/99167082">here</a>.
 </p>
 
 <p>
-In MacOS the temporary files where in <code>/tmp/audacity&lt;audacity version&gt;-&lt;my username&gt;</code>.  In this folder there were <code>*.au</code> files enumerated, and I copied them in a folder in my home directory.  In Audacity's wiki I downloaded the  <a href="http://manual.audacityteam.org/man/recovering_crashes_manually.html#1.2_Audacity_Recovery_Utility">Audacity Recovery Utility</a> for my Intel Mac.  Then I run the application of this utility and I selected the folder with the recovered files.  The utility did the recovery, though I noticed that the recovered WAV file was a bit stretched.
+In your init file you should add the following chunk.
 </p>
-
-<p>
-My recording was a stereo recording and in the first place I was disappointed because in <a href="http://manual.audacityteam.org/man/recovery.html">Audacity's wiki</a> (see 'Manual Recovery') it says: "Stereo or edited audio is unlikely to be recovered in the correct sequence".  To be honest I haven't listened the recovered recording because it's about 15 minutes, though more or less it seems to be OK.
-</p>
-
-<p>
-Each <code>au</code> file is a 1MB audio file and about 6 seconds of recording.  So if you have a short recording you can do the recovery manually if you import the audio files to audacity.  In Audacity 2.1.2 to import the audio files you go to <code>File&gt;Import&gt;Audio</code>, in Audacity 1.2.5 on MacOS that was on <code>Project&gt;Import Audio</code>.
-</p>
-
-<p>
-If you have many files the Recovery Utility is the way to go.  In order to make the recovery properly the <code>*.au</code> files must have <b>consecutive enumeration</b>.  I did not experience this case, but if you don't have consecutive enumeration in your list of files the following script reads the ordered, but not properly enumerated list of files, and enumerates them properly.
-</p>
-
-<p>
-I made a list of files with no consecutive enumeration in the folder <code>tmp-audacity/</code> and I stored the bash script as well.  I also made a folder to store the properly enumerated files under the name <code>ordered/</code>.
-</p>
-
-
-<div class="org-src-container">
-
-<pre class="src src-sh"><span class="org-builtin">cd</span> tmp-audacity &amp;&amp; ls
-</pre>
-</div>
-
 
 <pre class="example">
-b00001.au
-b00005.au
-b00007.au
-b00012.au
-b00015.au
-b00045.au
-b00245.au
-b00334.au
-b00434.au
-b00634.au
-b00637.au
-enumerate_files.sh
-ordered
+;; load contrib library
+(add-to-list 'load-path
+             (expand-file-name "/path/to/org-mode/contrib/lisp"
+                              (file-name-directory
+                               org-find-library-dir "org")))
+
+;; manage citations
+(require 'org-bibtex)
+
+;; export citations
+(require 'ox-bibtex)
+(setq org-bibtex-file "papers.org")
 </pre>
 
+<p>
+There are three basic commands:
+</p>
 
-<div class="org-src-container">
+<ul class="org-ul">
+<li><code>M-x org-bibtex</code> to export the citations in a bibtex file
+</li>
+<li><code>M-x org-bibtex-yank</code> to import a citation from bibtex text (clipboard)
+</li>
+<li><code>M-x org-bibtex-check-all</code> to check the validity of the entries
+</li>
+</ul>
 
-<pre class="src src-sh"><span class="org-comment-delimiter">#</span><span class="org-comment">!bin/</span><span class="org-keyword">bash</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Audacity enumerates the temp files in the following format: b#####.au</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">The Recovery Utility has to take as input the files enumerated with _consecuti</span><span class="org-comment"><span class="org-whitespace-line">ve numbers_</span></span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">The script below enumerates the tmp *.au files up to 99</span>
-<span class="org-variable-name">FILES</span>=./tmp-audacity/*.au <span class="org-comment-delimiter"># </span><span class="org-comment">Read all Audacity's temp files</span>
-<span class="org-variable-name">COUNTER</span>=1 <span class="org-comment-delimiter"># </span><span class="org-comment">Initialize a counter</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Loop</span>
-<span class="org-keyword">for</span> f<span class="org-keyword"> in</span> $<span class="org-variable-name">FILES</span>
-<span class="org-keyword">do</span>
-    <span class="org-keyword">if</span> [ $<span class="org-variable-name">COUNTER</span> -lt 10 ] <span class="org-comment-delimiter"># </span><span class="org-comment">less than 10 (up to 9)</span>
-    <span class="org-keyword">then</span>
-        <span class="org-variable-name">FN</span>=b0000
-        cp $<span class="org-variable-name">f</span> ./tmp-audacity/ordered/$<span class="org-variable-name">FN</span>$<span class="org-variable-name">COUNTER</span>.au
-        <span class="org-variable-name">COUNTER</span>=$(($<span class="org-variable-name">COUNTER</span> + 1))
-    <span class="org-keyword">fi</span>
-    <span class="org-keyword">if</span> [ $<span class="org-variable-name">COUNTER</span> -gt 9 ] <span class="org-comment-delimiter"># </span><span class="org-comment">greater than 10 (up to 99)</span>
-    <span class="org-keyword">then</span>
-        <span class="org-variable-name">FN</span>=b000
-        cp $<span class="org-variable-name">f</span> ./tmp-audacity/ordered/$<span class="org-variable-name">FN</span>$<span class="org-variable-name">COUNTER</span>.au
-        <span class="org-variable-name">COUNTER</span>=$(($<span class="org-variable-name">COUNTER</span> + 1))
-    <span class="org-keyword">fi</span>
-<span class="org-keyword">done</span>;
-<span class="org-builtin">cd</span> ./tmp-audacity/ordered &amp;&amp; ls <span class="org-comment-delimiter"># </span><span class="org-comment">show the properly enumerated files</span>
-</pre>
-</div>
-
+<p>
+Note that below each heading you can keep your <b>annotations</b>.
+</p>
 
 <pre class="example">
-b00001.au
-b00002.au
-b00003.au
-b00004.au
-b00005.au
-b00006.au
-b00007.au
-b00008.au
-b00009.au
-b00010.au
-b00011.au
-b00012.au
+* The Org Mode 7 Reference Manual-Organize your life with GNU Emacs
+  :PROPERTIES:
+  :TITLE:    The Org Mode 7 Reference Manual-Organize your life with GNU Emacs                  :manual:
+  :BTYPE:    book
+  :CUSTOM_ID: dominik2010org
+  :AUTHOR:   Dominik, Carsten
+  :YEAR:     2010
+  :PUBLISHER: Network Theory Ltd.
+  :END:
+This line is my annotation for the entry of Org Mode 7 Reference Manual.
+* A multi-language computing environment for literate programming and reproducible research    :babel:
+  :PROPERTIES:
+  :BTYPE: article
+  :AUTHOR: Eric Schulte and Dan Davidson and Tom Dye and Carsten Dominik
+  :JOURNAL: Journal of Statistical Software
+  :VOLUME: 46
+  :NUMBER: 3
+  :YEAR:     2012
+  :MONTH: January
+  :CUSTOM_ID: schulte2012babel
+  :END:
+Some annotation about babel.
 </pre>
+
+<dl class="org-dl">
+<dt> NOTE </dt><dd>In the beginning of the video by Eric Schulte you can see that he evaluates the buffer of <code>org-bibtex.el</code>.  If you do not do that you will not be able to yank citations.  My routine is that I export and open my bibtex document in a new buffer before yanking a new entry.
+</dd>
+</dl>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Advanced search in orgmode</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Using tags and properties we can perform <a href="http://orgmode.org/worg/org-tutorials/advanced-searching.html">advanced searching</a> for keywords in our entries.  We can also use <a href="http://orgmode.org/manual/Tags.html">tags</a> in our bibliographic headings, without affecting the export to *.bib file.  We can add our bibliography in the front of the agenda (<code>C-c [</code>) and we can use <code>C-c a m</code> to search for tags and properties.
+</p>
+
+<p>
+If we would like to begin our search based on a property, we have to set the key name followed by the value.  Some examples for properties using <code>C-c a m</code>:
+</p>
+
+<dl class="org-dl">
+<dt> YEAR&gt;="2012" </dt><dd>Search for entries after 2011
+</dd>
+<dt> AUTHOR={Dominik\|Schulte} </dt><dd>Search entries which contain in the author field either Dominik or Schulte
+</dd>
+<dt> AUTHOR={Dominik}+babel </dt><dd>This will match the entries with Author=Dominik and Tags=babel
+</dd>
+</dl>
+
+
+<p>
+<b>Note</b> that double quotes will match the exact key value, whereas curly brackets will perform partial matches.
+</p>
+</div>
 </div>
 </div>
 
