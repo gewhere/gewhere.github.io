@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Yorgos Diapoulis</title>
+        <title>Orgmode tables and IDs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -38,34 +38,53 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 blog-main">
-                    <div class="blog-header">
-                        <p class="blog-title">aucotsi's blog <sup class="blog-description">music & code 
-</sup>
-                    </div>
-                </div>
-                <div class="col-md-4 blog-sidebar">
-                    <div class="sidebar-module sidebar-module-inset">
-                        <blockquote class="blockquote-reverse blog-quote">
-    Go to SuperCollider!
-</blockquote>
-<div class="text-right"><a href="http://supercollider.github.io/"><img src="/img/sc3.png" style="width:10%"/></a></div>
+                    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><a id="unique-exams-id" name="unique-exams-id"></a>Orgmode tables and IDs</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Tables serve as a <a href="http://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html">spreadsheet environment</a> within orgmode.  We can assign unique identifiers to a cell using caret <code>^</code> and underscore <code>_</code> on the first column of the table, to point either to the element above or to the element below respectively.  Note that these identifiers should contain only <b>letters &amp; numbers</b> (and not special characters like underscore, dash etc), as a result CamelCase seems a good choice.
+</p>
 
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 blog-main">
-                    <p>
-This blog includes notes on programming tools and music-related topics.
+
+<p>
+Using <code>C-c C-x p</code> (or <code>M-x org-set-property</code>) in a heading we can assign a property.  Each property has a unique key and a value.  Whereas we can assign any name for the key a built-in property is <code>ID</code>.  If we would like to ensure that we will get a unique ID value we can call <code>M-x org-id-get-create</code>.
 </p>
 
 <p>
-You will find posts related to music cognition and technology and notes on programming.  More specifically about Emacs, Orgmode, Arch Linux, SuperCollider and more.
+<a href="http://orgmode.org/worg/org-glossary.html#property">Properties</a> are kind of invisible in orgmode as they are not visible in html, pdf and other publishing utilities, and they may have <a href="http://orgmode.org/manual/Property-inheritance.html#Property-inheritance">inheritance</a>, though this not a default feature.  Also note that if we are using unique IDs we can call them from different files.  So, unique IDs behave differently from <a href="http://orgmode.org/manual/Internal-links.html">internal links</a>.
 </p>
 
-<p>
-The blog serves mostly as a personal notebook.  If you find anything useful in here I will be more than happy.
-</p>
+
+<pre class="example">
+** Exams
+   :PROPERTIES:
+   :ID:       unique-exams-id
+   :END:
+#+NAME: ratings
+|   | Grades      | Tom         | John         | Andy         | Mean     |
+|---+-------------+-------------+--------------+--------------+----------|
+| # | Mathematics | 5.625       | 8.125        | 4.875        | 6.208    |
+| ^ |             | TomMathExam | JohnMathExam | AndyMathExam | MeanMath |
+| _ |             | TomPhysExam | JohnPhysExam | AndyPhysExam | MeanPhys |
+| # | Physics     | 7.875       | 9.125        | 5.25         | 7.417    |
+#+TBLFM: $&gt; = vmean($&gt;&gt;&gt;&gt;..$&gt;&gt;);%.3f
+
+** Final
+   :PROPERTIES:
+   :ID:       unique-final-grades
+   :END:
+|   | Final       | Tom     | John     | Andy     | Mean      |
+|---+-------------+---------+----------+----------+-----------|
+| # | Mathematics | 6       | 7        | 6        | 6.333     |
+| ^ |             | TomMath | JohnMath | AndyMath | FinalMath |
+| _ |             | TomPhys | JohnPhys | AndyPhys | FinalPhys |
+| # | Physics     | 8       | 8        | 6        | 7.333     |
+#+TBLFM: $TomMath=remote(unique-exams-id, ($TomMathExam + $MeanMath)/2);%.0f::$JohnMath=remote(unique-exams-id, ($JohnMathExam + $MeanMath)/2);%.0f::$AndyMath=remote(unique-exams-id, ($AndyMathExam + $MeanMath)/2);%.0f
+#+TBLFM: $TomPhys=remote(unique-exams-id, ($TomPhysExam + $MeanPhys)/2);%.0f::$JohnPhys=remote(unique-exams-id, ($JohnPhysExam + $MeanPhys)/2);%.0f::$AndyPhys=remote(unique-exams-id, ($AndyPhysExam + $MeanPhys)/2);%.0f
+#+TBLFM: $FinalMath=vmean($&gt;&gt;&gt;&gt;..$&gt;&gt;);%.3f::$FinalPhys=vmean($&gt;&gt;&gt;&gt;..$&gt;&gt;);%.3f
+</pre>
+</div>
+</div>
 
                 </div>
                 <div class="col-md-4 blog-sidebar">
