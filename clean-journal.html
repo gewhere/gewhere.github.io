@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Recover audio files in Audacity</title>
+        <title>Clean cached journal logs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,99 +39,19 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">How to recover audio files from a crashed session in Audacity</h2>
+<h2 id="sec-1">Clean cached journal logs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Today I experienced a crash using Audacity while I was recording a long radio session.  I was on an old macbook which runs on MacOS 10.5.8 and Audacity 1.2.5.  When I had the crash a 'Yes' or 'No' dialog opened in which I click 'No' in order <b>not to delete</b> the temporary files.
+<a href="https://wiki.archlinux.org/index.php?title=Systemd&redirect=no#Journal">Journal</a> is systemd's logging system.  Logs are stored in <code>/var/log/</code>.  Today I saw a <a href="https://twitter.com/ebalaskas/status/802075403166896128">tweet</a> about a <code>journalctl</code> option which cleans the cached logs.  I run the following command using sudo, and I cleaned 3.3GB of cached logs.
 </p>
 
-<p>
-In MacOS the temporary files where in <code>/tmp/audacity&lt;audacity version&gt;-&lt;my username&gt;</code>.  In this folder there were <code>*.au</code> files enumerated, and I copied them in a folder in my home directory.  In Audacity's wiki I downloaded the  <a href="http://manual.audacityteam.org/man/recovering_crashes_manually.html#1.2_Audacity_Recovery_Utility">Audacity Recovery Utility</a> for my Intel Mac.  Then I run the application of this utility and I selected the folder with the recovered files.  The utility did the recovery, though I noticed that the recovered WAV file was a bit stretched.
-</p>
-
-<p>
-My recording was a stereo recording and in the first place I was disappointed because in <a href="http://manual.audacityteam.org/man/recovery.html">Audacity's wiki</a> (see 'Manual Recovery') it says: "Stereo or edited audio is unlikely to be recovered in the correct sequence".  To be honest I haven't listened the recovered recording because it's about 15 minutes, though more or less it seems to be OK.
-</p>
-
-<p>
-Each <code>au</code> file is a 1MB audio file and about 6 seconds of recording.  So if you have a short recording you can do the recovery manually if you import the audio files to audacity.  In Audacity 2.1.2 to import the audio files you go to <code>File&gt;Import&gt;Audio</code>, in Audacity 1.2.5 on MacOS that was on <code>Project&gt;Import Audio</code>.
-</p>
-
-<p>
-If you have many files the Recovery Utility is the way to go.  In order to make the recovery properly the <code>*.au</code> files must have <b>consecutive enumeration</b>.  I did not experience this case, but if you don't have consecutive enumeration in your list of files the following script reads the ordered, but not properly enumerated list of files, and enumerates them properly.
-</p>
-
-<p>
-I made a list of files with no consecutive enumeration in the folder <code>tmp-audacity/</code> and I stored the bash script as well.  I also made a folder to store the properly enumerated files under the name <code>ordered/</code>.
-</p>
-
-
-<div class="org-src-container">
-
-<pre class="src src-sh"><span class="org-builtin">cd</span> tmp-audacity &amp;&amp; ls
-</pre>
-</div>
-
+<ul class="org-ul">
+<li><a href="https://wiki.archlinux.org/index.php?title=Systemd&redirect=no#Clean_journal_files_manually">https://wiki.archlinux.org/index.php?title=Systemd&redirect=no#Clean_journal_files_manually</a>
+</li>
+</ul>
 
 <pre class="example">
-b00001.au
-b00005.au
-b00007.au
-b00012.au
-b00015.au
-b00045.au
-b00245.au
-b00334.au
-b00434.au
-b00634.au
-b00637.au
-enumerate_files.sh
-ordered
-</pre>
-
-
-<div class="org-src-container">
-
-<pre class="src src-sh"><span class="org-comment-delimiter">#</span><span class="org-comment">!bin/</span><span class="org-keyword">bash</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Audacity enumerates the temp files in the following format: b#####.au</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">The Recovery Utility has to take as input the files enumerated with _consecuti</span><span class="org-comment"><span class="org-whitespace-line">ve numbers_</span></span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">The script below enumerates the tmp *.au files up to 99</span>
-<span class="org-variable-name">FILES</span>=./tmp-audacity/*.au <span class="org-comment-delimiter"># </span><span class="org-comment">Read all Audacity's temp files</span>
-<span class="org-variable-name">COUNTER</span>=1 <span class="org-comment-delimiter"># </span><span class="org-comment">Initialize a counter</span>
-<span class="org-comment-delimiter"># </span><span class="org-comment">Loop</span>
-<span class="org-keyword">for</span> f<span class="org-keyword"> in</span> $<span class="org-variable-name">FILES</span>
-<span class="org-keyword">do</span>
-    <span class="org-keyword">if</span> [ $<span class="org-variable-name">COUNTER</span> -lt 10 ] <span class="org-comment-delimiter"># </span><span class="org-comment">less than 10 (up to 9)</span>
-    <span class="org-keyword">then</span>
-        <span class="org-variable-name">FN</span>=b0000
-        cp $<span class="org-variable-name">f</span> ./tmp-audacity/ordered/$<span class="org-variable-name">FN</span>$<span class="org-variable-name">COUNTER</span>.au
-        <span class="org-variable-name">COUNTER</span>=$(($<span class="org-variable-name">COUNTER</span> + 1))
-    <span class="org-keyword">fi</span>
-    <span class="org-keyword">if</span> [ $<span class="org-variable-name">COUNTER</span> -gt 9 ] <span class="org-comment-delimiter"># </span><span class="org-comment">greater than 10 (up to 99)</span>
-    <span class="org-keyword">then</span>
-        <span class="org-variable-name">FN</span>=b000
-        cp $<span class="org-variable-name">f</span> ./tmp-audacity/ordered/$<span class="org-variable-name">FN</span>$<span class="org-variable-name">COUNTER</span>.au
-        <span class="org-variable-name">COUNTER</span>=$(($<span class="org-variable-name">COUNTER</span> + 1))
-    <span class="org-keyword">fi</span>
-<span class="org-keyword">done</span>;
-<span class="org-builtin">cd</span> ./tmp-audacity/ordered &amp;&amp; ls <span class="org-comment-delimiter"># </span><span class="org-comment">show the properly enumerated files</span>
-</pre>
-</div>
-
-
-<pre class="example">
-b00001.au
-b00002.au
-b00003.au
-b00004.au
-b00005.au
-b00006.au
-b00007.au
-b00008.au
-b00009.au
-b00010.au
-b00011.au
-b00012.au
+# journalctl --vacuum-time=2weeks
 </pre>
 </div>
 </div>
