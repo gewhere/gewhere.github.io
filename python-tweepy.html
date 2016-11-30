@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Yorgos Diapoulis</title>
+        <title>Tweepy library for python</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -38,34 +38,75 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 blog-main">
-                    <div class="blog-header">
-                        <p class="blog-title">aucotsi's blog <sup class="blog-description">music & code 
-</sup>
-                    </div>
-                </div>
-                <div class="col-md-4 blog-sidebar">
-                    <div class="sidebar-module sidebar-module-inset">
-                        <blockquote class="blockquote-reverse blog-quote">
-    Go to SuperCollider!
-</blockquote>
-<div class="text-right"><a href="http://supercollider.github.io/"><img src="/img/sc3.png" style="width:10%"/></a></div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 blog-main">
-                    <p>
-This blog includes notes on programming tools and music-related topics.
+                    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Tweepy library for python</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<i>Tweepy</i> is a python library for accessing twitter's API.  My aim was to get the list of people that I am following, but I found out that this was not straight-forward.  You can easily get a list of your friends <code>tweepy.API().friends()</code>, though the size of the list is limited due to <a href="http://docs.tweepy.org/en/v3.5.0/code_snippet.html?highlight=pagination#pagination">pagination</a>.  The more convenient workaround to get the full list of people was to get the unique IDs as integers and then ask for their <code>screen_name</code>.
 </p>
 
 <p>
-You will find posts related to music cognition and technology and notes on programming.  More specifically about Emacs, Orgmode, Arch Linux, SuperCollider and more.
+This example demonstrates the limited size of the list due to pagination.
 </p>
 
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-keyword">import</span> tweepy
+
+<span class="org-variable-name">consumer_key</span> = <span class="org-string">""</span>
+<span class="org-variable-name">consumer_secret</span> = <span class="org-string">""</span>
+<span class="org-variable-name">access_token</span> = <span class="org-string">""</span>
+<span class="org-variable-name">access_token_secret</span> = <span class="org-string">""</span>
+
+<span class="org-variable-name">auth</span> = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+<span class="org-variable-name">api</span> = tweepy.API(auth)
+
+<span class="org-variable-name">user</span> = api.get_user(<span class="org-string">'aucotsi'</span>)
+
+<span class="org-variable-name">l</span> = <span class="org-builtin">list</span>()
+
+<span class="org-keyword">for</span> friend <span class="org-keyword">in</span> user.friends():
+    l.append(friend.screen_name)
+
+<span class="org-keyword">print</span>(<span class="org-string">'Total friends: '</span>, <span class="org-builtin">len</span>(l))
+</pre>
+</div>
+
+<pre class="example">
+Total friends:  20
+</pre>
+
 <p>
-The blog serves mostly as a personal notebook.  If you find anything useful in here I will be more than happy.
+This example demonstrates a workaround to overcome pagination.
 </p>
+
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-variable-name">user</span> = api.get_user(<span class="org-string">'aucotsi'</span>)
+
+<span class="org-variable-name">l</span> = <span class="org-builtin">list</span>()
+
+<span class="org-keyword">for</span> friend <span class="org-keyword">in</span> api.friends_ids():
+    <span class="org-variable-name">u</span> = api.get_user(friend)
+    l.append(u.screen_name)
+
+<span class="org-keyword">print</span>(<span class="org-string">'Total friends: '</span>, <span class="org-builtin">len</span>(l))
+</pre>
+</div>
+
+<pre class="example">
+Total friends:  474
+</pre>
+
+
+<p>
+In the <a href="http://docs.tweepy.org/en/v3.5.0/api.html">API reference</a> you can find timeline, status, user and search methods among others.
+</p>
+</div>
+</div>
 
                 </div>
                 <div class="col-md-4 blog-sidebar">
