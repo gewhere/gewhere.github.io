@@ -9,6 +9,17 @@
         <atom:link href="http://gewhere.github.io/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Make a twitter bot in python</title>
+            
+            <description>A how-to</description>
+            
+            <pubDate>Wed, 30 Nov 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/twitter-bot</link> -->
+            <link href="http://gewhere.github.io/">/twitter-bot</link>
+            <guid isPermaLink="true">http://localhost:4000/twitter-bot</guid>
+        </item>
+        
+        <item>
             <title>Tweepy library for python</title>
             
             <description>Retrieve twitter data</description>
@@ -50,17 +61,6 @@
             <!-- <link>http://localhost:4000/org-bibtex</link> -->
             <link href="http://gewhere.github.io/">/org-bibtex</link>
             <guid isPermaLink="true">http://localhost:4000/org-bibtex</guid>
-        </item>
-        
-        <item>
-            <title>Blockdiag and Seqdiag</title>
-            
-            <description>Graphviz-like apps in python</description>
-            
-            <pubDate>Sun, 20 Nov 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/blockdiag-seqdiag</link> -->
-            <link href="http://gewhere.github.io/">/blockdiag-seqdiag</link>
-            <guid isPermaLink="true">http://localhost:4000/blockdiag-seqdiag</guid>
         </item>
         
     </channel>

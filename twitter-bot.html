@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Using Jitsi for online conference</title>
+        <title>Make a twitter bot in python</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,15 +39,61 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">An easy to use video-conference application on your browser</h2>
+<h2 id="sec-1">How to make a twitter bot using python</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Today I used <a href="https://meet.jit.si/">meet.jitsi.si</a>, a simple to use interface on my browser.  I experienced that while I was sharing my desktop, my screen was producing fractal images.  I am unsure if that happens on other applications like google's hangouts.  Running on Arch Linux I found online an <a href="https://aur.archlinux.org/packages/jitsi/">AUR package</a>, but I realized that this is messenger application.
+First go to <a href="https://apps.twitter.com/">apps.twitter.com</a> and create a new application.  Go to <i>Permissions</i> tab and make you that you have read and write access for your application.  Then request the access tokens in the <i>Key and Access Tokens</i> tab.
 </p>
 
 <p>
-I downloaded this package because I was not able to make a valid conference room in the first place, though a friend next to me found out that the problem was an underscore that I had typed on the URL (the room's name).  That was redirecting my browser to an error page saying something about Ubuntu, and I thought in the first place that jitsi was unable to identify my OS.  By removing the underscore the problem was solved and the room was working.
+See <a href="http://gewhere.github.io/python-tweepy">my previous post</a> about the basic setup.
 </p>
+
+<ul class="org-ul">
+<li>To make a new tweet:
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-variable-name">mypost</span> = <span class="org-string">'This is my new tweet'</span>
+api.update_status(status=mypost)
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>To follow back every follower:
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-keyword">for</span> follower <span class="org-keyword">in</span> tweepy.Cursor(api.followers).items():
+    follower.follow()
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Add a cron task every 3 hours o'clock:
+<ul class="org-ul">
+<li>Edit your cron
+</li>
+</ul>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">crontab -e
+</pre>
+</div>
+
+<p>
+Check <a href="https://wiki.archlinux.org/index.php/cron#Crontab_format">cron help at arch linux</a>.
+</p>
+
+<pre class="example">
+0 */3 * * * /usr/bin/python /path/to/mybot.py
+</pre>
 </div>
 </div>
 
