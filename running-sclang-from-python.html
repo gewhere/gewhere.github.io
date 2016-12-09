@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Initial post</title>
+        <title>Running sclang from python</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,11 +39,43 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Blogging</h2>
+<h2 id="sec-1">Start sclang as subprocess from python</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-This post is as my initial post using jekyll for blogging environment.  I followed the instruction by @ardumont in his <a href="https://github.com/ardumont/ardumont.github.io">github</a> profile.
+Check if SuperCollider does not print errors on the post window.
 </p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-keyword">import</span> subprocess
+<span class="org-comment-delimiter"># </span><span class="org-comment">start sclang to check if file is executable</span>
+<span class="org-variable-name">p</span> = subprocess.Popen([<span class="org-string">'sclang'</span>, <span class="org-string">'/path/to/file.scd'</span>], stdout=subprocess.PIPE, st<span class="org-whitespace-line">derr=subprocess.PIPE)</span>
+(output, err) = p.communicate()
+<span class="org-variable-name">p_status</span> = p.wait()
+<span class="org-keyword">if</span> p_status == 0:
+    <span class="org-variable-name">r</span> = re.findall(<span class="org-string">'(ERROR)+'</span>, <span class="org-builtin">str</span>(output), flags=re.IGNORECASE)
+    <span class="org-keyword">if</span> r:
+        <span class="org-keyword">print</span>(<span class="org-string">'An ERROR occurred!'</span>)
+    <span class="org-keyword">else</span>:
+        <span class="org-keyword">print</span>(<span class="org-string">'File is executable!'</span>)
+</pre>
+</div>
+
+<p>
+It is possible to start the <code>scsynth</code> within <code>sclang</code> using <code>s.waitForBoot</code>.  In order to stop <code>sclang</code> and get the post window output in python we have to kill sclang's interpreter using the command <code>0.exit</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sclang"><span class="org-function-name">fork</span>{
+    s.waitForBoot{
+        { <span class="org-type">SinOsc</span>.<span class="org-function-name">ar</span>(400 * <span class="org-type">SinOsc</span>.<span class="org-function-name">kr</span>(9), 0, 0.5) }.play;
+    };
+    2.wait;
+    0.<span class="org-warning">exit</span>;
+}
+</pre>
+</div>
 </div>
 </div>
 

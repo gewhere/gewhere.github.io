@@ -9,6 +9,28 @@
         <atom:link href="http://gewhere.github.io/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Running sclang from python</title>
+            
+            <description>Start a subprocess</description>
+            
+            <pubDate>Fri, 09 Dec 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/running-sclang-from-python</link> -->
+            <link href="http://gewhere.github.io/">/running-sclang-from-python</link>
+            <guid isPermaLink="true">http://localhost:4000/running-sclang-from-python</guid>
+        </item>
+        
+        <item>
+            <title>Regex in python when reading a file</title>
+            
+            <description>Two approaches for regex manipulation</description>
+            
+            <pubDate>Sat, 03 Dec 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/python-regex-in-file</link> -->
+            <link href="http://gewhere.github.io/">/python-regex-in-file</link>
+            <guid isPermaLink="true">http://localhost:4000/python-regex-in-file</guid>
+        </item>
+        
+        <item>
             <title>Make a twitter bot in python</title>
             
             <description>A how-to</description>
@@ -39,28 +61,6 @@
             <!-- <link>http://localhost:4000/clean-journal</link> -->
             <link href="http://gewhere.github.io/">/clean-journal</link>
             <guid isPermaLink="true">http://localhost:4000/clean-journal</guid>
-        </item>
-        
-        <item>
-            <title>Orgmode tables and IDs</title>
-            
-            <description>Basic properties and calculations with org-table</description>
-            
-            <pubDate>Wed, 23 Nov 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/org-tables-id</link> -->
-            <link href="http://gewhere.github.io/">/org-tables-id</link>
-            <guid isPermaLink="true">http://localhost:4000/org-tables-id</guid>
-        </item>
-        
-        <item>
-            <title>Org-bibtex</title>
-            
-            <description>Handling bibliography in orgmode</description>
-            
-            <pubDate>Wed, 23 Nov 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/org-bibtex</link> -->
-            <link href="http://gewhere.github.io/">/org-bibtex</link>
-            <guid isPermaLink="true">http://localhost:4000/org-bibtex</guid>
         </item>
         
     </channel>
