@@ -9,6 +9,17 @@
         <atom:link href="http://gewhere.github.io/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Get the executing path in SC3</title>
+            
+            <description>Many different approaches</description>
+            
+            <pubDate>Thu, 15 Dec 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/sclang-executing-path</link> -->
+            <link href="http://gewhere.github.io/">/sclang-executing-path</link>
+            <guid isPermaLink="true">http://localhost:4000/sclang-executing-path</guid>
+        </item>
+        
+        <item>
             <title>Running sclang from python</title>
             
             <description>Start a subprocess</description>
@@ -50,17 +61,6 @@
             <!-- <link>http://localhost:4000/python-tweepy</link> -->
             <link href="http://gewhere.github.io/">/python-tweepy</link>
             <guid isPermaLink="true">http://localhost:4000/python-tweepy</guid>
-        </item>
-        
-        <item>
-            <title>Clean cached journal logs</title>
-            
-            <description>System maintenance</description>
-            
-            <pubDate>Fri, 25 Nov 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/clean-journal</link> -->
-            <link href="http://gewhere.github.io/">/clean-journal</link>
-            <guid isPermaLink="true">http://localhost:4000/clean-journal</guid>
         </item>
         
     </channel>

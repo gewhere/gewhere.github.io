@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Clean cached journal logs</title>
+        <title>Get the executing path in SC3</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,20 +39,43 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Clean cached journal logs</h2>
+<h2 id="sec-1">How to get the executing path in SC3</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<a href="https://wiki.archlinux.org/index.php?title=Systemd&redirect=no#Journal">Journal</a> is systemd's logging system.  Logs are stored in <code>/var/log/</code>.  Today I saw a <a href="https://twitter.com/ebalaskas/status/802075403166896128">tweet</a> about a <code>journalctl</code> option which cleans the cached logs.  I run the following command using sudo, and I cleaned 3.3GB of cached logs.
+There are many different ways to get the working directory in SuperCollider.  If you are working on a script, and not writing a class, the easiest way to do so is to call <code>thisProcess.nowExecutingPath</code>.  See <a href="http://doc.sccode.org/Classes/Process.html">Process</a> help file for more information.
 </p>
 
-<ul class="org-ul">
-<li><a href="https://wiki.archlinux.org/index.php?title=Systemd&redirect=no#Clean_journal_files_manually">https://wiki.archlinux.org/index.php?title=Systemd&redirect=no#Clean_journal_files_manually</a>
-</li>
-</ul>
+<p>
+If you are writing a class and you are on a Unix-based OS, you can use the following expressions.
+</p>
 
-<pre class="example">
-# journalctl --vacuum-time=2weeks
+<div class="org-src-container">
+
+<pre class="src src-sclang"><span class="org-keyword">thisMethod</span>.filenameSymbol
+<span class="org-keyword">this</span>.class.filenameSymbol
 </pre>
+</div>
+
+<p>
+The problem with the above expressions is that they don't work as "expected" if you have symlink the class name, so in my case I got <code>~/.local/share/SuperCollider/Extensions/MyClass.sc</code> which is not my working directory.
+</p>
+
+<p>
+Two workarounds that I found useful when you symlink a class definition are shown below.  The first example calls an external process, and it's a bit slow in terms of execution time.  The second is more efficient as it is in main class library.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sclang"><span class="org-string">"pwd"</span>.unixCmdGetStdOut;
+getPath = getPath.copyRange(0, getPath.size-2); <span class="org-comment-delimiter">//</span><span class="org-comment">remove \n</span>
+<span class="org-comment-delimiter">//</span>
+<span class="org-type">File</span>.getcwd;
+</pre>
+</div>
+
+<p>
+Finally, notice the the first approach returns the full path of the working file, whereas the workarounds return only the working directory.
+</p>
 </div>
 </div>
 
