@@ -9,6 +9,17 @@
         <atom:link href="http://gewhere.github.io/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Handling error in SC3</title>
+            
+            <description>How to catch errors</description>
+            
+            <pubDate>Fri, 16 Dec 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/handling-errors-sc3</link> -->
+            <link href="http://gewhere.github.io/">/handling-errors-sc3</link>
+            <guid isPermaLink="true">http://localhost:4000/handling-errors-sc3</guid>
+        </item>
+        
+        <item>
             <title>Get the executing path in SC3</title>
             
             <description>Many different approaches</description>
@@ -50,17 +61,6 @@
             <!-- <link>http://localhost:4000/twitter-bot</link> -->
             <link href="http://gewhere.github.io/">/twitter-bot</link>
             <guid isPermaLink="true">http://localhost:4000/twitter-bot</guid>
-        </item>
-        
-        <item>
-            <title>Tweepy library for python</title>
-            
-            <description>Retrieve twitter data</description>
-            
-            <pubDate>Mon, 28 Nov 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/python-tweepy</link> -->
-            <link href="http://gewhere.github.io/">/python-tweepy</link>
-            <guid isPermaLink="true">http://localhost:4000/python-tweepy</guid>
         </item>
         
     </channel>
