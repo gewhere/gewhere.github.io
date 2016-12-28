@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Using Jitsi for online conference</title>
+        <title>Install Archlinux on raspberry pi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -39,15 +39,113 @@
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">An easy to use video-conference application on your browser</h2>
+<h2 id="sec-1">Install Archlinux on Raspberry Pi</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Today I used <a href="https://meet.jit.si/">meet.jitsi.si</a>, a simple to use interface on my browser.  I experienced that while I was sharing my desktop, my screen was producing fractal images.  I am unsure if that happens on other applications like google's hangouts.  Running on Arch Linux I found online an <a href="https://aur.archlinux.org/packages/jitsi/">AUR package</a>, but I realized that this is messenger application.
+Archlinux forums do not support official installation for Raspberry Pi 3.  To make the partitions on the SD card follow <a href="https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3">this link</a>.  A useful command is <code>lsblk</code> to see the partitions on your system.  On any linux distro make sure to be careful otherwise you may flash your hard drive.
 </p>
 
 <p>
-I downloaded this package because I was not able to make a valid conference room in the first place, though a friend next to me found out that the problem was an underscore that I had typed on the URL (the room's name).  That was redirecting my browser to an error page saying something about Ubuntu, and I thought in the first place that jitsi was unable to identify my OS.  By removing the underscore the problem was solved and the room was working.
+All steps can be easily applied using <code>sudo</code>, make sure for the step 5 to login as root using <code>sudo su</code>.
 </p>
+
+<p>
+After making the partitions on the SD card, remove the card from your PC and insert it to the Raspberry Pi.  Go to this <a href="http://elinux.org/ArchLinux_Install_Guide">installation guide</a> and follow the steps.
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Basic steps for Archlinux installation</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+If you are not planning to make a headless installation login as <code>root</code> with password <code>root</code>.
+</p>
+
+<ul class="org-ul">
+<li>Change the password using <code>passwd</code>.  Then remove <code>/usr/localtime</code> file and symlink your local time using <code>ln -s /usr/share/zoneinfo/Europe/Athens /etc/localtime</code>.
+</li>
+<li>Open <code>vi /etc/hostname</code> and change <code>alarmpi</code> to your Pi's name.
+</li>
+<li>Open <code>vi /etc/hosts</code> and change the line <code>127.0.0.1 localhost.localdomain localhost yourhostname</code>.
+</li>
+<li>Switch to <code>tty2</code> using <code>Alt+F2</code> and run <code>ls -R / &amp;&amp; ls -R / &amp;&amp; ls -R /</code>
+<ul class="org-ul">
+<li>Go to <code>tty1</code> and run <code>pacman-key --init</code>
+</li>
+</ul>
+</li>
+<li>Update your package manager using <code>pacman -Syu</code>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Installing secondary packages</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Install <code>sudo</code> using <code>pacman -S sudo</code>
+<ul class="org-ul">
+<li>Run <code>EDITOR=vi visudo</code> and uncomment the line <code>%wheel ALL=(ALL) ALL</code>
+</li>
+</ul>
+</li>
+<li>Create user account
+<ul class="org-ul">
+<li><code>useradd -m -G wheel -s /bin/bash newuser</code>
+</li>
+</ul>
+</li>
+<li>Change user's password
+<ul class="org-ul">
+<li><code>passwd newuser</code>
+</li>
+<li><code>logout</code> as root and login as regular user
+</li>
+</ul>
+</li>
+<li>Install <code>fakeroot</code> package to <code>checkupdates</code> for Archlinux updates
+</li>
+<li>Install <code>xorg</code> using <code>sudo pacman -S xorg xorg-xinit xorg-server xorg-server-utils xterm</code>
+</li>
+<li>Install <code>xfce</code> desktop <code>sudo pacman -S xfce4</code>
+</li>
+<li>Install <code>vim</code> and <code>emacs</code>
+<ul class="org-ul">
+<li><code>sudo pacman -S vim emacs</code>
+</li>
+</ul>
+</li>
+<li>Install python3, python2, gcc
+<ul class="org-ul">
+<li><code>sudo pacman -S python python2 gcc</code>
+</li>
+</ul>
+</li>
+<li>Add to the bottom of <code>~/.xinitrc</code> the line <code>exec startxfce4</code> to enter to <code>xfce</code> using <code>startx</code>.
+</li>
+<li>Install <code>networkmanager</code> and <code>network-manager-applet</code> for wifi
+<ul class="org-ul">
+<li>Enable and start service on <code>systemd</code>
+<ul class="org-ul">
+<li><code>systemctl enable NetworkManager.service</code>
+</li>
+<li><code>systemctl start NetworkManager.service</code>
+</li>
+</ul>
+</li>
+<li>Connect to a wifi connection via command line
+<ul class="org-ul">
+<li><code>nmcli dev wifi connect &lt;name&gt; password &lt;password&gt;</code>
+</li>
+<li><b>WARNING</b> In this case you will create two wifi connections
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 

@@ -9,6 +9,17 @@
         <atom:link href="http://gewhere.github.io/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Install Archlinux on raspberry pi</title>
+            
+            <description>A guide</description>
+            
+            <pubDate>Wed, 28 Dec 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/arch-on-raspberry-pi</link> -->
+            <link href="http://gewhere.github.io/">/arch-on-raspberry-pi</link>
+            <guid isPermaLink="true">http://localhost:4000/arch-on-raspberry-pi</guid>
+        </item>
+        
+        <item>
             <title>Handling error in SC3</title>
             
             <description>How to catch errors</description>
@@ -50,17 +61,6 @@
             <!-- <link>http://localhost:4000/python-regex-in-file</link> -->
             <link href="http://gewhere.github.io/">/python-regex-in-file</link>
             <guid isPermaLink="true">http://localhost:4000/python-regex-in-file</guid>
-        </item>
-        
-        <item>
-            <title>Make a twitter bot in python</title>
-            
-            <description>A how-to</description>
-            
-            <pubDate>Wed, 30 Nov 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/twitter-bot</link> -->
-            <link href="http://gewhere.github.io/">/twitter-bot</link>
-            <guid isPermaLink="true">http://localhost:4000/twitter-bot</guid>
         </item>
         
     </channel>
