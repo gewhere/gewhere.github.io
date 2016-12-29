@@ -9,6 +9,17 @@
         <atom:link href="http://gewhere.github.io/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Setup Arduino Uno WIFI on Archlinux</title>
+            
+            <description>Using arduino-git aur package</description>
+            
+            <pubDate>Wed, 28 Dec 2016 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/arduino-uno-wifi</link> -->
+            <link href="http://gewhere.github.io/">/arduino-uno-wifi</link>
+            <guid isPermaLink="true">http://localhost:4000/arduino-uno-wifi</guid>
+        </item>
+        
+        <item>
             <title>Install Archlinux on raspberry pi</title>
             
             <description>A guide</description>
@@ -50,17 +61,6 @@
             <!-- <link>http://localhost:4000/running-sclang-from-python</link> -->
             <link href="http://gewhere.github.io/">/running-sclang-from-python</link>
             <guid isPermaLink="true">http://localhost:4000/running-sclang-from-python</guid>
-        </item>
-        
-        <item>
-            <title>Regex in python when reading a file</title>
-            
-            <description>Two approaches for regex manipulation</description>
-            
-            <pubDate>Sat, 03 Dec 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/python-regex-in-file</link> -->
-            <link href="http://gewhere.github.io/">/python-regex-in-file</link>
-            <guid isPermaLink="true">http://localhost:4000/python-regex-in-file</guid>
         </item>
         
     </channel>
