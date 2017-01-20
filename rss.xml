@@ -9,6 +9,17 @@
         <atom:link href="http://gewhere.github.io/rss.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Leman on embodied music cognition</title>
+            
+            <description>A lecture on youtube</description>
+            
+            <pubDate>Fri, 20 Jan 2017 00:00:00 +0200</pubDate>
+            <!-- <link>http://localhost:4000/leman-embodied-cognition</link> -->
+            <link href="http://gewhere.github.io/">/leman-embodied-cognition</link>
+            <guid isPermaLink="true">http://localhost:4000/leman-embodied-cognition</guid>
+        </item>
+        
+        <item>
             <title>Setup Arduino Uno WIFI on Archlinux</title>
             
             <description>Using arduino-git aur package</description>
@@ -50,17 +61,6 @@
             <!-- <link>http://localhost:4000/sclang-executing-path</link> -->
             <link href="http://gewhere.github.io/">/sclang-executing-path</link>
             <guid isPermaLink="true">http://localhost:4000/sclang-executing-path</guid>
-        </item>
-        
-        <item>
-            <title>Running sclang from python</title>
-            
-            <description>Start a subprocess</description>
-            
-            <pubDate>Fri, 09 Dec 2016 00:00:00 +0200</pubDate>
-            <!-- <link>http://localhost:4000/running-sclang-from-python</link> -->
-            <link href="http://gewhere.github.io/">/running-sclang-from-python</link>
-            <guid isPermaLink="true">http://localhost:4000/running-sclang-from-python</guid>
         </item>
         
     </channel>
