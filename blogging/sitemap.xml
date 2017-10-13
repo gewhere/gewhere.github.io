@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/2017/10/13/sc3-and-scikit-learn/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/about/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/2017/10/12/moving-to-hugo/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/publications/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/hugo/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/orgmode/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/osc/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/pca/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/post/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/python/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/scikit-learn/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/supercollider/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://users.jyu.fi/~gediapou/hugo/tags/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

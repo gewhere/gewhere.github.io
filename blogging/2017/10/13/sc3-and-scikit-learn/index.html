@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Georgios Diapoulis" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.29" />
+
+<link rel="canonical" href="http://users.jyu.fi/~gediapou/hugo/2017/10/13/sc3-and-scikit-learn/">
+<base href="http://users.jyu.fi/~gediapou/hugo/" />
+<meta property="og:title" content="SC3 and scikit-learn" />
+<meta property="og:description" content="This blog post is about machine learning techniques in live coding. I particularly focused on SuperCollider (SC3) and scikit-learn library for Python3. The main procedure was to send data over Open Sound Control (OSC) protocol, using pythonosc, and to analyze the data in Python3. The data analysis results are sending back to sclang in real-time for parameter control UGens.
+Description and order of execution The main idea is to get input of environmental sounds using a microphone (also input from speakers works fine), and to analyze the input based on Chromagram class from SC3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://users.jyu.fi/~gediapou/hugo/2017/10/13/sc3-and-scikit-learn/" />
+
+
+
+<meta property="article:published_time" content="2017-10-13T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-13T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SC3 and scikit-learn"/>
+<meta name="twitter:description" content="This blog post is about machine learning techniques in live coding. I particularly focused on SuperCollider (SC3) and scikit-learn library for Python3. The main procedure was to send data over Open Sound Control (OSC) protocol, using pythonosc, and to analyze the data in Python3. The data analysis results are sending back to sclang in real-time for parameter control UGens.
+Description and order of execution The main idea is to get input of environmental sounds using a microphone (also input from speakers works fine), and to analyze the input based on Chromagram class from SC3."/>
+
+
+
+<meta itemprop="name" content="SC3 and scikit-learn">
+<meta itemprop="description" content="This blog post is about machine learning techniques in live coding. I particularly focused on SuperCollider (SC3) and scikit-learn library for Python3. The main procedure was to send data over Open Sound Control (OSC) protocol, using pythonosc, and to analyze the data in Python3. The data analysis results are sending back to sclang in real-time for parameter control UGens.
+Description and order of execution The main idea is to get input of environmental sounds using a microphone (also input from speakers works fine), and to analyze the input based on Chromagram class from SC3.">
+
+
+<meta itemprop="dateModified" content="2017-10-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="769">
+
+
+
+<meta itemprop="keywords" content="supercollider,OSC,python,scikit-learn,PCA," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     SC3 and scikit-learn 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://users.jyu.fi/~gediapou/hugo/">Georgios Diapoulis personal blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="http://users.jyu.fi/~gediapou/hugo/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="http://users.jyu.fi/~gediapou/hugo/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="http://users.jyu.fi/~gediapou/hugo/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="http://users.jyu.fi/~gediapou/hugo/publications/"><div class="nav-item-title">Publications</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:myemail"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/gewhere" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/aucotsi" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> SC3 and scikit-learn </h1>
+    <div class="content"> <p>This blog post is about machine learning techniques in live coding.  I particularly focused on SuperCollider (SC3) and scikit-learn library for Python3.  The main procedure was to send data over Open Sound Control (OSC) protocol, using <a href="https://pypi.python.org/pypi/python-osc" title="pythonosc">pythonosc</a>, and to analyze the data in Python3.  The data analysis results are sending back to sclang in real-time for parameter control UGens.</p>
+
+<h1 id="description-and-order-of-execution">Description and order of execution</h1>
+
+<p>The main idea is to get input of environmental sounds using a microphone (also input from speakers works fine), and to analyze the input based on <code>Chromagram</code> class from SC3.  The next step is to send the acoustical features to python via OSC.  The python script <code>chroma-server.py</code> is responsible to receive the data and to make the data analysis.  This is done by writing the raw data in the file <code>data.txt</code>.  The data analysis is based on <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.IncrementalPCA.html" title="IncrementalPCA">IncrementalPCA</a> algorithm.  When the analysis is finished <code>chroma-server.py</code> appends the results in <code>data-pca.txt</code>, and calls the <code>client-parasite.py</code> script which sends the data back to sclang.</p>
+
+<p>The script <code>client-parasite.py</code> is in the folder <code>./lib</code>.  The python home directory looks as follows:</p>
+
+<pre><code>
+$ tree -L 2
+.
+├── chroma-server.py
+├── data-pca.txt
+├── data.txt
+└── lib
+    ├── __init.py__
+    ├── __pycache__
+    └── client_parasite.py
+
+2 directories, 5 files
+htkl1303-01:askt opiskelija$
+</code></pre>
+
+<ul>
+*Order of execution*:
+<li>Run the script <code>chroma-server.py</code></li>
+<li>Run the code chunks in SC3</li>
+</ul>
+
+<h2 id="sclang">sclang</h2>
+
+<pre><code class="language-javascript">
+(
+SynthDef(\chroma,{
+	var in, fft, chroma, array;
+	in = SoundIn.ar(0); // dynamic mic
+	fft = FFT(LocalBuf(2048), in);
+	chroma = Chromagram.kr(fft);
+	//chroma.poll(1);
+	//in
+	12 do: { |i|
+		SendTrig.kr(Impulse.kr(8), i, chroma[i])
+	};
+}).add;
+)
+
+// send to python
+
+(
+o = OSCFunc({ arg msg, time;
+	b = NetAddr.new(&quot;127.0.0.1&quot;, 5005);    // create the NetAddr
+	b.sendMsg(&quot;/chroma&quot;, msg[2].asString, msg[3].asString);
+	//[msg[2], msg[3]].postln;
+},'/tr', s.addr);
+)
+
+o.free;
+
+x = Synth(\chroma) // start sending the synth data
+
+x.free
+
+thisProcess.openUDPPort(7007); // open port 12000 to rcv from p5
+
+thisProcess.openPorts; // list all open ports
+
+// start the sound to collect some data
+
+Ndef(\brg).fadeTime_(4)
+
+(
+Ndef('brg', { |pc1=2 pc2=2 pc3=3 pc4=4|
+	FreeVerb.ar(
+		Ringz.ar(
+			TGrains.ar(2, LFPulse.ar(pc1/pc3), Buffer.read(s, Platform.resourceDir ++ &quot;/sounds/a11wlk01.wav&quot;), Sweep.ar( x = LFPulse.ar(pc2/pc4)), x, Sweep.ar(x, pc3/pc4)
+			),
+			1390, 0.004
+		),
+		0.24, 0.11, 0.12
+	)
+}).play
+)
+
+// get the results of the analysis and control Ndef parameters
+
+(
+t = OSCFunc( { |msg, time, addr, recvPort|
+	var pca_data;
+	pca_data = clump(msg.asString.findRegexp(&quot;[0-9]+\.[0-9]+&quot;) collect: { |i| i[1] }, 4);    // 4 components
+	pca_data.postln;
+	Ndef(\brg).set(\pc1, pca_data[1][0].interpret, \pc2, pca_data[1][1].interpret, \pc3, pca_data[1][2].interpret, \pc4, pca_data[1][3].interpret);
+}, '/components');
+)
+
+t.free;
+
+Ndef(\brg).clear(2)
+
+</code></pre>
+
+<h2 id="python-3">python 3</h2>
+
+<h3 id="chroma-server-py"><code>chroma-server.py</code></h3>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;
+Live coding session
+The script receives Chromagram data from SC3 and writes the raw data to 'data.txt'.  Then it writes a file called 'data-pca.txt' with the PCA results.
+&quot;&quot;&quot;
+import argparse
+import math
+import os
+import lib.client_parasite
+
+import numpy as np
+from sklearn.decomposition import PCA
+from sklearn.decomposition import IncrementalPCA
+from sklearn.feature_selection import VarianceThreshold
+
+from pythonosc import dispatcher
+from pythonosc import osc_server
+
+def print_volume_handler(unused_addr, args, volume):
+  print(&quot;[{0}] ~ {1}&quot;.format(args[0], volume))
+
+def print_compute_handler(unused_addr, args, volume):
+  try:
+    print(&quot;[{0}] ~ {1}&quot;.format(args[0], args[1](volume)))
+  except ValueError: pass
+
+def fw_pca(explained_variance, singular_values): #, features):
+  f = open('data-pca.txt', 'a')
+  data_array = explained_variance + '\n' +  singular_values + '\n'
+  f.write(data_array)
+  f.close()
+
+def pca(fname):
+  d = {}
+  for x in range(0,12):
+    d[&quot;val{0}&quot;.format(x)] = 0
+  data_array = []
+  with open(fname) as f:
+    content = f.readlines()
+  content = [x.strip() for x in content]
+  #print('CONTENT: ', content)
+  #print('CONTENT_SIZE: ', len(content))
+  for elem in content:
+    for i in range(0,12):
+      if elem[0] == str(i) and elem[1] == ':':
+        d['val'+str(i)] = elem.lstrip(str(i)+':').strip()
+      elif elem[1] == '0':
+        d['val10'] = elem.lstrip('10:').strip()
+      elif elem[1] == '1':
+        d['val11'] = elem.lstrip('11:').strip()
+    data_array.append([d['val0'], d['val1'], d['val2'], d['val3'], d['val4'], d['val5'], d['val6'], d['val6'], d['val7'], d['val8'], d['val9'], d['val10'], d['val11']])
+#print('DATA_ARRAY_SIZE: ', len(data_array))
+  try:
+    X = np.array(data_array)
+    mypca = IncrementalPCA(n_components=4, batch_size=4320)
+    mypca.fit(X)
+    print(mypca.explained_variance_ratio_)
+    print(mypca.singular_values_)
+    lib.client_parasite.read_pca_data(str(mypca.explained_variance_ratio_),str(mypca.singular_values_))
+  except:
+    pass
+  return fw_pca(str(mypca.explained_variance_ratio_), str(mypca.singular_values_))
+
+
+def write_chroma(unused_addr, args, data):
+  if args[0] is not None:
+    chromadata = &quot;{}: {}\n&quot;.format(args, data)
+    f = open('data.txt', 'a')
+    f.write(chromadata)  # python will convert \n to os.linesep
+    f.close()
+    with open('data.txt') as fn: # readlines in every entry
+      for i, l in enumerate(fn):
+        pass
+      lines = i + 1
+      if lines % 360 == 0: # n_features=12 * 5
+        pca('data.txt')
+        target = open('data.txt', 'w')
+        target.truncate()
+      return print(lines)
+
+if __name__ == &quot;__main__&quot;:
+  parser = argparse.ArgumentParser()
+  parser.add_argument(&quot;--ip&quot;,
+                      default=&quot;127.0.0.1&quot;, help=&quot;The ip to listen on&quot;)
+  parser.add_argument(&quot;--port&quot;,
+                      type=int, default=5005, help=&quot;The port to listen on&quot;)
+  args = parser.parse_args()
+
+  dispatcher = dispatcher.Dispatcher()
+  dispatcher.map(&quot;/chroma&quot;, print)
+  dispatcher.map(&quot;/chroma&quot;, write_chroma)
+
+  server = osc_server.ThreadingOSCUDPServer(
+    (args.ip, args.port), dispatcher)
+  print(&quot;Serving on {}&quot;.format(server.server_address))
+  server.serve_forever()
+
+</code></pre>
+
+<h3 id="client-parasite-py"><code>client-parasite.py</code></h3>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;
+The script reads the data-pca.txt and replies to SC3
+&quot;&quot;&quot;
+import argparse
+import numpy as np
+
+from pythonosc import osc_message_builder
+from pythonosc import udp_client
+
+def read_pca_data(first, second):
+  parser = argparse.ArgumentParser()
+  parser.add_argument(&quot;--ip&quot;, default=&quot;127.0.0.1&quot;,
+                      help=&quot;The ip of the OSC server&quot;)
+  parser.add_argument(&quot;--port&quot;, type=int, default=7007,
+                       help=&quot;The port the OSC server is listening on&quot;)
+  args = parser.parse_args()
+  client = udp_client.SimpleUDPClient(args.ip, args.port)
+  return client.send_message(&quot;/components&quot;, str([first, second]))
+
+</code></pre>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="http://users.jyu.fi/~gediapou/hugo/tags/supercollider">#supercollider</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://users.jyu.fi/~gediapou/hugo/tags/osc">#OSC</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://users.jyu.fi/~gediapou/hugo/tags/python">#python</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://users.jyu.fi/~gediapou/hugo/tags/scikit-learn">#scikit-learn</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://users.jyu.fi/~gediapou/hugo/tags/pca">#PCA</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Oct 13, 2017 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:myemail"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/gewhere" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/aucotsi" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://users.jyu.fi/~gediapou/hugo/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2017, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

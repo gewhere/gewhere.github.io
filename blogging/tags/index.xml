@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Georgios Diapoulis personal blog</title>
+    <link>http://users.jyu.fi/~gediapou/hugo/tags/</link>
+    <description>Recent content in Tags on Georgios Diapoulis personal blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2017, all rights reserved.</copyright>
+    <lastBuildDate>Thu, 12 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://users.jyu.fi/~gediapou/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/tags/hugo/</link>
+      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Orgmode</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/tags/orgmode/</link>
+      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/tags/orgmode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Osc</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/tags/osc/</link>
+      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/tags/osc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pca</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/tags/pca/</link>
+      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/tags/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/tags/python/</link>
+      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scikit Learn</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/tags/scikit-learn/</link>
+      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/tags/scikit-learn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Supercollider</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/tags/supercollider/</link>
+      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/tags/supercollider/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

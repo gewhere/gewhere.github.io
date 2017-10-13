@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Supercollider on Georgios Diapoulis personal blog</title>
+    <link>http://users.jyu.fi/~gediapou/hugo/tags/supercollider/</link>
+    <description>Recent content in Supercollider on Georgios Diapoulis personal blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2017, all rights reserved.</copyright>
+    <lastBuildDate>Fri, 13 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://users.jyu.fi/~gediapou/hugo/tags/supercollider/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SC3 and scikit-learn</title>
+      <link>http://users.jyu.fi/~gediapou/hugo/2017/10/13/sc3-and-scikit-learn/</link>
+      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://users.jyu.fi/~gediapou/hugo/2017/10/13/sc3-and-scikit-learn/</guid>
+      <description>This blog post is about machine learning techniques in live coding. I particularly focused on SuperCollider (SC3) and scikit-learn library for Python3. The main procedure was to send data over Open Sound Control (OSC) protocol, using pythonosc, and to analyze the data in Python3. The data analysis results are sending back to sclang in real-time for parameter control UGens.
+Description and order of execution The main idea is to get input of environmental sounds using a microphone (also input from speakers works fine), and to analyze the input based on Chromagram class from SC3.</description>
+    </item>
+    
+  </channel>
+</rss>
