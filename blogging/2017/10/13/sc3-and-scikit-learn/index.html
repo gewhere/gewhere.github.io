@@ -44,7 +44,7 @@ Description and order of execution The main idea is to get input of environmenta
 
 
 <meta itemprop="dateModified" content="2017-10-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="769">
+<meta itemprop="wordCount" content="777">
 
 
 
@@ -142,7 +142,6 @@ $ tree -L 2
     └── client_parasite.py
 
 2 directories, 5 files
-htkl1303-01:askt opiskelija$
 </code></pre>
 
 <ul>
@@ -228,8 +227,8 @@ Ndef(\brg).clear(2)
 
 <pre><code class="language-python">
 &quot;&quot;&quot;
-Live coding session
-The script receives Chromagram data from SC3 and writes the raw data to 'data.txt'.  Then it writes a file called 'data-pca.txt' with the PCA results.
+Live coding session with machine learning.
+The script receives Chromagram data from SC3 and writes the raw data from onsets analysis to 'data.txt', and then it writes a file called 'data-pca.txt' with the iPCA results
 &quot;&quot;&quot;
 import argparse
 import math
@@ -237,9 +236,9 @@ import os
 import lib.client_parasite
 
 import numpy as np
-from sklearn.decomposition import PCA
+#np.set_printoptions(threshold=np.nan)
 from sklearn.decomposition import IncrementalPCA
-from sklearn.feature_selection import VarianceThreshold
+from scipy import stats
 
 from pythonosc import dispatcher
 from pythonosc import osc_server
@@ -271,24 +270,25 @@ def pca(fname):
   for elem in content:
     for i in range(0,12):
       if elem[0] == str(i) and elem[1] == ':':
-        d['val'+str(i)] = elem.lstrip(str(i)+':').strip()
+        d['val'+str(i)] = float(elem.lstrip(str(i)+':').strip())
       elif elem[1] == '0':
-        d['val10'] = elem.lstrip('10:').strip()
+        d['val10'] = float(elem.lstrip('10:').strip())
       elif elem[1] == '1':
-        d['val11'] = elem.lstrip('11:').strip()
-    data_array.append([d['val0'], d['val1'], d['val2'], d['val3'], d['val4'], d['val5'], d['val6'], d['val6'], d['val7'], d['val8'], d['val9'], d['val10'], d['val11']])
+        d['val11'] = float(elem.lstrip('11:').strip())
+    data_array.append([d['val0'], d['val1'], d['val2'], d['val3'], d['val4'], d['val5'], d['val6'], d['val7'], d['val8'], d['val9'], d['val10'], d['val11']])
 #print('DATA_ARRAY_SIZE: ', len(data_array))
   try:
     X = np.array(data_array)
+    #print('X = ', X)
+    Y = stats.zscore(X)
     mypca = IncrementalPCA(n_components=4, batch_size=4320)
-    mypca.fit(X)
+    mypca.fit(Y)
     print(mypca.explained_variance_ratio_)
     print(mypca.singular_values_)
     lib.client_parasite.read_pca_data(str(mypca.explained_variance_ratio_),str(mypca.singular_values_))
   except:
     pass
   return fw_pca(str(mypca.explained_variance_ratio_), str(mypca.singular_values_))
-
 
 def write_chroma(unused_addr, args, data):
   if args[0] is not None:
