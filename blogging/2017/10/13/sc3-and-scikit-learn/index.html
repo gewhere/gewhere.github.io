@@ -44,7 +44,7 @@ Description and order of execution The main idea is to get input of environmenta
 
 
 <meta itemprop="dateModified" content="2017-10-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="777">
+<meta itemprop="wordCount" content="772">
 
 
 
@@ -162,7 +162,7 @@ SynthDef(\chroma,{
 	//chroma.poll(1);
 	//in
 	12 do: { |i|
-		SendTrig.kr(Impulse.kr(8), i, chroma[i])
+		SendTrig.kr(Impulse.kr(2), i, chroma[i])
 	};
 }).add;
 )
@@ -279,7 +279,7 @@ def pca(fname):
 #print('DATA_ARRAY_SIZE: ', len(data_array))
   try:
     X = np.array(data_array)
-    #print('X = ', X)
+    print('X = ', X)
     Y = stats.zscore(X)
     mypca = IncrementalPCA(n_components=4, batch_size=4320)
     mypca.fit(Y)
@@ -289,6 +289,7 @@ def pca(fname):
   except:
     pass
   return fw_pca(str(mypca.explained_variance_ratio_), str(mypca.singular_values_))
+
 
 def write_chroma(unused_addr, args, data):
   if args[0] is not None:
@@ -302,8 +303,6 @@ def write_chroma(unused_addr, args, data):
       lines = i + 1
       if lines % 360 == 0: # n_features=12 * 5
         pca('data.txt')
-        target = open('data.txt', 'w')
-        target.truncate()
       return print(lines)
 
 if __name__ == &quot;__main__&quot;:
