@@ -44,7 +44,7 @@ Description and order of execution The main idea is to get input of environmenta
 
 
 <meta itemprop="dateModified" content="2017-10-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="809">
+<meta itemprop="wordCount" content="789">
 
 
 
@@ -150,9 +150,9 @@ $ tree -L 2
 <li>Run the code chunks in SC3</li>
 </ul>
 
-<p><span style="text-decoration: underline;">IMPORTANT NOTICE:</span> For applying Incremental PCA we have to keep records of the full data set.  As such, the 'data.txt' is getting bigger and bigger.  Than makes the computations CPU intensive.  Pay attention to Python CPU percentage!</p>
+<p><span style="text-decoration: underline;">IMPORTANT NOTICE:</span> For applying <a href="http://scikit-learn.org/stable/modules/decomposition.html#incremental-pca" title="Incremental PCA">Incremental PCA</a> we have to keep records of the full data set.  As such, the 'data.txt' is getting bigger and bigger.  Than makes the computations CPU intensive.  Pay attention to Python CPU percentage!</p>
 
-<h2 id="sclang">SCLANG</h2>
+<h2 id="sclang">sclang</h2>
 
 <pre><code class="language-javascript">
 (
@@ -172,8 +172,8 @@ SynthDef(\chroma,{
 // send to python
 
 (
+b = NetAddr.new(&quot;127.0.0.1&quot;, 5005);    // create the NetAddr
 o = OSCFunc({ arg msg, time;
-	b = NetAddr.new(&quot;127.0.0.1&quot;, 5005);    // create the NetAddr
 	b.sendMsg(&quot;/chroma&quot;, msg[2].asString, msg[3].asString);
 	//[msg[2], msg[3]].postln;
 },'/tr', s.addr);
@@ -244,14 +244,6 @@ from scipy import stats
 
 from pythonosc import dispatcher
 from pythonosc import osc_server
-
-def print_volume_handler(unused_addr, args, volume):
-  print(&quot;[{0}] ~ {1}&quot;.format(args[0], volume))
-
-def print_compute_handler(unused_addr, args, volume):
-  try:
-    print(&quot;[{0}] ~ {1}&quot;.format(args[0], args[1](volume)))
-  except ValueError: pass
 
 def fw_pca(explained_variance, singular_values): #, features):
   f = open('data-pca.txt', 'a')
