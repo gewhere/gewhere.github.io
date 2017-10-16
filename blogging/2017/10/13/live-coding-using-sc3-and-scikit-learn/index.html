@@ -286,7 +286,7 @@ def pca(fname):
     X = np.array(data_array)
     print('X = ', X)
     Y = stats.zscore(X)
-    mypca = IncrementalPCA(n_components=4, batch_size=4320)
+    mypca = IncrementalPCA(n_components=4, batch_size=None)
     mypca.fit(Y)
     print(mypca.explained_variance_ratio_)
     print(mypca.singular_values_)
