@@ -44,7 +44,7 @@ Description and order of execution The main idea is to get input of environmenta
 
 
 <meta itemprop="dateModified" content="2017-10-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="847">
+<meta itemprop="wordCount" content="851">
 
 
 
@@ -286,7 +286,7 @@ def pca(fname):
     X = np.array(data_array)
     print('X = ', X)
     Y = stats.zscore(X)
-    mypca = IncrementalPCA(n_components=4, batch_size=None)
+    mypca = IncrementalPCA(n_components=4, batch_size=None) # configure batch size
     mypca.fit(Y)
     print(mypca.explained_variance_ratio_)
     print(mypca.singular_values_)
