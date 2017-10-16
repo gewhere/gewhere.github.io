@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Orgmode on Georgios Diapoulis personal blog</title>
-    <link>http://gewhere.github.io/blogging/tags/orgmode/</link>
+    <link>http://gewhere.github.io/blog/tags/orgmode/</link>
     <description>Recent content in Orgmode on Georgios Diapoulis personal blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Licence CC BY-SA 4.0</copyright>
     <lastBuildDate>Mon, 16 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gewhere.github.io/blogging/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gewhere.github.io/blog/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using python to call different code blocks in babel</title>
-      <link>http://gewhere.github.io/blogging/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</link>
+      <link>http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</link>
       <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gewhere.github.io/blogging/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</guid>
+      <guid>http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</guid>
       <description>This entry has two main ways to call different code blocks from babel. The first example is based on an example from Eric Shulte org-scraps using session header argument and the second is based on a noweb example that I found here. Also, the last example shows how to call a named code block using #+CALL.
 Persistent python Import modules from scikit-learn library using untitled session header argument. The example below shows the raw orgmode content.</description>
     </item>
     
     <item>
       <title>Moving to Hugo</title>
-      <link>http://gewhere.github.io/blogging/2017/10/12/moving-to-hugo/</link>
+      <link>http://gewhere.github.io/blog/2017/10/12/moving-to-hugo/</link>
       <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gewhere.github.io/blogging/2017/10/12/moving-to-hugo/</guid>
+      <guid>http://gewhere.github.io/blog/2017/10/12/moving-to-hugo/</guid>
       <description>This blog entry provide information about the setup of a Hugo blog using orgmode. Hugo has been established in the field of static websites and blogs. It is based on Go programming language. The user is writing her posts in Markdown which makes it easy to use. I decided to quit Jekyll (and particular org2jekyll) and to begin a new blog using Hugo &amp; orgmode. Hugo has a large collection of templates, and the present template is called hugo-dusk.</description>
     </item>
     
