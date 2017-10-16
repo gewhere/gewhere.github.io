@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Georgios Diapoulis" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.29" />
+
+<link rel="canonical" href="http://gewhere.github.io/blogging/2017/10/12/moving-to-hugo/">
+<base href="http://gewhere.github.io/blogging/" />
+<meta property="og:title" content="Moving to Hugo" />
+<meta property="og:description" content="This blog entry provide information about the setup of a Hugo blog using orgmode. Hugo has been established in the field of static websites and blogs. It is based on Go programming language. The user is writing her posts in Markdown which makes it easy to use. I decided to quit Jekyll (and particular org2jekyll) and to begin a new blog using Hugo & orgmode. Hugo has a large collection of templates, and the present template is called hugo-dusk." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gewhere.github.io/blogging/2017/10/12/moving-to-hugo/" />
+
+
+
+<meta property="article:published_time" content="2017-10-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-12T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Moving to Hugo"/>
+<meta name="twitter:description" content="This blog entry provide information about the setup of a Hugo blog using orgmode. Hugo has been established in the field of static websites and blogs. It is based on Go programming language. The user is writing her posts in Markdown which makes it easy to use. I decided to quit Jekyll (and particular org2jekyll) and to begin a new blog using Hugo & orgmode. Hugo has a large collection of templates, and the present template is called hugo-dusk."/>
+
+
+
+<meta itemprop="name" content="Moving to Hugo">
+<meta itemprop="description" content="This blog entry provide information about the setup of a Hugo blog using orgmode. Hugo has been established in the field of static websites and blogs. It is based on Go programming language. The user is writing her posts in Markdown which makes it easy to use. I decided to quit Jekyll (and particular org2jekyll) and to begin a new blog using Hugo & orgmode. Hugo has a large collection of templates, and the present template is called hugo-dusk.">
+
+
+<meta itemprop="dateModified" content="2017-10-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="680">
+
+
+
+<meta itemprop="keywords" content="hugo,orgmode," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Moving to Hugo 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://gewhere.github.io/blogging/">Georgios Diapoulis personal blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="http://gewhere.github.io/blogging/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="http://gewhere.github.io/blogging/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="http://gewhere.github.io/blogging/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="http://gewhere.github.io/blogging/publications/"><div class="nav-item-title">Publications</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:gediapou@student.cc.jyu.fi"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/gewhere" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/aucotsi" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Moving to Hugo </h1>
+    <div class="content"> <p>This blog entry provide information about the setup of a <a href="https://gohugo.io/" title="Hugo">Hugo</a> blog using <a href="http://orgmode.org/" title="orgmode">orgmode</a>.  Hugo has been established in the field of static websites and blogs.  It is based on <a href="http://golang.org/" title="Go programming language">Go programming language</a>.  The user is writing her posts in <a href="https://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a> which makes it easy to use.  I decided to quit <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a> (and particular <a href="https://github.com/ardumont/org2jekyll" title="org2jekyll">org2jekyll</a>) and to begin a new blog using Hugo & orgmode.  Hugo has a large <a href="https://github.com/gohugoio/hugoThemes" title="collection of templates">collection of templates</a>, and the present template is called <a href="https://themes.gohugo.io/hugo-dusk/" title="hugo-dusk">hugo-dusk</a>.</p>
+
+<h1 id="start-a-hugo-blog-using-orgmode">Start a Hugo blog using orgmode</h1>
+
+<p>The first step is to make the home folder of your blog, let's say this is called <em>blogging</em>.  In your blog home directory (<code>BLOGHOMEDIR</code>) you have to make a directory called <code>themes</code>, and to clone the template of your choice.</p>
+
+<pre><code>
+$ mkdir ~/blogging
+$ BLOGHOMEDIR=~/blogging
+$ cd $BLOGHOMEDIR
+$ mkdir themes
+$ cd themes
+$ git clone https://github.com/gyorb/hugo-dusk
+</code></pre>
+
+<h2 id="basic-structure-of-hugo">Basic structure of Hugo</h2>
+
+<ol>
+In your <code>BLOGHOMEDIR</code> you need the followings:
+<li><code>config.toml</code></li>
+<li><code>$BLOGHOMEDIR/content/post</code> folders to write your blog posts</li>
+<li><code>$BLOGHOMEDIR/themes/&lt;template&gt;</code> folder</li>
+</ol>
+
+<p>In principle, you should copy the contents of the <code>$BLOGHOMEDIR/themes/&lt;template&gt;/exampleSite</code> in your <code>BLOGHOMEDIR</code>.  Hugo gives precedence to any files that are placed in your <code>BLOGHOMEDIR</code>, given that the basis is the <code>$BLOGHOMEDIR/themes/&lt;template&gt;</code>.  So, <em>if you would like to use the builtin functionality of the template you need to do only the 3 steps as described above</em>.  The <strong>directory structure</strong> of Hugo is explained <a href="https://gohugo.io/getting-started/directory-structure/#directory-structure-explained" title="here">here</a>.</p>
+
+<p>My directory structure looks as below:</p>
+
+<pre><code class="language-sh">
+cd $BLOGHOMEDIR &amp;&amp; tree -L 3
+</code></pre>
+
+<pre><code>
+.
+├── archetypes
+├── config.toml
+├── content
+│   ├── about.org
+│   └── post
+│       └── moving-to-hugo.org
+├── data
+├── layouts
+├── static
+└── themes
+    └── hugo-dusk
+        ├── LICENSE.md
+        ├── README.md
+        ├── archetypes
+        ├── exampleSite
+        ├── images
+        ├── layouts
+        ├── static
+        └── theme.toml
+
+13 directories, 6 files
+</code></pre>
+
+<h2 id="browse-your-blog">Browse your blog</h2>
+
+<pre><code>
+$ cd $BLOGHOMEDIR &amp;&amp; hugo server -D
+</code></pre>
+
+<p>Open your browser and go to this address <span style="text-decoration: underline;">http://localhost:55400/~gediapou/hugo/</span>.  Hugo by default open the port 1313, but in my case this is in use.</p>
+
+<pre><code>
+ERROR 2017/10/12 16:52:08 port 1313 already in use, attempting to use an available port
+Started building sites ...
+
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+2 regular pages created
+12 other pages created
+0 non-page files copied
+1 paginator pages created
+0 categories created
+2 tags created
+total in 37 ms
+Watching for changes in /Users/opiskelija/hugo/blogging/{data,content,layouts,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:55400/~gediapou/hugo/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre>
+
+<h2 id="my-config-toml">My <code>config.toml</code></h2>
+
+<pre><code>
+baseURL = &quot;http://users.jyu.fi/~gediapou/hugo/&quot;
+title = &quot;Georgios Diapoulis blog&quot;
+copyright = &quot;Copyright (c) 2017, all rights reserved.&quot;
+canonifyurls = true
+languageCode = &quot;en-US&quot;
+paginate = 3
+theme = &quot;hugo-dusk&quot;
+
+googleAnalytics = &quot;&quot;
+disqusShortname = &quot;&quot;
+
+[author]
+  name = &quot;Georgios Diapoulis&quot;
+
+SectionPagesMenu = &quot;main&quot;
+
+[permalinks]
+post = &quot;/:year/:month/:day/:title/&quot;
+
+[[menu.main]]
+  name = &quot;Posts&quot;
+  weight = -120
+  identifier = &quot;post&quot;
+  url = &quot;/post/&quot;
+
+[[menu.main]]
+  name = &quot;Tags&quot;
+  weight = -110
+  identifier = &quot;tag&quot;
+  url = &quot;/tags/&quot;
+
+[params.meta]
+  keywords = &quot;blog, tech&quot;
+  description = &quot;Personal blog.&quot;
+
+[params]
+  github = &quot;gewhere&quot;
+  twitter = &quot;aucotsi&quot;
+  email = &quot;myemail&quot;
+</code></pre>
+
+<h2 id="how-this-org-file-looks-like">How this org file looks like</h2>
+
+<pre><code>
+#+TITLE: Moving to Hugo
+#+DATE: 2017-10-12
+#+TAGS: hugo orgmode
+
+
+
+This blog entry provide information about the setup of a [[https://gohugo.io/][Hugo]] blog using [[http://orgmode.org/][orgmode]].  Hugo has been established in the field of static websites and blogs.  It is based on [[http://golang.org/][Go programming language]].  The user is writing her posts in [[https://daringfireball.net/projects/markdown/][Markdown]] which makes it easy to use.  I decided to quit [[https://jekyllrb.com/][Jekyll]] (and particular [[https://github.com/ardumont/org2jekyll][org2jekyll]]) and to begin a new blog using Hugo &amp; orgmode.  Hugo has a large [[https://github.com/gohugoio/hugoThemes][collection of templates]], and the present template is called [[https://themes.gohugo.io/hugo-dusk/][hugo-dusk]].
+
+
+* Start a Hugo blog using orgmode
+The first step is to make the home folder of your blog, let's say this is called /blogging/.  In your blog home directory (=BLOGHOMEDIR=) you have to make a directory called =themes=, and to clone the template of your choice.
+</code></pre>
+
+<h2 id="deploy-your-website-to-the-server">Deploy your website to the server</h2>
+
+<p>Hugo creates static websites.  All you have to do is to execute <code>hugo</code> and copy the content of <code>$BLOGHOMEDIR/public/</code> directory to the server.</p>
+
+<ul>
+<li>Render your static website: <code>$ cd $BLOGHOMEDIR &amp;&amp; hugo</code></li>
+<li>Upload to server: <code>$ rsync -avz $BLOGHOMEDIR/public/* username@servername.address:/path/to/folder/</code></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blogging/tags/hugo">#hugo</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blogging/tags/orgmode">#orgmode</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Oct 12, 2017 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:gediapou@student.cc.jyu.fi"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/gewhere" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/aucotsi" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://gewhere.github.io/blogging/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Licence CC BY-SA 4.0 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+

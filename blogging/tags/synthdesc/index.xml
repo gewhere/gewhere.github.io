@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Synthdesc on Georgios Diapoulis personal blog</title>
+    <link>http://gewhere.github.io/blogging/tags/synthdesc/</link>
+    <description>Recent content in Synthdesc on Georgios Diapoulis personal blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Licence CC BY-SA 4.0</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gewhere.github.io/blogging/tags/synthdesc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Print SynthDef list using SynthDescLib</title>
+      <link>http://gewhere.github.io/blogging/2017/10/15/print-synthdef-list-using-synthdesclib/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://gewhere.github.io/blogging/2017/10/15/print-synthdef-list-using-synthdesclib/</guid>
+      <description>The following code chunks print the full list of the synth defitions (SynthDef) that are loaded in the server. A Synthdef is the client side representation of a synth on the server-side.
+SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.associationsDo { |assoc| var name = assoc.key, code = assoc.value.def.func.def.sourceCode; code.notNil.if { &amp;quot;&amp;quot;.postln; name.post; &amp;quot;: &amp;quot;.postln; code.postln; }; }; &amp;quot;&amp;quot;; ) ( SynthDescLib.global.synthDescs.do { |desc| if(desc.def.notNil) { &amp;quot;\nSynthDef %\n&amp;quot;.postf(desc.name.asCompileString); desc.def.func.postcs; }; }; &amp;quot;&amp;quot; // this prevents the synthDescs collection from posting )  </description>
+    </item>
+    
+  </channel>
+</rss>
