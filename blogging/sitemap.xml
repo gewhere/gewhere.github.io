@@ -3,87 +3,121 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/2017/10/13/sc3-and-scikit-learn/</loc>
+    <loc>http://gewhere.github.io/blogging/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gewhere.github.io/blogging/2017/10/15/print-synthdef-list-using-synthdesclib/</loc>
+    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gewhere.github.io/blogging/2017/10/13/sc3-and-scikit-learn/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/about/</loc>
+    <loc>http://gewhere.github.io/blogging/about/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/2017/10/12/moving-to-hugo/</loc>
+    <loc>http://gewhere.github.io/blogging/2017/10/12/moving-to-hugo/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/publications/</loc>
+    <loc>http://gewhere.github.io/blogging/publications/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/categories/</loc>
+    <loc>http://gewhere.github.io/blogging/tags/babel/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/</loc>
-    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <loc>http://gewhere.github.io/blogging/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/hugo/</loc>
+    <loc>http://gewhere.github.io/blogging/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gewhere.github.io/blogging/tags/hugo/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/orgmode/</loc>
-    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <loc>http://gewhere.github.io/blogging/tags/noweb/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/osc/</loc>
+    <loc>http://gewhere.github.io/blogging/tags/orgmode/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gewhere.github.io/blogging/tags/osc/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/pca/</loc>
+    <loc>http://gewhere.github.io/blogging/tags/pca/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/post/</loc>
+    <loc>http://gewhere.github.io/blogging/post/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gewhere.github.io/blogging/tags/python/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gewhere.github.io/blogging/tags/scikit-learn/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/python/</loc>
+    <loc>http://gewhere.github.io/blogging/tags/supercollider/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/scikit-learn/</loc>
-    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <loc>http://gewhere.github.io/blogging/tags/synthdef/</loc>
+    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/supercollider/</loc>
-    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+    <loc>http://gewhere.github.io/blogging/tags/synthdesc/</loc>
+    <lastmod>2017-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://users.jyu.fi/~gediapou/hugo/tags/</loc>
-    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <loc>http://gewhere.github.io/blogging/tags/</loc>
+    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

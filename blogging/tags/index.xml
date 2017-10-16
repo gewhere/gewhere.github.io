@@ -2,76 +2,112 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Georgios Diapoulis personal blog</title>
-    <link>http://users.jyu.fi/~gediapou/hugo/tags/</link>
+    <link>http://gewhere.github.io/blogging/tags/</link>
     <description>Recent content in Tags on Georgios Diapoulis personal blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>Copyright (c) 2017, all rights reserved.</copyright>
-    <lastBuildDate>Thu, 12 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <copyright>Licence CC BY-SA 4.0</copyright>
+    <lastBuildDate>Mon, 16 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://users.jyu.fi/~gediapou/hugo/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gewhere.github.io/blogging/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Babel</title>
+      <link>http://gewhere.github.io/blogging/tags/babel/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://gewhere.github.io/blogging/tags/babel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo</title>
-      <link>http://users.jyu.fi/~gediapou/hugo/tags/hugo/</link>
+      <link>http://gewhere.github.io/blogging/tags/hugo/</link>
       <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://users.jyu.fi/~gediapou/hugo/tags/hugo/</guid>
+      <guid>http://gewhere.github.io/blogging/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Noweb</title>
+      <link>http://gewhere.github.io/blogging/tags/noweb/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://gewhere.github.io/blogging/tags/noweb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Orgmode</title>
-      <link>http://users.jyu.fi/~gediapou/hugo/tags/orgmode/</link>
-      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      <link>http://gewhere.github.io/blogging/tags/orgmode/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://users.jyu.fi/~gediapou/hugo/tags/orgmode/</guid>
+      <guid>http://gewhere.github.io/blogging/tags/orgmode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Osc</title>
-      <link>http://users.jyu.fi/~gediapou/hugo/tags/osc/</link>
+      <link>http://gewhere.github.io/blogging/tags/osc/</link>
       <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://users.jyu.fi/~gediapou/hugo/tags/osc/</guid>
+      <guid>http://gewhere.github.io/blogging/tags/osc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pca</title>
-      <link>http://users.jyu.fi/~gediapou/hugo/tags/pca/</link>
+      <link>http://gewhere.github.io/blogging/tags/pca/</link>
       <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://users.jyu.fi/~gediapou/hugo/tags/pca/</guid>
+      <guid>http://gewhere.github.io/blogging/tags/pca/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>http://users.jyu.fi/~gediapou/hugo/tags/python/</link>
-      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      <link>http://gewhere.github.io/blogging/tags/python/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://users.jyu.fi/~gediapou/hugo/tags/python/</guid>
+      <guid>http://gewhere.github.io/blogging/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scikit Learn</title>
-      <link>http://users.jyu.fi/~gediapou/hugo/tags/scikit-learn/</link>
+      <link>http://gewhere.github.io/blogging/tags/scikit-learn/</link>
       <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://users.jyu.fi/~gediapou/hugo/tags/scikit-learn/</guid>
+      <guid>http://gewhere.github.io/blogging/tags/scikit-learn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Supercollider</title>
-      <link>http://users.jyu.fi/~gediapou/hugo/tags/supercollider/</link>
+      <link>http://gewhere.github.io/blogging/tags/supercollider/</link>
       <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://users.jyu.fi/~gediapou/hugo/tags/supercollider/</guid>
+      <guid>http://gewhere.github.io/blogging/tags/supercollider/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthdef</title>
+      <link>http://gewhere.github.io/blogging/tags/synthdef/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://gewhere.github.io/blogging/tags/synthdef/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synthdesc</title>
+      <link>http://gewhere.github.io/blogging/tags/synthdesc/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://gewhere.github.io/blogging/tags/synthdesc/</guid>
       <description></description>
     </item>
     
