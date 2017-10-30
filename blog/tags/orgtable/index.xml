@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Babel on Georgios Diapoulis personal blog</title>
-    <link>http://gewhere.github.io/blog/tags/babel/</link>
-    <description>Recent content in Babel on Georgios Diapoulis personal blog</description>
+    <title>Orgtable on Georgios Diapoulis personal blog</title>
+    <link>http://gewhere.github.io/blog/tags/orgtable/</link>
+    <description>Recent content in Orgtable on Georgios Diapoulis personal blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>This work is licensed under a Creative Commons Attribution 3.0 Unported License unless otherwise noted.</copyright>
     <lastBuildDate>Sat, 28 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gewhere.github.io/blog/tags/babel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gewhere.github.io/blog/tags/orgtable/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       
       <guid>http://gewhere.github.io/blog/2017/10/28/get-rss-feed-entries-in-orgmode-from-orgtable/</guid>
       <description>Orgmode can read RSS feeds by calling the function org-feed-update-all. In this post I wrote a function that can read RSS entries from an orgmode table. Then it assigns these entries to the variable org-feed-alist. The basic idea is to manage my feeds list in a handy manner. My emacs init file is written in orgmode format, so I can edit my RSS feed entries in my init.org to add or remove entries in a convenient manner.</description>
-    </item>
-    
-    <item>
-      <title>Using python to call different code blocks in babel</title>
-      <link>http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</link>
-      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</guid>
-      <description>This entry has two main ways to call different code blocks from babel. The first example is based on an example from Eric Shulte org-scraps using session header argument and the second is based on a noweb example that I found here. Also, the last example shows how to call a named code block using #+CALL.
-Persistent python Import modules from scikit-learn library using untitled session header argument. The example below shows the raw orgmode content.</description>
     </item>
     
   </channel>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Georgios Diapoulis" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.29" />
+
+<link rel="canonical" href="http://gewhere.github.io/blog/2017/10/28/get-rss-feed-entries-in-orgmode-from-orgtable/">
+<base href="http://gewhere.github.io/blog/" />
+<meta property="og:title" content="Get RSS feed entries in orgmode from orgtable" />
+<meta property="og:description" content="Orgmode can read RSS feeds by calling the function org-feed-update-all. In this post I wrote a function that can read RSS entries from an orgmode table. Then it assigns these entries to the variable org-feed-alist. The basic idea is to manage my feeds list in a handy manner. My emacs init file is written in orgmode format, so I can edit my RSS feed entries in my init.org to add or remove entries in a convenient manner." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://gewhere.github.io/blog/2017/10/28/get-rss-feed-entries-in-orgmode-from-orgtable/" />
+
+
+
+<meta property="article:published_time" content="2017-10-28T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-28T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Get RSS feed entries in orgmode from orgtable"/>
+<meta name="twitter:description" content="Orgmode can read RSS feeds by calling the function org-feed-update-all. In this post I wrote a function that can read RSS entries from an orgmode table. Then it assigns these entries to the variable org-feed-alist. The basic idea is to manage my feeds list in a handy manner. My emacs init file is written in orgmode format, so I can edit my RSS feed entries in my init.org to add or remove entries in a convenient manner."/>
+
+
+
+<meta itemprop="name" content="Get RSS feed entries in orgmode from orgtable">
+<meta itemprop="description" content="Orgmode can read RSS feeds by calling the function org-feed-update-all. In this post I wrote a function that can read RSS entries from an orgmode table. Then it assigns these entries to the variable org-feed-alist. The basic idea is to manage my feeds list in a handy manner. My emacs init file is written in orgmode format, so I can edit my RSS feed entries in my init.org to add or remove entries in a convenient manner.">
+
+
+<meta itemprop="dateModified" content="2017-10-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="324">
+
+
+
+<meta itemprop="keywords" content="orgmode,babel,orgtable,emacs-lisp,RSS," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/color-dark.css" />
+
+
+
+<title>
+
+
+     Get RSS feed entries in orgmode from orgtable 
+
+</title>
+
+<script src="js/highlight.min.js"></script>
+<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://gewhere.github.io/blog/">Georgios Diapoulis personal blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="http://gewhere.github.io/blog/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="http://gewhere.github.io/blog/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="http://gewhere.github.io/blog/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="http://gewhere.github.io/blog/publications/"><div class="nav-item-title">Publications</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:gediapou@student.cc.jyu.fi"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/gewhere" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/aucotsi" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Get RSS feed entries in orgmode from orgtable </h1>
+    <div class="content"> <p>Orgmode can read RSS feeds by calling the function <code>org-feed-update-all</code>.  In this post I wrote a function that can read RSS entries from an orgmode table.  Then it assigns these entries to the variable <code>org-feed-alist</code>.  The basic idea is to manage my feeds list in a handy manner.  <a href="http://gewhere.github.io/orgmode-emacs-init-file" title="My emacs init">My emacs init</a> file is written in orgmode format, so I can edit my RSS feed entries in my <code>init.org</code> to add or remove entries in a convenient manner.  Thus, the following code chunks are into my Emacs init file.</p>
+
+<h1 id="emacs-lisp-function-for-reading-the-table">Emacs lisp function for reading the table</h1>
+
+<h2 id="table-with-the-data">Table with the data</h2>
+
+<p>The variable <code>org-feed-alist</code> has four arguments: <code>name</code>, <code>URL</code>, <code>file</code>, <code>headline</code> (see <code>C-h v org-feed-alist</code> or <code>(describe-variable 'org-feed-alist)</code>).</p>
+
+<pre><code>
+#+NAME: table-rss
+| Music Perception        | http://mp.ucpress.edu/rss/current.xml                 | ~/rss/feeds.org | Music Perception - Current Issue |
+| Frontiers in Psychology | http://journal.frontiersin.org/journal/psychology/rss | ~/rss/feeds.org | Frontiers in Psychology          |
+| Nature Podcast          | http://feeds.nature.com/nature/podcast/current        | ~/rss/feeds.org | Nature Podcast                   |
+| Nature Journal          | http://feeds.nature.com/nature/rss/current            | ~/rss/feeds.org | Nature Journal - Current Issue   |
+
+</code></pre>
+
+<h2 id="read-entries-from-org-table">Read entries from org table</h2>
+
+<p>The following function <code>rss-feed</code> is based on this <a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/print_002delements_002dof_002dlist.html" title="example">example</a>.</p>
+
+<pre><code>
+  #+BEGIN_SRC emacs-lisp :session :results silent
+  (defun rss-feed (table)
+    &quot;Get RSS feed from the table and assign its contents to org-feed-alist.&quot;
+    (setq mylst nil)
+    (while table
+      (setq mylst (cons (car table) mylst))
+      (setq table (cdr table)))
+    (setq org-feed-alist mylst))
+  #+END_SRC
+</code></pre>
+
+<h2 id="call-elisp-function-rss-feed">Call elisp function <code>rss-feed</code></h2>
+
+<p>Run <code>rss-feed</code> function to set the value of the variable <code>org-feed-alist</code>.</p>
+
+<pre><code>
+  #+BEGIN_SRC emacs-lisp :session :var tbl=table-rss :results silent
+  (rss-feed tbl)
+  #+END_SRC
+
+</code></pre>
+
+<h2 id="update-rss-feed">Update RSS feed</h2>
+
+<p><code>M-x org-feed-update-all</code></p>
+
+<h2 id="general-discussion">General discussion</h2>
+
+<p>Orgmode RSS feed are not handy.  One major drawback is that there is no correspondence between published date and time of the feeds.  Instead org feeds contain the information of the retrieved date and time.  I also noticed that some RSS feeds are not compatible.  While, the orgfeeds are in orgmode document format, which gives plenty of opportunities, it seems the <a href="https://github.com/skeeto/elfeed" title="elfeed">elfeed</a> is more appropriate library for RSS feeds.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/orgmode">#orgmode</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/babel">#babel</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/orgtable">#orgtable</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/emacs-lisp">#emacs-lisp</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/rss">#RSS</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Oct 28, 2017 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:gediapou@student.cc.jyu.fi"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/gewhere" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/aucotsi" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://gewhere.github.io/blog/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> This work is licensed under a Creative Commons Attribution 3.0 Unported License unless otherwise noted. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</body>
+</html>
+
