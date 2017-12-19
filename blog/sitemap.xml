@@ -3,189 +3,189 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://gewhere.github.io/blogging/2017/12/19/setup-matlab-in-emacs-and-babel-orgmode/</loc>
+    <loc>http://gewhere.github.io/blog/2017/12/19/setup-matlab-in-emacs-and-babel-orgmode/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/2017/10/30/the-very-firsts-step-to-sc3/</loc>
+    <loc>http://gewhere.github.io/blog/2017/10/30/the-very-firsts-step-to-sc3/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/2017/10/28/get-rss-feed-entries-in-orgmode-from-orgtable/</loc>
+    <loc>http://gewhere.github.io/blog/2017/10/28/get-rss-feed-entries-in-orgmode-from-orgtable/</loc>
     <lastmod>2017-10-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</loc>
+    <loc>http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</loc>
     <lastmod>2017-10-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/2017/10/15/print-synthdef-list-using-synthdesclib/</loc>
+    <loc>http://gewhere.github.io/blog/2017/10/15/print-synthdef-list-using-synthdesclib/</loc>
     <lastmod>2017-10-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/2017/10/13/live-coding-using-sc3-and-scikit-learn/</loc>
+    <loc>http://gewhere.github.io/blog/2017/10/13/live-coding-using-sc3-and-scikit-learn/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/about/</loc>
+    <loc>http://gewhere.github.io/blog/about/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/2017/10/12/moving-to-hugo/</loc>
+    <loc>http://gewhere.github.io/blog/2017/10/12/moving-to-hugo/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/publications/</loc>
+    <loc>http://gewhere.github.io/blog/publications/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/babel/</loc>
+    <loc>http://gewhere.github.io/blog/tags/babel/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/categories/</loc>
+    <loc>http://gewhere.github.io/blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/emacs/</loc>
+    <loc>http://gewhere.github.io/blog/tags/emacs/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/emacs-lisp/</loc>
+    <loc>http://gewhere.github.io/blog/tags/emacs-lisp/</loc>
     <lastmod>2017-10-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/</loc>
+    <loc>http://gewhere.github.io/blog/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/hugo/</loc>
+    <loc>http://gewhere.github.io/blog/tags/hugo/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/live-coding/</loc>
+    <loc>http://gewhere.github.io/blog/tags/live-coding/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/mac/</loc>
+    <loc>http://gewhere.github.io/blog/tags/mac/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/matlab/</loc>
+    <loc>http://gewhere.github.io/blog/tags/matlab/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/ndef/</loc>
+    <loc>http://gewhere.github.io/blog/tags/ndef/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/noweb/</loc>
+    <loc>http://gewhere.github.io/blog/tags/noweb/</loc>
     <lastmod>2017-10-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/orgmode/</loc>
+    <loc>http://gewhere.github.io/blog/tags/orgmode/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/orgtable/</loc>
+    <loc>http://gewhere.github.io/blog/tags/orgtable/</loc>
     <lastmod>2017-10-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/osc/</loc>
+    <loc>http://gewhere.github.io/blog/tags/osc/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/pca/</loc>
+    <loc>http://gewhere.github.io/blog/tags/pca/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/post/</loc>
+    <loc>http://gewhere.github.io/blog/post/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/python/</loc>
+    <loc>http://gewhere.github.io/blog/tags/python/</loc>
     <lastmod>2017-10-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/rss/</loc>
+    <loc>http://gewhere.github.io/blog/tags/rss/</loc>
     <lastmod>2017-10-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/scikit-learn/</loc>
+    <loc>http://gewhere.github.io/blog/tags/scikit-learn/</loc>
     <lastmod>2017-10-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/supercollider/</loc>
+    <loc>http://gewhere.github.io/blog/tags/supercollider/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/synthdef/</loc>
+    <loc>http://gewhere.github.io/blog/tags/synthdef/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/synthdesc/</loc>
+    <loc>http://gewhere.github.io/blog/tags/synthdesc/</loc>
     <lastmod>2017-10-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/</loc>
+    <loc>http://gewhere.github.io/blog/tags/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gewhere.github.io/blogging/tags/ugen/</loc>
+    <loc>http://gewhere.github.io/blog/tags/ugen/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

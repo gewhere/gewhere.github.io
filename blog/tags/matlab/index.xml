@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matlab on Georgios Diapoulis personal blog</title>
-    <link>http://gewhere.github.io/blogging/tags/matlab/</link>
+    <link>http://gewhere.github.io/blog/tags/matlab/</link>
     <description>Recent content in Matlab on Georgios Diapoulis personal blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>This work is licensed under a Creative Commons Attribution 3.0 Unported License unless otherwise noted.</copyright>
     <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gewhere.github.io/blogging/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gewhere.github.io/blog/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup MATLAB in Emacs and babel orgmode</title>
-      <link>http://gewhere.github.io/blogging/2017/12/19/setup-matlab-in-emacs-and-babel-orgmode/</link>
+      <link>http://gewhere.github.io/blog/2017/12/19/setup-matlab-in-emacs-and-babel-orgmode/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gewhere.github.io/blogging/2017/12/19/setup-matlab-in-emacs-and-babel-orgmode/</guid>
+      <guid>http://gewhere.github.io/blog/2017/12/19/setup-matlab-in-emacs-and-babel-orgmode/</guid>
       <description>There are few steps to setup MATLAB working in Emacs and few more to get working in babel orgmode. This works in MacOS 10.12.6, Emacs 25.3.1 and MATLAB 2017b (also tested in El Capitan with R2016b and Emacs 24.5.1).
 For the first step, I found one response from MathWorks Support Team. The basic idea is that the stack size in shell for Mac computers has to be multiple of 4KB, whereas Emacs has does not have a fixed stack size.</description>
     </item>

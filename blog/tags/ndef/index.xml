@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ndef on Georgios Diapoulis personal blog</title>
-    <link>http://gewhere.github.io/blogging/tags/ndef/</link>
+    <link>http://gewhere.github.io/blog/tags/ndef/</link>
     <description>Recent content in Ndef on Georgios Diapoulis personal blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>This work is licensed under a Creative Commons Attribution 3.0 Unported License unless otherwise noted.</copyright>
     <lastBuildDate>Mon, 30 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gewhere.github.io/blogging/tags/ndef/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gewhere.github.io/blog/tags/ndef/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The very firsts step to SC3</title>
-      <link>http://gewhere.github.io/blogging/2017/10/30/the-very-firsts-step-to-sc3/</link>
+      <link>http://gewhere.github.io/blog/2017/10/30/the-very-firsts-step-to-sc3/</link>
       <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gewhere.github.io/blogging/2017/10/30/the-very-firsts-step-to-sc3/</guid>
+      <guid>http://gewhere.github.io/blog/2017/10/30/the-very-firsts-step-to-sc3/</guid>
       <description>SuperCollider is a powerful programming environment for live music making. It is a textual programming language, combined with a state-of-art sound engine. The basic architecture is based on client-server model, which means that you launch two separate applications, the language (sclang, client) and the sound synthesis engine (scsynth, server). The online help is available at sccode, and the mailing list at nabble.
 How to start In order to make some sound, the first step is to launch scsynth.</description>
     </item>
