@@ -7,19 +7,20 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.29" />
+<meta name="generator" content="Hugo 0.31.1" />
 
-<link rel="canonical" href="http://gewhere.github.io/blog/2017/10/15/print-synthdef-list-using-synthdesclib/">
-<base href="http://gewhere.github.io/blog/" />
+<link rel="canonical" href="http://gewhere.github.io/blogging/2017/10/15/print-synthdef-list-using-synthdesclib/">
+<base href="http://gewhere.github.io/blogging/" />
 <meta property="og:title" content="Print SynthDef list using SynthDescLib" />
 <meta property="og:description" content="The following code chunks print the full list of the synth defitions (SynthDef) that are loaded in the server. A Synthdef is the client side representation of a synth on the server-side.
 SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.associationsDo { |assoc| var name = assoc.key, code = assoc.value.def.func.def.sourceCode; code.notNil.if { &quot;&quot;.postln; name.post; &quot;: &quot;.postln; code.postln; }; }; &quot;&quot;; ) ( SynthDescLib.global.synthDescs.do { |desc| if(desc.def.notNil) { &quot;\nSynthDef %\n&quot;.postf(desc.name.asCompileString); desc.def.func.postcs; }; }; &quot;&quot; // this prevents the synthDescs collection from posting )  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://gewhere.github.io/blog/2017/10/15/print-synthdef-list-using-synthdesclib/" />
+<meta property="og:url" content="http://gewhere.github.io/blogging/2017/10/15/print-synthdef-list-using-synthdesclib/" />
 
 
 
 <meta property="article:published_time" content="2017-10-15T00:00:00&#43;00:00"/>
+
 <meta property="article:modified_time" content="2017-10-15T00:00:00&#43;00:00"/>
 
 
@@ -43,6 +44,7 @@ SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.ass
 SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.associationsDo { |assoc| var name = assoc.key, code = assoc.value.def.func.def.sourceCode; code.notNil.if { &quot;&quot;.postln; name.post; &quot;: &quot;.postln; code.postln; }; }; &quot;&quot;; ) ( SynthDescLib.global.synthDescs.do { |desc| if(desc.def.notNil) { &quot;\nSynthDef %\n&quot;.postf(desc.name.asCompileString); desc.def.func.postcs; }; }; &quot;&quot; // this prevents the synthDescs collection from posting )  ">
 
 
+<meta itemprop="datePublished" content="2017-10-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-10-15T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="82">
 
@@ -78,18 +80,18 @@ SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.ass
 
   <nav>
     <div class="siteTitle">
-      <a href="http://gewhere.github.io/blog/">Georgios Diapoulis personal blog</a>
+      <a href="http://gewhere.github.io/blogging/">Georgios Diapoulis personal blog</a>
     </div> 
 
     
     
-    <a class="nav-item" href="http://gewhere.github.io/blog/post/"><div class="nav-item-title">Posts</div></a>
+    <a class="nav-item" href="http://gewhere.github.io/blogging/post/"><div class="nav-item-title">Posts</div></a>
     
-    <a class="nav-item" href="http://gewhere.github.io/blog/tags/"><div class="nav-item-title">Tags</div></a>
+    <a class="nav-item" href="http://gewhere.github.io/blogging/tags/"><div class="nav-item-title">Tags</div></a>
     
-    <a class="nav-item" href="http://gewhere.github.io/blog/about/"><div class="nav-item-title">About</div></a>
+    <a class="nav-item" href="http://gewhere.github.io/blogging/about/"><div class="nav-item-title">About</div></a>
     
-    <a class="nav-item" href="http://gewhere.github.io/blog/publications/"><div class="nav-item-title">Publications</div></a>
+    <a class="nav-item" href="http://gewhere.github.io/blogging/publications/"><div class="nav-item-title">Publications</div></a>
     
 
   </nav>
@@ -99,7 +101,7 @@ SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.ass
 <div class="social-links-header">
 
   
-  <a href="mailto:gediapou@student.cc.jyu.fi"><div class="social-link">Email</div></a>
+  <a href="mailto:georgios.diapoulis@chalmers.se"><div class="social-link">Email</div></a>
   
 
   
@@ -158,11 +160,11 @@ SynthDescLib.global.synthDescs.do { |desc|
 <div class="tags">
     
       <div class="tag">
-        <a href="http://gewhere.github.io/blog/tags/synthdesc">#SynthDesc</a>
+        <a href="http://gewhere.github.io/blogging/tags/synthdesc">#SynthDesc</a>
       </div>
     
       <div class="tag">
-        <a href="http://gewhere.github.io/blog/tags/synthdef">#SynthDef</a>
+        <a href="http://gewhere.github.io/blogging/tags/synthdef">#SynthDef</a>
       </div>
     
 </div>
@@ -184,7 +186,7 @@ SynthDescLib.global.synthDescs.do { |desc|
   <div class="social-links-footer">
 
   
-  <a href="mailto:gediapou@student.cc.jyu.fi"><div class="social-link">Email</div></a>
+  <a href="mailto:georgios.diapoulis@chalmers.se"><div class="social-link">Email</div></a>
   
 
   
@@ -200,7 +202,7 @@ SynthDescLib.global.synthDescs.do { |desc|
   
 
   <div class="social-link">
-  <a href="http://gewhere.github.io/blog/index.xml" target="_blank">RSS</a>
+  <a href="http://gewhere.github.io/blogging/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>

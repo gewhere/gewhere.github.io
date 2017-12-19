@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scikit Learn on Georgios Diapoulis personal blog</title>
-    <link>http://gewhere.github.io/blog/tags/scikit-learn/</link>
+    <link>http://gewhere.github.io/blogging/tags/scikit-learn/</link>
     <description>Recent content in Scikit Learn on Georgios Diapoulis personal blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>This work is licensed under a Creative Commons Attribution 3.0 Unported License unless otherwise noted.</copyright>
     <lastBuildDate>Fri, 13 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gewhere.github.io/blog/tags/scikit-learn/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gewhere.github.io/blogging/tags/scikit-learn/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Live coding using SC3 and scikit-learn</title>
-      <link>http://gewhere.github.io/blog/2017/10/13/live-coding-using-sc3-and-scikit-learn/</link>
+      <link>http://gewhere.github.io/blogging/2017/10/13/live-coding-using-sc3-and-scikit-learn/</link>
       <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gewhere.github.io/blog/2017/10/13/live-coding-using-sc3-and-scikit-learn/</guid>
+      <guid>http://gewhere.github.io/blogging/2017/10/13/live-coding-using-sc3-and-scikit-learn/</guid>
       <description>This blog post is about machine learning techniques in live coding. I particularly focused on SuperCollider (SC3) and scikit-learn library for Python3. The main procedure was to send data over Open Sound Control (OSC) protocol, using pythonosc, and to analyze the data in Python3. The data analysis results are sending back to sclang in real-time for parameter control of UGens.
 Description and order of execution The main idea is to get input of environmental sounds using a microphone (also input from speakers works fine), and to analyze the input based on Chromagram class from SC3.</description>
     </item>

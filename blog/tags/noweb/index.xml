@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Noweb on Georgios Diapoulis personal blog</title>
-    <link>http://gewhere.github.io/blog/tags/noweb/</link>
+    <link>http://gewhere.github.io/blogging/tags/noweb/</link>
     <description>Recent content in Noweb on Georgios Diapoulis personal blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>This work is licensed under a Creative Commons Attribution 3.0 Unported License unless otherwise noted.</copyright>
     <lastBuildDate>Mon, 16 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gewhere.github.io/blog/tags/noweb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gewhere.github.io/blogging/tags/noweb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using python to call different code blocks in babel</title>
-      <link>http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</link>
+      <link>http://gewhere.github.io/blogging/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</link>
       <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</guid>
+      <guid>http://gewhere.github.io/blogging/2017/10/16/using-python-to-call-different-code-blocks-in-babel/</guid>
       <description>This entry has two main ways to call different code blocks from babel. The first example is based on an example from Eric Shulte org-scraps using session header argument and the second is based on a noweb example that I found here. Also, the last example shows how to call a named code block using #+CALL.
 Persistent python Import modules from scikit-learn library using untitled session header argument. The example below shows the raw orgmode content.</description>
     </item>
