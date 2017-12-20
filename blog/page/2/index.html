@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-10-13T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-10-15T00:00:00&#43;00:00"/>
 
 
 
@@ -113,6 +113,40 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://gewhere.github.io/blog/2017/10/15/print-synthdef-list-using-synthdesclib/'> Print SynthDef list using SynthDescLib</a> </h2>
+    <div class="meta">
+      Oct 15, 2017 - 1 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/synthdesc">#SynthDesc</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/synthdef">#SynthDef</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> The following code chunks print the full list of the synth defitions (SynthDef) that are loaded in the server. A Synthdef is the client side representation of a synth on the server-side.
+SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.associationsDo { |assoc| var name = assoc.key, code = assoc.value.def.func.def.sourceCode; code.notNil.if { &quot;&quot;.postln; name.post; &quot;: &quot;.postln; code.postln; }; }; &quot;&quot;; ) ( SynthDescLib.global.synthDescs.do { |desc| if(desc.def.notNil) { &quot;\nSynthDef %\n&quot;.postf(desc.name.asCompileString); desc.def.func.postcs; }; }; &quot;&quot; // this prevents the synthDescs collection from posting )   </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://gewhere.github.io/blog/2017/10/15/print-synthdef-list-using-synthdesclib/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>

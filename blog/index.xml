@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>This work is licensed under a Creative Commons Attribution 3.0 Unported License unless otherwise noted.</copyright>
-    <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gewhere.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup SuperCollider in Emacs</title>
+      <link>http://gewhere.github.io/blog/2017/12/20/setup-supercollider-in-emacs/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://gewhere.github.io/blog/2017/12/20/setup-supercollider-in-emacs/</guid>
+      <description>While SuperCollider IDE is more convenient than any other text editor, as it is tailor-made solution for editing sclang, I like to use Emacs for interactive coding. This post will demonstrate how to configure Emacs with SC3. The solution is based on this blog post by Gene De Lisa. This setup assumes that you have install SC3 using the pre-build dmg image file.
+Get the resources Emacs Lisp files Make sure to get the Emacs Lisp files for SC3 integration.</description>
+    </item>
     
     <item>
       <title>Setup MATLAB in Emacs and babel orgmode</title>

@@ -19,7 +19,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-12-19T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-12-20T00:00:00&#43;00:00"/>
 
 
 
@@ -113,6 +113,44 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='http://gewhere.github.io/blog/2017/12/20/setup-supercollider-in-emacs/'> Setup SuperCollider in Emacs</a> </h2>
+    <div class="meta">
+      Dec 20, 2017 - 2 minutes
+    </div>
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/supercollider">#supercollider</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/emacs">#emacs</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://gewhere.github.io/blog/tags/mac">#Mac</a>
+      </div>
+    
+</div>
+
+  </header>
+
+  <div class="summary"> While SuperCollider IDE is more convenient than any other text editor, as it is tailor-made solution for editing sclang, I like to use Emacs for interactive coding. This post will demonstrate how to configure Emacs with SC3. The solution is based on this blog post by Gene De Lisa. This setup assumes that you have install SC3 using the pre-build dmg image file.
+Get the resources Emacs Lisp files Make sure to get the Emacs Lisp files for SC3 integration. </div>
+
+  <footer>
+  <div class="rmore">
+    <a href='http://gewhere.github.io/blog/2017/12/20/setup-supercollider-in-emacs/'><nobr>Read more ...</nobr></a>
+  </div>
+  </footer>
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -282,40 +320,6 @@ Persistent python Import modules from scikit-learn library using untitled sessio
   <footer>
   <div class="rmore">
     <a href='http://gewhere.github.io/blog/2017/10/16/using-python-to-call-different-code-blocks-in-babel/'><nobr>Read more ...</nobr></a>
-  </div>
-  </footer>
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='http://gewhere.github.io/blog/2017/10/15/print-synthdef-list-using-synthdesclib/'> Print SynthDef list using SynthDescLib</a> </h2>
-    <div class="meta">
-      Oct 15, 2017 - 1 minutes
-    </div>
-    
-<div class="tags">
-    
-      <div class="tag">
-        <a href="http://gewhere.github.io/blog/tags/synthdesc">#SynthDesc</a>
-      </div>
-    
-      <div class="tag">
-        <a href="http://gewhere.github.io/blog/tags/synthdef">#SynthDef</a>
-      </div>
-    
-</div>
-
-  </header>
-
-  <div class="summary"> The following code chunks print the full list of the synth defitions (SynthDef) that are loaded in the server. A Synthdef is the client side representation of a synth on the server-side.
-SynthDef library // print all the SynthDefs ( SynthDescLib.global.synthDescs.associationsDo { |assoc| var name = assoc.key, code = assoc.value.def.func.def.sourceCode; code.notNil.if { &quot;&quot;.postln; name.post; &quot;: &quot;.postln; code.postln; }; }; &quot;&quot;; ) ( SynthDescLib.global.synthDescs.do { |desc| if(desc.def.notNil) { &quot;\nSynthDef %\n&quot;.postf(desc.name.asCompileString); desc.def.func.postcs; }; }; &quot;&quot; // this prevents the synthDescs collection from posting )   </div>
-
-  <footer>
-  <div class="rmore">
-    <a href='http://gewhere.github.io/blog/2017/10/15/print-synthdef-list-using-synthdesclib/'><nobr>Read more ...</nobr></a>
   </div>
   </footer>
 
